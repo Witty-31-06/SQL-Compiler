@@ -1,0 +1,35 @@
+# Project info
+PROJECT_NAME           = "SQL Interpreter"
+
+# Input
+INPUT                  = ./include ./src    # Point to your code directories
+FILE_PATTERNS          = *.h *.cpp
+
+# Extract class info
+EXTRACT_ALL            = YES
+EXTRACT_PRIVATE        = YES
+EXTRACT_STATIC         = YES
+CALL_GRAPH             = YES
+CALLER_GRAPH           = YES
+DOT_CLEANUP            = YES
+
+# Diagrams
+HAVE_DOT               = YES  # Enables Graphviz support
+CLASS_DIAGRAMS         = YES  # Enables UML-like class diagrams
+UML_LOOK               = YES  # Improves class diagrams look
+CALL_GRAPH             = YES  # Shows which function calls what
+CALLER_GRAPH           = YES  # Shows who calls a function
+COLLABORATION_GRAPH    = YES  # Shows class collaboration
+INCLUDED_BY_GRAPH      = YES  # Shows which files include a file
+INCLUDE_GRAPH          = YES  # Shows which files a file includes
+DOT_PATH               = /usr/bin/dot  # Change this based on `which dot`
+DOT_GRAPH_MAX_NODES    = 200  # Increase if needed
+INTERACTIVE_SVG        = YES  # Allows zooming in diagrams
+
+DOT_TRANSPARENT = YES
+
+# PlantUML integration (optional)
+PLANTUML_JAR_PATH      = /path/to/plantuml.jar
+USE_MDFILE_AS_MAINPAGE = README.md          # Optional main page
+HTML_COLORSTYLE = LIGHT
+

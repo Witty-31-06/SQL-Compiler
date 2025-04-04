@@ -1,0 +1,214 @@
+\doxysection{Lexer Class Reference}
+\hypertarget{classLexer}{}\label{classLexer}\index{Lexer@{Lexer}}
+
+
+{\ttfamily \#include $<$Lexer.\+h$>$}
+
+
+
+Collaboration diagram for Lexer\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=174pt]{classLexer__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classLexer_a2752a2b16cc1ffbcb8fc3e82e95bf331}{Lexer}} ()
+\item 
+vector$<$ \mbox{\hyperlink{classToken}{Token}} $>$ \mbox{\hyperlink{classLexer_a53ca4097e5fdc3038c07104a07d91bf0}{tokenize}} (const string \&)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{classLexer_ab599dcaa2c91238cd49c6c99d69c58f0}{remove\+Spaces}} (string \&t)
+\item 
+bool \mbox{\hyperlink{classLexer_a4546b85fe75e0152a3cba759d18f240d}{is\+Keyword}} (const string \&str)
+\item 
+bool \mbox{\hyperlink{classLexer_acc2c15fd3f25cbc9e0fba3946ddfe1fe}{is\+Identifier}} (const string \&str)
+\item 
+bool \mbox{\hyperlink{classLexer_af0d792d931a1c5c168bc224b5218bdb8}{is\+Operator}} (const string \&str)
+\item 
+bool \mbox{\hyperlink{classLexer_a6c8157cad4951a2f24c763ab5645e693}{is\+Numeric\+Literal}} (const string \&str)
+\item 
+bool \mbox{\hyperlink{classLexer_aed757d18850c5bfe53b6b0fa65a07587}{is\+String\+Literal}} (const string \&str)
+\item 
+bool \mbox{\hyperlink{classLexer_abebae2e9ca0987e3f06363c48442b054}{is\+Punctuation}} (const string \&str)
+\item 
+bool \mbox{\hyperlink{classLexer_a7d2a073525f3dafc49701dc64fb8455a}{is\+All}} (const string \&str)
+\item 
+\mbox{\hyperlink{classToken}{Token}} \mbox{\hyperlink{classLexer_aeef65cdc820f48477913e8411df2fcf4}{classify\+Token}} (const string \&str)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{classLexer_ae589851446b61a31157d5f27829f2c18}{filename}}
+\item 
+vector$<$ \mbox{\hyperlink{classToken}{Token}} $>$ \mbox{\hyperlink{classLexer_a5271266ba9bc67fc6dc3f7210961f3f6}{tokens}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classLexer_a2752a2b16cc1ffbcb8fc3e82e95bf331}\index{Lexer@{Lexer}!Lexer@{Lexer}}
+\index{Lexer@{Lexer}!Lexer@{Lexer}}
+\doxysubsubsection{\texorpdfstring{Lexer()}{Lexer()}}
+{\footnotesize\ttfamily \label{classLexer_a2752a2b16cc1ffbcb8fc3e82e95bf331} 
+Lexer\+::\+Lexer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classLexer_aeef65cdc820f48477913e8411df2fcf4}\index{Lexer@{Lexer}!classifyToken@{classifyToken}}
+\index{classifyToken@{classifyToken}!Lexer@{Lexer}}
+\doxysubsubsection{\texorpdfstring{classifyToken()}{classifyToken()}}
+{\footnotesize\ttfamily \label{classLexer_aeef65cdc820f48477913e8411df2fcf4} 
+\mbox{\hyperlink{classToken}{Token}} Lexer\+::classify\+Token (\begin{DoxyParamCaption}\item[{const string \&}]{str}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{classLexer_aeef65cdc820f48477913e8411df2fcf4_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classLexer_aeef65cdc820f48477913e8411df2fcf4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classLexer_a7d2a073525f3dafc49701dc64fb8455a}\index{Lexer@{Lexer}!isAll@{isAll}}
+\index{isAll@{isAll}!Lexer@{Lexer}}
+\doxysubsubsection{\texorpdfstring{isAll()}{isAll()}}
+{\footnotesize\ttfamily \label{classLexer_a7d2a073525f3dafc49701dc64fb8455a} 
+bool Lexer\+::is\+All (\begin{DoxyParamCaption}\item[{const string \&}]{str}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classLexer_a7d2a073525f3dafc49701dc64fb8455a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classLexer_acc2c15fd3f25cbc9e0fba3946ddfe1fe}\index{Lexer@{Lexer}!isIdentifier@{isIdentifier}}
+\index{isIdentifier@{isIdentifier}!Lexer@{Lexer}}
+\doxysubsubsection{\texorpdfstring{isIdentifier()}{isIdentifier()}}
+{\footnotesize\ttfamily \label{classLexer_acc2c15fd3f25cbc9e0fba3946ddfe1fe} 
+bool Lexer\+::is\+Identifier (\begin{DoxyParamCaption}\item[{const string \&}]{str}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classLexer_acc2c15fd3f25cbc9e0fba3946ddfe1fe_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classLexer_a4546b85fe75e0152a3cba759d18f240d}\index{Lexer@{Lexer}!isKeyword@{isKeyword}}
+\index{isKeyword@{isKeyword}!Lexer@{Lexer}}
+\doxysubsubsection{\texorpdfstring{isKeyword()}{isKeyword()}}
+{\footnotesize\ttfamily \label{classLexer_a4546b85fe75e0152a3cba759d18f240d} 
+bool Lexer\+::is\+Keyword (\begin{DoxyParamCaption}\item[{const string \&}]{str}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classLexer_a4546b85fe75e0152a3cba759d18f240d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classLexer_a6c8157cad4951a2f24c763ab5645e693}\index{Lexer@{Lexer}!isNumericLiteral@{isNumericLiteral}}
+\index{isNumericLiteral@{isNumericLiteral}!Lexer@{Lexer}}
+\doxysubsubsection{\texorpdfstring{isNumericLiteral()}{isNumericLiteral()}}
+{\footnotesize\ttfamily \label{classLexer_a6c8157cad4951a2f24c763ab5645e693} 
+bool Lexer\+::is\+Numeric\+Literal (\begin{DoxyParamCaption}\item[{const string \&}]{str}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classLexer_a6c8157cad4951a2f24c763ab5645e693_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classLexer_af0d792d931a1c5c168bc224b5218bdb8}\index{Lexer@{Lexer}!isOperator@{isOperator}}
+\index{isOperator@{isOperator}!Lexer@{Lexer}}
+\doxysubsubsection{\texorpdfstring{isOperator()}{isOperator()}}
+{\footnotesize\ttfamily \label{classLexer_af0d792d931a1c5c168bc224b5218bdb8} 
+bool Lexer\+::is\+Operator (\begin{DoxyParamCaption}\item[{const string \&}]{str}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classLexer_af0d792d931a1c5c168bc224b5218bdb8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classLexer_abebae2e9ca0987e3f06363c48442b054}\index{Lexer@{Lexer}!isPunctuation@{isPunctuation}}
+\index{isPunctuation@{isPunctuation}!Lexer@{Lexer}}
+\doxysubsubsection{\texorpdfstring{isPunctuation()}{isPunctuation()}}
+{\footnotesize\ttfamily \label{classLexer_abebae2e9ca0987e3f06363c48442b054} 
+bool Lexer\+::is\+Punctuation (\begin{DoxyParamCaption}\item[{const string \&}]{str}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classLexer_aed757d18850c5bfe53b6b0fa65a07587}\index{Lexer@{Lexer}!isStringLiteral@{isStringLiteral}}
+\index{isStringLiteral@{isStringLiteral}!Lexer@{Lexer}}
+\doxysubsubsection{\texorpdfstring{isStringLiteral()}{isStringLiteral()}}
+{\footnotesize\ttfamily \label{classLexer_aed757d18850c5bfe53b6b0fa65a07587} 
+bool Lexer\+::is\+String\+Literal (\begin{DoxyParamCaption}\item[{const string \&}]{str}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classLexer_aed757d18850c5bfe53b6b0fa65a07587_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classLexer_ab599dcaa2c91238cd49c6c99d69c58f0}\index{Lexer@{Lexer}!removeSpaces@{removeSpaces}}
+\index{removeSpaces@{removeSpaces}!Lexer@{Lexer}}
+\doxysubsubsection{\texorpdfstring{removeSpaces()}{removeSpaces()}}
+{\footnotesize\ttfamily \label{classLexer_ab599dcaa2c91238cd49c6c99d69c58f0} 
+string Lexer\+::remove\+Spaces (\begin{DoxyParamCaption}\item[{string \&}]{t}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classLexer_a53ca4097e5fdc3038c07104a07d91bf0}\index{Lexer@{Lexer}!tokenize@{tokenize}}
+\index{tokenize@{tokenize}!Lexer@{Lexer}}
+\doxysubsubsection{\texorpdfstring{tokenize()}{tokenize()}}
+{\footnotesize\ttfamily \label{classLexer_a53ca4097e5fdc3038c07104a07d91bf0} 
+vector$<$ \mbox{\hyperlink{classToken}{Token}} $>$ Lexer\+::tokenize (\begin{DoxyParamCaption}\item[{const string \&}]{query}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classLexer_a53ca4097e5fdc3038c07104a07d91bf0_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classLexer_a53ca4097e5fdc3038c07104a07d91bf0_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classLexer_ae589851446b61a31157d5f27829f2c18}\index{Lexer@{Lexer}!filename@{filename}}
+\index{filename@{filename}!Lexer@{Lexer}}
+\doxysubsubsection{\texorpdfstring{filename}{filename}}
+{\footnotesize\ttfamily \label{classLexer_ae589851446b61a31157d5f27829f2c18} 
+string Lexer\+::filename\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classLexer_a5271266ba9bc67fc6dc3f7210961f3f6}\index{Lexer@{Lexer}!tokens@{tokens}}
+\index{tokens@{tokens}!Lexer@{Lexer}}
+\doxysubsubsection{\texorpdfstring{tokens}{tokens}}
+{\footnotesize\ttfamily \label{classLexer_a5271266ba9bc67fc6dc3f7210961f3f6} 
+vector$<$\mbox{\hyperlink{classToken}{Token}}$>$ Lexer\+::tokens\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{Lexer_8h}{Lexer.\+h}}\item 
+src/\mbox{\hyperlink{Lexer_8cpp}{Lexer.\+cpp}}\end{DoxyCompactItemize}

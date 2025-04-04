@@ -1,0 +1,64 @@
+\doxysection{parser.\+h}
+\hypertarget{parser_8h_source}{}\label{parser_8h_source}\index{include/parser.h@{include/parser.h}}
+\mbox{\hyperlink{parser_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ \_\_PARSER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ \_\_PARSER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <bits/stdc++.h>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Token_8h}{Token.h}}"{}}}
+\DoxyCodeLine{00007\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classSymbol}{Symbol}}\ \{}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{classSymbol_a5a6510dbf012192a46984e4c6b8f315c}{symbol}};}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classSymbol_a7911a477f0959199fd61fb6a37fb5397}{isTerminal}};}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{public}:\ }
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSymbol_a6e5009e9408693d2f7240d1e8662c278}{Symbol}}(\textcolor{keywordtype}{string}\ \mbox{\hyperlink{classSymbol_a5a6510dbf012192a46984e4c6b8f315c}{symbol}},\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classSymbol_a7911a477f0959199fd61fb6a37fb5397}{isTerminal}});}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{classSymbol_a626bdd3948ea431fa1281416e0d012d5}{getSymbol}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classSymbol_aec1e9bf10060bdfd209414b69044a357}{getIsTerminal}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classSymbol_aa30b510ea651d376f68346a018ff8fea}{operator==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classSymbol}{Symbol}}\ \&other)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00019\ \};}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structSymbolHash}{SymbolHash}}\ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{structSymbolHash_a1a1337eb6dd5e949ed42b80b7c1332e7}{operator()}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classSymbol}{Symbol}}\ \&s)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00023\ \};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classNonTerminal}{NonTerminal}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classSymbol}{Symbol}}\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classNonTerminal_a409576a130daba865db9e6ff6b385be5}{NonTerminal}}(\textcolor{keywordtype}{string}\ \mbox{\hyperlink{classSymbol_a5a6510dbf012192a46984e4c6b8f315c}{symbol}});}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classNonTerminal_a7d040e5e4754f3700921226fbc88fa67}{operator==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classNonTerminal}{NonTerminal}}\ \&other)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00029\ \};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classTerminal}{Terminal}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classSymbol}{Symbol}}\ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTerminal_afbf3c059ebb2f7d0614f7c341a6f1a04}{Terminal}}(\textcolor{keywordtype}{string}\ \mbox{\hyperlink{classSymbol_a5a6510dbf012192a46984e4c6b8f315c}{symbol}});}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classTerminal_ac155612c0d3c3ffc64a043223fa6acca}{operator==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classTerminal}{Terminal}}\ \&other)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00035\ \};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classParser}{Parser}}\ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ unordered\_map<NonTerminal,\ vector<vector<shared\_ptr<Symbol>>>,\ \mbox{\hyperlink{structSymbolHash}{SymbolHash}}>\ \mbox{\hyperlink{classParser_a36d2eb8091aea0fd77c6b1c1e6a234b7}{grammar}};}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ shared\_ptr<NonTerminal>\ \mbox{\hyperlink{classParser_a2f6d04a797842407d2a2b76f6fec4e0b}{start}};}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ unordered\_map<NonTerminal,\ unordered\_set<Terminal,\ SymbolHash>,\ \mbox{\hyperlink{structSymbolHash}{SymbolHash}}>\ \mbox{\hyperlink{classParser_ae4646e1c0f41c4011d9638e2bc40178f}{first}};}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ unordered\_map<NonTerminal,\ unordered\_set<Terminal,\ SymbolHash>,\ \mbox{\hyperlink{structSymbolHash}{SymbolHash}}>\ \mbox{\hyperlink{classParser_af67ad55e9647af09901c752ffeb8a362}{follow}};}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ unordered\_map<NonTerminal,\ unordered\_map<Terminal,\ vector<shared\_ptr<Symbol>>,\ \mbox{\hyperlink{structSymbolHash}{SymbolHash}}>,\ \mbox{\hyperlink{structSymbolHash}{SymbolHash}}>\ \mbox{\hyperlink{classParser_ac526a9b9dc7871303a9cd581c79ba3c1}{ll1Table}};}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classParser_ac13410cc626574db39d1b39cdf8dfe39}{Parser}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ filename);}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classParser_aaa59ab12d2363ede9c8f72ff8a32ce88}{printGrammar}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classParser_a271f328741d9e36146ed32bcb382d9a8}{leftFactorGrammar}}();}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classParser_ae656481d980555a17d639fe063fd436a}{computeFirst}}();}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classParser_ae1dba1e4b94224b696e2d25cc39df2c7}{computeFollow}}();}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classParser_a2dc265a26604c6829bac6fd93daa14ef}{printFirstAndFollow}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classParser_ae3862281fb56fea407bbd332c5bebe10}{computeLL1Table}}();}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classParser_a7ccefd47273ea741d7350049eac417ff}{printLL1Table}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classParser_a5400c4e8361072c77bedc61e7bc15535}{printLL1TableFromGrammarJSON}}(\textcolor{keyword}{const}\ std::string\ \&jsonFilePath);}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classParser_a65780aca08811f29dda782f145bd7d4d}{parse}}(vector<Token>\ tokens);}
+\DoxyCodeLine{00055\ \};}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

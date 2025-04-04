@@ -1,0 +1,241 @@
+\doxysection{Parser Class Reference}
+\hypertarget{classParser}{}\label{classParser}\index{Parser@{Parser}}
+
+
+{\ttfamily \#include $<$parser.\+h$>$}
+
+
+
+Collaboration diagram for Parser\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{classParser__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classParser_ac13410cc626574db39d1b39cdf8dfe39}{Parser}} (const string \&filename)
+\item 
+void \mbox{\hyperlink{classParser_aaa59ab12d2363ede9c8f72ff8a32ce88}{print\+Grammar}} () const
+\item 
+void \mbox{\hyperlink{classParser_a271f328741d9e36146ed32bcb382d9a8}{left\+Factor\+Grammar}} ()
+\item 
+void \mbox{\hyperlink{classParser_ae656481d980555a17d639fe063fd436a}{compute\+First}} ()
+\item 
+void \mbox{\hyperlink{classParser_ae1dba1e4b94224b696e2d25cc39df2c7}{compute\+Follow}} ()
+\item 
+void \mbox{\hyperlink{classParser_a2dc265a26604c6829bac6fd93daa14ef}{print\+First\+And\+Follow}} () const
+\item 
+void \mbox{\hyperlink{classParser_ae3862281fb56fea407bbd332c5bebe10}{compute\+LL1\+Table}} ()
+\item 
+void \mbox{\hyperlink{classParser_a7ccefd47273ea741d7350049eac417ff}{print\+LL1\+Table}} () const
+\item 
+void \mbox{\hyperlink{classParser_a5400c4e8361072c77bedc61e7bc15535}{print\+LL1\+Table\+From\+Grammar\+JSON}} (const std\+::string \&json\+File\+Path)
+\item 
+bool \mbox{\hyperlink{classParser_a65780aca08811f29dda782f145bd7d4d}{parse}} (vector$<$ \mbox{\hyperlink{classToken}{Token}} $>$ tokens)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unordered\+\_\+map$<$ \mbox{\hyperlink{classNonTerminal}{Non\+Terminal}}, vector$<$ vector$<$ shared\+\_\+ptr$<$ \mbox{\hyperlink{classSymbol}{Symbol}} $>$ $>$ $>$, \mbox{\hyperlink{structSymbolHash}{Symbol\+Hash}} $>$ \mbox{\hyperlink{classParser_a36d2eb8091aea0fd77c6b1c1e6a234b7}{grammar}}
+\item 
+shared\+\_\+ptr$<$ \mbox{\hyperlink{classNonTerminal}{Non\+Terminal}} $>$ \mbox{\hyperlink{classParser_a2f6d04a797842407d2a2b76f6fec4e0b}{start}}
+\item 
+unordered\+\_\+map$<$ \mbox{\hyperlink{classNonTerminal}{Non\+Terminal}}, unordered\+\_\+set$<$ \mbox{\hyperlink{classTerminal}{Terminal}}, \mbox{\hyperlink{structSymbolHash}{Symbol\+Hash}} $>$, \mbox{\hyperlink{structSymbolHash}{Symbol\+Hash}} $>$ \mbox{\hyperlink{classParser_ae4646e1c0f41c4011d9638e2bc40178f}{first}}
+\item 
+unordered\+\_\+map$<$ \mbox{\hyperlink{classNonTerminal}{Non\+Terminal}}, unordered\+\_\+set$<$ \mbox{\hyperlink{classTerminal}{Terminal}}, \mbox{\hyperlink{structSymbolHash}{Symbol\+Hash}} $>$, \mbox{\hyperlink{structSymbolHash}{Symbol\+Hash}} $>$ \mbox{\hyperlink{classParser_af67ad55e9647af09901c752ffeb8a362}{follow}}
+\item 
+unordered\+\_\+map$<$ \mbox{\hyperlink{classNonTerminal}{Non\+Terminal}}, unordered\+\_\+map$<$ \mbox{\hyperlink{classTerminal}{Terminal}}, vector$<$ shared\+\_\+ptr$<$ \mbox{\hyperlink{classSymbol}{Symbol}} $>$ $>$, \mbox{\hyperlink{structSymbolHash}{Symbol\+Hash}} $>$, \mbox{\hyperlink{structSymbolHash}{Symbol\+Hash}} $>$ \mbox{\hyperlink{classParser_ac526a9b9dc7871303a9cd581c79ba3c1}{ll1\+Table}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classParser_ac13410cc626574db39d1b39cdf8dfe39}\index{Parser@{Parser}!Parser@{Parser}}
+\index{Parser@{Parser}!Parser@{Parser}}
+\doxysubsubsection{\texorpdfstring{Parser()}{Parser()}}
+{\footnotesize\ttfamily \label{classParser_ac13410cc626574db39d1b39cdf8dfe39} 
+Parser\+::\+Parser (\begin{DoxyParamCaption}\item[{const string \&}]{filename}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classParser_ac13410cc626574db39d1b39cdf8dfe39_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classParser_ae656481d980555a17d639fe063fd436a}\index{Parser@{Parser}!computeFirst@{computeFirst}}
+\index{computeFirst@{computeFirst}!Parser@{Parser}}
+\doxysubsubsection{\texorpdfstring{computeFirst()}{computeFirst()}}
+{\footnotesize\ttfamily \label{classParser_ae656481d980555a17d639fe063fd436a} 
+void Parser\+::compute\+First (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=303pt]{classParser_ae656481d980555a17d639fe063fd436a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classParser_ae1dba1e4b94224b696e2d25cc39df2c7}\index{Parser@{Parser}!computeFollow@{computeFollow}}
+\index{computeFollow@{computeFollow}!Parser@{Parser}}
+\doxysubsubsection{\texorpdfstring{computeFollow()}{computeFollow()}}
+{\footnotesize\ttfamily \label{classParser_ae1dba1e4b94224b696e2d25cc39df2c7} 
+void Parser\+::compute\+Follow (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{classParser_ae1dba1e4b94224b696e2d25cc39df2c7_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classParser_ae3862281fb56fea407bbd332c5bebe10}\index{Parser@{Parser}!computeLL1Table@{computeLL1Table}}
+\index{computeLL1Table@{computeLL1Table}!Parser@{Parser}}
+\doxysubsubsection{\texorpdfstring{computeLL1Table()}{computeLL1Table()}}
+{\footnotesize\ttfamily \label{classParser_ae3862281fb56fea407bbd332c5bebe10} 
+void Parser\+::compute\+LL1\+Table (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=345pt]{classParser_ae3862281fb56fea407bbd332c5bebe10_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{classParser_ae3862281fb56fea407bbd332c5bebe10_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classParser_a271f328741d9e36146ed32bcb382d9a8}\index{Parser@{Parser}!leftFactorGrammar@{leftFactorGrammar}}
+\index{leftFactorGrammar@{leftFactorGrammar}!Parser@{Parser}}
+\doxysubsubsection{\texorpdfstring{leftFactorGrammar()}{leftFactorGrammar()}}
+{\footnotesize\ttfamily \label{classParser_a271f328741d9e36146ed32bcb382d9a8} 
+void Parser\+::left\+Factor\+Grammar (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classParser_a271f328741d9e36146ed32bcb382d9a8_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=327pt]{classParser_a271f328741d9e36146ed32bcb382d9a8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classParser_a65780aca08811f29dda782f145bd7d4d}\index{Parser@{Parser}!parse@{parse}}
+\index{parse@{parse}!Parser@{Parser}}
+\doxysubsubsection{\texorpdfstring{parse()}{parse()}}
+{\footnotesize\ttfamily \label{classParser_a65780aca08811f29dda782f145bd7d4d} 
+bool Parser\+::parse (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{classToken}{Token}} $>$}]{tokens}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=292pt]{classParser_a65780aca08811f29dda782f145bd7d4d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classParser_a65780aca08811f29dda782f145bd7d4d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classParser_a2dc265a26604c6829bac6fd93daa14ef}\index{Parser@{Parser}!printFirstAndFollow@{printFirstAndFollow}}
+\index{printFirstAndFollow@{printFirstAndFollow}!Parser@{Parser}}
+\doxysubsubsection{\texorpdfstring{printFirstAndFollow()}{printFirstAndFollow()}}
+{\footnotesize\ttfamily \label{classParser_a2dc265a26604c6829bac6fd93daa14ef} 
+void Parser\+::print\+First\+And\+Follow (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classParser_a2dc265a26604c6829bac6fd93daa14ef_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classParser_aaa59ab12d2363ede9c8f72ff8a32ce88}\index{Parser@{Parser}!printGrammar@{printGrammar}}
+\index{printGrammar@{printGrammar}!Parser@{Parser}}
+\doxysubsubsection{\texorpdfstring{printGrammar()}{printGrammar()}}
+{\footnotesize\ttfamily \label{classParser_aaa59ab12d2363ede9c8f72ff8a32ce88} 
+void Parser\+::print\+Grammar (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classParser_aaa59ab12d2363ede9c8f72ff8a32ce88_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classParser_a7ccefd47273ea741d7350049eac417ff}\index{Parser@{Parser}!printLL1Table@{printLL1Table}}
+\index{printLL1Table@{printLL1Table}!Parser@{Parser}}
+\doxysubsubsection{\texorpdfstring{printLL1Table()}{printLL1Table()}}
+{\footnotesize\ttfamily \label{classParser_a7ccefd47273ea741d7350049eac417ff} 
+void Parser\+::print\+LL1\+Table (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classParser_a7ccefd47273ea741d7350049eac417ff_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classParser_a5400c4e8361072c77bedc61e7bc15535}\index{Parser@{Parser}!printLL1TableFromGrammarJSON@{printLL1TableFromGrammarJSON}}
+\index{printLL1TableFromGrammarJSON@{printLL1TableFromGrammarJSON}!Parser@{Parser}}
+\doxysubsubsection{\texorpdfstring{printLL1TableFromGrammarJSON()}{printLL1TableFromGrammarJSON()}}
+{\footnotesize\ttfamily \label{classParser_a5400c4e8361072c77bedc61e7bc15535} 
+void Parser\+::print\+LL1\+Table\+From\+Grammar\+JSON (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{json\+File\+Path}{}\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classParser_ae4646e1c0f41c4011d9638e2bc40178f}\index{Parser@{Parser}!first@{first}}
+\index{first@{first}!Parser@{Parser}}
+\doxysubsubsection{\texorpdfstring{first}{first}}
+{\footnotesize\ttfamily \label{classParser_ae4646e1c0f41c4011d9638e2bc40178f} 
+unordered\+\_\+map$<$\mbox{\hyperlink{classNonTerminal}{Non\+Terminal}}, unordered\+\_\+set$<$\mbox{\hyperlink{classTerminal}{Terminal}}, \mbox{\hyperlink{structSymbolHash}{Symbol\+Hash}}$>$, \mbox{\hyperlink{structSymbolHash}{Symbol\+Hash}}$>$ Parser\+::first\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classParser_af67ad55e9647af09901c752ffeb8a362}\index{Parser@{Parser}!follow@{follow}}
+\index{follow@{follow}!Parser@{Parser}}
+\doxysubsubsection{\texorpdfstring{follow}{follow}}
+{\footnotesize\ttfamily \label{classParser_af67ad55e9647af09901c752ffeb8a362} 
+unordered\+\_\+map$<$\mbox{\hyperlink{classNonTerminal}{Non\+Terminal}}, unordered\+\_\+set$<$\mbox{\hyperlink{classTerminal}{Terminal}}, \mbox{\hyperlink{structSymbolHash}{Symbol\+Hash}}$>$, \mbox{\hyperlink{structSymbolHash}{Symbol\+Hash}}$>$ Parser\+::follow\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classParser_a36d2eb8091aea0fd77c6b1c1e6a234b7}\index{Parser@{Parser}!grammar@{grammar}}
+\index{grammar@{grammar}!Parser@{Parser}}
+\doxysubsubsection{\texorpdfstring{grammar}{grammar}}
+{\footnotesize\ttfamily \label{classParser_a36d2eb8091aea0fd77c6b1c1e6a234b7} 
+unordered\+\_\+map$<$\mbox{\hyperlink{classNonTerminal}{Non\+Terminal}}, vector$<$vector$<$shared\+\_\+ptr$<$\mbox{\hyperlink{classSymbol}{Symbol}}$>$ $>$ $>$, \mbox{\hyperlink{structSymbolHash}{Symbol\+Hash}}$>$ Parser\+::grammar\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classParser_ac526a9b9dc7871303a9cd581c79ba3c1}\index{Parser@{Parser}!ll1Table@{ll1Table}}
+\index{ll1Table@{ll1Table}!Parser@{Parser}}
+\doxysubsubsection{\texorpdfstring{ll1Table}{ll1Table}}
+{\footnotesize\ttfamily \label{classParser_ac526a9b9dc7871303a9cd581c79ba3c1} 
+unordered\+\_\+map$<$\mbox{\hyperlink{classNonTerminal}{Non\+Terminal}}, unordered\+\_\+map$<$\mbox{\hyperlink{classTerminal}{Terminal}}, vector$<$shared\+\_\+ptr$<$\mbox{\hyperlink{classSymbol}{Symbol}}$>$ $>$, \mbox{\hyperlink{structSymbolHash}{Symbol\+Hash}}$>$, \mbox{\hyperlink{structSymbolHash}{Symbol\+Hash}}$>$ Parser\+::ll1\+Table\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classParser_a2f6d04a797842407d2a2b76f6fec4e0b}\index{Parser@{Parser}!start@{start}}
+\index{start@{start}!Parser@{Parser}}
+\doxysubsubsection{\texorpdfstring{start}{start}}
+{\footnotesize\ttfamily \label{classParser_a2f6d04a797842407d2a2b76f6fec4e0b} 
+shared\+\_\+ptr$<$\mbox{\hyperlink{classNonTerminal}{Non\+Terminal}}$>$ Parser\+::start\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{parser_8h}{parser.\+h}}\item 
+src/\mbox{\hyperlink{parser_8cpp}{parser.\+cpp}}\end{DoxyCompactItemize}
