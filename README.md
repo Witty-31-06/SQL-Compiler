@@ -21,8 +21,6 @@ This is a C++ based SQL Parser and Compiler that takes SQL queries as input, tok
 <table>
 <tr>
 <td><b>Parsing Table in Action</b></td>
-<td><b>Tokenization Process</b></td>
-</tr>
 <tr>
 <td><img src="demo/demo1.gif" width="600"/></td>
 </tr>
@@ -130,5 +128,17 @@ Options:
 | Sugata Laha | [@sugatalaha](https://github.com/sugatalaha) |
 | Subham Mondal | [@Subham-Mondal-973](https://github.com/Subham-Mondal-973) |
 
+
+---
+
+
+### 📦 Special Thanks
+
+This project wouldn't have been possible without the help of these amazing open-source libraries:
+
+- 🧩 [**nlohmann/json**](https://github.com/nlohmann/json) – for elegant and easy-to-use JSON parsing in C++.
+- 📊 [**tabulate**](https://github.com/p-ranav/tabulate) – for beautifully formatted and customizable tables in the terminal.
+
+Huge shoutout to their contributors and maintainers! 💙
 
 ---
