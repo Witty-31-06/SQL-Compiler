@@ -6,7 +6,6 @@
 #include <iomanip>
 #include <tabulate/table.hpp>
 
-using namespace tabulate;
 using json = nlohmann::json;
 using namespace std;
 
@@ -380,8 +379,9 @@ bool Parser::parse(vector<Token> tokens) {
     traceTable.add_row({"Stack", "Input", "Action"});
     traceTable[0].format()
         .font_style({FontStyle::bold})
-        .font_align(FontAlign::center);
-
+        .font_align(FontAlign::center)
+        .font_color(Color::blue);
+    int rowIndex = 1;
     while (!parseStack.empty()) {
         stack<shared_ptr<Symbol>> tempStack = parseStack;
         vector<string> stackContents;
@@ -407,7 +407,8 @@ bool Parser::parse(vector<Token> tokens) {
         if (tokenType == "NUMERIC LITERAL") tokenType = "number";
         else if (tokenType == "STRING LITERAL") tokenType = "string";
         else if (tokenType == "IDENTIFIER") tokenType = "identifier";
-
+        bool matched = false;
+        bool error = false;
         if (top->getIsTerminal()) {
             if (topSymbol == tokenType || topSymbol == tokenLexeme) {
                 actionStr = "Matched '" + tokenLexeme + "'";
@@ -417,11 +418,19 @@ bool Parser::parse(vector<Token> tokens) {
                 } else {
                     currentToken = Token("$", "$");
                 }
+                matched = true;
             } else {
-                cerr << "\nSyntax Error: Expected '" << topSymbol << "' but found '" << tokenLexeme << "'\n";
+                Table errorTable;
+                errorTable.format().font_background_color(Color::red).font_color(Color::white).font_style({FontStyle::bold});
+                string errmsg = "Syntax Error: Expected '" + topSymbol + "' but found '" + tokenLexeme + "'";
+                errorTable.add_row({errmsg});
+                cout<<traceTable<<endl;
+                cout<<errorTable<<endl;
+                error = true;
                 return false;
             }
         } else {
+            matched = false;
             NonTerminal nonTerminal(topSymbol);
             auto &row = ll1Table[nonTerminal];
 
@@ -444,12 +453,34 @@ bool Parser::parse(vector<Token> tokens) {
                 }
 
             } else {
-                cerr << "\nSyntax Error: Unexpected token '(" << tokenLexeme << "," << tokenType << ")'\n";
+                Table errorTable;
+                errorTable.format().font_background_color(Color::red).font_color(Color::white).font_style({FontStyle::bold});
+                string errmsg =  "Syntax Error: Unexpected token '(" + tokenLexeme + "," + tokenType + ")'";
+                errorTable.add_row({errmsg});
+                cout<<traceTable<<endl;
+                cout<<errorTable<<endl;
+                error = true;
                 return false;
             }
         }
+        actionStr = std::regex_replace(actionStr, std::regex("^\\s+|\\s+$"), "");
 
-        auto &new_row = traceTable.add_row({stackStr, inputStr, actionStr});
+        traceTable.add_row({stackStr, inputStr, actionStr});
+        auto &new_row = traceTable[rowIndex++];
+        new_row[2].format().width(60);
+        if(matched) {
+            new_row.format()
+                .font_style({FontStyle::bold})
+                .font_color(Color::green);
+        } else if (error) {
+            new_row.format()
+                .font_style({FontStyle::bold})
+                .font_color(Color::red);
+        } else {
+            new_row.format()
+                .font_style({FontStyle::bold})
+                .font_color(Color::yellow);
+        }
     }
 
     if (tokenIndex < tokens.size()) {
