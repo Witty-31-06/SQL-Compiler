@@ -1,0 +1,99 @@
+{
+  "non-terminals": [
+    "SQLSTATEMENT",
+    "CREATETABLESTMT",
+    "COLUMNDEFINITIONLIST",
+    "COLUMNDEFINITION",
+    "INSERTSTMT",
+    "COLUMNLIST",
+    "VALUELIST",
+    "SELECTSTMT",
+    "CONDITION",
+    "COMPARISON",
+    "OPERATOR",
+    "WHERECLAUSE",
+    "DATATYPE"
+  ],
+  "terminals": [
+    "create",
+    "table",
+    "insert",
+    "into",
+    "values",
+    "select",
+    "from",
+    "where",
+    "(",
+    ")",
+    ",",
+    ";",
+    "*",
+    "identifier",
+    "string",
+    "number",
+    "=",
+    ">",
+    "<",
+    "between",
+    "like",
+    "in",
+    "and",
+    "or"
+  ],
+  "start-symbol": "SQLSTATEMENT",
+  "productions": [
+    { "lhs": "SQLSTATEMENT", "rhs": ["CREATETABLESTMT"] },
+    { "lhs": "SQLSTATEMENT", "rhs": ["INSERTSTMT"] },
+    { "lhs": "SQLSTATEMENT", "rhs": ["SELECTSTMT"] },
+
+    { "lhs": "CREATETABLESTMT", "rhs": ["create", "table", "identifier", "(", "COLUMNDEFINITIONLIST", ")", ";"] },
+
+    { "lhs": "COLUMNDEFINITIONLIST", "rhs": ["COLUMNDEFINITION"] },
+    { "lhs": "COLUMNDEFINITIONLIST", "rhs": ["COLUMNDEFINITION", ",", "COLUMNDEFINITIONLIST"] },
+
+    { "lhs": "COLUMNDEFINITION", "rhs": ["identifier", "DATATYPE"] },
+
+    { "lhs": "INSERTSTMT", "rhs": ["insert", "into", "identifier", "values", "(", "VALUELIST", ")", ";"] },
+    { "lhs": "INSERTSTMT", "rhs": ["insert", "into", "identifier", "(", "COLUMNLIST", ")", "values", "(", "VALUELIST", ")", ";"] },
+
+    { "lhs": "COLUMNLIST", "rhs": ["identifier"] },
+    { "lhs": "COLUMNLIST", "rhs": ["identifier", ",", "COLUMNLIST"] },
+
+    { "lhs": "VALUELIST", "rhs": ["string"] },
+    { "lhs": "VALUELIST", "rhs": ["number"] },
+    { "lhs": "VALUELIST", "rhs": ["string", ",", "VALUELIST"] },
+    { "lhs": "VALUELIST", "rhs": ["number", ",", "VALUELIST"] },
+
+    { "lhs": "SELECTSTMT", "rhs": ["select", "COLUMNLIST", "from", "identifier", "WHERECLAUSE", ";"] },
+    { "lhs": "SELECTSTMT", "rhs": ["select", "*", "from", "identifier", "WHERECLAUSE", ";"] },
+
+    { "lhs": "WHERECLAUSE", "rhs": ["where", "CONDITION"] },
+    { "lhs": "WHERECLAUSE", "rhs": ["#"] },
+
+    { "lhs": "CONDITION", "rhs": ["COMPARISON"] },
+    { "lhs": "CONDITION", "rhs": ["COMPARISON", "and", "CONDITION"] },
+    { "lhs": "CONDITION", "rhs": ["COMPARISON", "or", "CONDITION"] },
+    { "lhs": "CONDITION", "rhs": ["(", "CONDITION", ")"] },
+
+    { "lhs": "COMPARISON", "rhs": ["identifier", "OPERATOR", "string"] },
+    { "lhs": "COMPARISON", "rhs": ["identifier", "OPERATOR", "number"] },
+
+    { "lhs": "OPERATOR", "rhs": ["="] },
+    { "lhs": "OPERATOR", "rhs": [">"] },
+    { "lhs": "OPERATOR", "rhs": ["<"] },
+    { "lhs": "OPERATOR", "rhs": ["between"] },
+    { "lhs": "OPERATOR", "rhs": ["like"] },
+    { "lhs": "OPERATOR", "rhs": ["in"] },
+
+    { "lhs": "DATATYPE", "rhs": ["char"] },
+    { "lhs": "DATATYPE", "rhs": ["varchar"] },
+    { "lhs": "DATATYPE", "rhs": ["int"] },
+    { "lhs": "DATATYPE", "rhs": ["integer"] },
+    { "lhs": "DATATYPE", "rhs": ["float"] },
+    { "lhs": "DATATYPE", "rhs": ["double"] },
+    { "lhs": "DATATYPE", "rhs": ["number"] },
+    { "lhs": "DATATYPE", "rhs": ["date"] },
+    { "lhs": "DATATYPE", "rhs": ["text"] },
+    { "lhs": "DATATYPE", "rhs": ["boolean"] }
+  ]
+}
