@@ -50,6 +50,7 @@ class Parser {
         void printFirstAndFollow() const;
         void computeLL1Table();
         void printLL1Table() const;
+        void printLL1TableFromGrammarJSON(const std::string &jsonFilePath);
         bool parse(vector<Token> tokens);
 };
 

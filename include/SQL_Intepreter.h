@@ -8,12 +8,13 @@ class SQLInterpreter
 {
     private:
         Lexer lexer;
+        int verbosity;
         void printTokens(vector<Token> tokens);
         Parser parser;
         string trim(const string &str);
         void toLowercase(std::string& str);
     public:
-        SQLInterpreter();
+        SQLInterpreter(int verbosity);
         ~SQLInterpreter() = default;
 
         void init_interpreter();

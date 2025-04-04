@@ -1,9 +1,9 @@
 #include "SQL_Intepreter.h"
 #include <iostream>
 using namespace std;
-SQLInterpreter::SQLInterpreter() : lexer(), parser("grammar.json")
+SQLInterpreter::SQLInterpreter(int verbosity) : lexer(), parser("grammar.json")
 {
-    std::cout << "SQLInterpreter constructor called" << std::endl;
+    this->verbosity = verbosity;
 }
 void SQLInterpreter::printTokens(vector<Token> tokens)
 {
@@ -18,6 +18,11 @@ void SQLInterpreter::toLowercase(std::string& str) {
 }
 void SQLInterpreter::init_interpreter()
 {
+    if(verbosity == 2){
+        parser.printGrammar();
+        parser.printFirstAndFollow();
+        parser.printLL1Table();
+    }
     while (true)
     {
         cout << "SQL> ";
@@ -43,7 +48,9 @@ void SQLInterpreter::init_interpreter()
             continue;
 
         vector<Token> tokens = lexer.tokenize(fullQuery);
-        printTokens(tokens);
+        if(verbosity == 2) {
+            printTokens(tokens);
+        }
         parser.parse(tokens);
     }
 }

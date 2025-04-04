@@ -31,7 +31,7 @@ NonTerminal::NonTerminal(string symbol) : Symbol(symbol, false) {}
 Terminal::Terminal(string symbol) : Symbol(symbol, true) {}
 
 size_t SymbolHash::operator()(const Symbol& s) const {
-    return std::hash<string>()(s.getSymbol());
+    return hash<string>()(s.getSymbol());
 }
 
 Parser::Parser(const string& filename) {
@@ -57,7 +57,7 @@ Parser::Parser(const string& filename) {
         NonTerminal nonTerminal(lhs);
 
         vector<shared_ptr<Symbol>> rhsSymbols;
-        for (const string& rhs : prod["rhs"]) {
+        for (const auto& rhs : prod["rhs"]) {
             if (nonTerminals.find(rhs) != nonTerminals.end()) {  // If it's a NonTerminal
                 rhsSymbols.push_back(make_shared<NonTerminal>(rhs));
             } else {  // Otherwise, it's a Terminal
@@ -76,21 +76,35 @@ Parser::Parser(const string& filename) {
 
 }
 
-void Parser::printGrammar() const {
-    cout << "Start Symbol: " << start->getSymbol() << endl;
-    cout << "Grammar Rules:\n";
+#include <tabulate/table.hpp>
+using namespace tabulate;
 
+void Parser::printGrammar() const {
+    Table table;
+    table.add_row({"Start Symbol", start->getSymbol()});
+    table[0].format().font_color(Color::yellow).font_style({FontStyle::bold});
+
+    table.add_row({"Grammar Rules", ""});
+    table[1].format().font_color(Color::cyan).font_style({FontStyle::bold});
+
+    
     for (const auto& rule : grammar) {
-        cout << rule.first.getSymbol() << " -> ";
-        for (const auto& rhs : rule.second) {
-            for (const auto& sym : rhs) {
-                cout << sym->getSymbol() << " ";
+        string lhs = rule.first.getSymbol();
+        string rhs;
+
+        for (const auto& rhs_list : rule.second) {
+            for (const auto& sym : rhs_list) {
+                rhs += sym->getSymbol() + " ";
             }
-            cout << "| ";
+            rhs += "| ";
         }
-        cout << endl;
+        table.add_row({lhs, rhs});
+        table.column(0).format().font_color(Color::red).font_style({FontStyle::bold});
+        table.column(1).format().font_color(Color::blue).font_style({FontStyle::bold});
+
     }
-    cout<<string(50,'-')<<endl;
+
+    cout << table << endl<<endl<<endl;
 }
 
 
@@ -262,27 +276,46 @@ void Parser::computeFollow() {
     } while (changed);
 }
 
+#include <tabulate/table.hpp>
+using namespace tabulate;
+
 void Parser::printFirstAndFollow() const {
-    cout << "FIRST Sets:\n";
+    // Table for FIRST sets
+    Table firstTable;
+    firstTable.add_row({"Non-Terminal", "FIRST Set"});
+    firstTable[0].format().font_style({FontStyle::bold}).font_color(Color::green);
+
     for (const auto& entry : first) {
-        cout << "FIRST(" << entry.first.getSymbol() << ") = { ";
+        string nt = entry.first.getSymbol();
+        string symbols;
         for (const auto& sym : entry.second) {
-            cout << sym.getSymbol() << " ";
+            symbols += sym.getSymbol() + " ";
         }
-        cout << "}\n";
+        firstTable.add_row({nt, "{ " + symbols + "}"});
+        firstTable.column(0).format().font_color(Color::red).font_style({FontStyle::bold});
+        firstTable.column(1).format().font_color(Color::blue).font_style({FontStyle::bold});
     }
 
-    cout << "\nFOLLOW Sets:\n";
+    // Table for FOLLOW sets
+    Table followTable;
+    followTable.add_row({"Non-Terminal", "FOLLOW Set"});
+    followTable[0].format().font_style({FontStyle::bold}).font_color(Color::yellow);
+
     for (const auto& entry : follow) {
-        cout << "FOLLOW(" << entry.first.getSymbol() << ") = { ";
+        string nt = entry.first.getSymbol();
+        string symbols;
         for (const auto& sym : entry.second) {
-            cout << sym.getSymbol() << " ";
+            symbols += sym.getSymbol() + " ";
         }
-        cout << "}\n";
+        followTable.add_row({nt, "{ " + symbols + "}"});
+        followTable.column(0).format().font_color(Color::red).font_style({FontStyle::bold});
+        followTable.column(1).format().font_color(Color::blue).font_style({FontStyle::bold});
     }
-    cout<<string(50,'-')<<endl;
 
+    cout << "\nFIRST Sets:\n" << firstTable << "\n\n";
+    cout << "FOLLOW Sets:\n" << followTable << "\n";
 }
+
 
 void Parser::computeLL1Table() {
     for (const auto& rule : grammar) {
@@ -349,21 +382,36 @@ void Parser::computeLL1Table() {
 }
 
 void Parser::printLL1Table() const {
-    cout << "\nLL(1) Parsing Table:\n";
-    for (const auto& row : ll1Table) {
-        cout << row.first.getSymbol() << " : ";
-        for (const auto& col : row.second) {
-            cout << "[" << col.first.getSymbol() << " -> ";
-            for (const auto& sym : col.second) {
-                cout << sym->getSymbol() << " ";
-            }
-            cout << "] ";
-        }
-        cout << endl;
-    }
-    cout<<string(50,'-')<<endl;
+    Table table;
+    table.add_row({"Non-Terminal", "Terminal", "Production"});
+    table[0].format().font_style({FontStyle::bold}).font_color(Color::cyan);
 
+    for (const auto& row : ll1Table) {
+        const string& nonTerminal = row.first.getSymbol();
+
+        for (const auto& col : row.second) {
+            string terminal = col.first.getSymbol();
+            string production;
+
+            for (const auto& sym : col.second) {
+                production += sym->getSymbol() + " ";
+            }
+
+            table.add_row({nonTerminal, terminal, production});
+            table.column(0).format().font_color(Color::red).font_style({FontStyle::bold});
+            table.column(1).format().font_color(Color::blue).font_style({FontStyle::bold});
+            table.column(2).format().font_color(Color::green).font_style({FontStyle::bold});
+
+        }
+        
+    }
+
+    cout << "\nLL(1) Parsing Table:\n" << table << endl <<endl;
 }
+
+
+
+
 
 bool Parser::parse(vector<Token> tokens) {
     using namespace tabulate;
@@ -463,7 +511,7 @@ bool Parser::parse(vector<Token> tokens) {
                 return false;
             }
         }
-        actionStr = std::regex_replace(actionStr, std::regex("^\\s+|\\s+$"), "");
+        actionStr = regex_replace(actionStr, regex("^\\s+|\\s+$"), "");
 
         traceTable.add_row({stackStr, inputStr, actionStr});
         auto &new_row = traceTable[rowIndex++];
@@ -491,8 +539,14 @@ bool Parser::parse(vector<Token> tokens) {
     }
 
     cout << traceTable << endl;
-
-    cout << "\nParsing successful!" << endl;
+    Table successTable;
+    successTable.format().font_background_color(Color::green).font_color(Color::white).font_style({FontStyle::bold})
+                .border_top(" ")
+                .border_bottom(" ")
+                .border_left(" ")
+                .border_right(" ");
+    successTable.add_row({"Parsing successful!"});
+    cout<<successTable<<endl;
     return true;
 }
 
