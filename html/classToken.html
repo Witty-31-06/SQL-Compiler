@@ -92,33 +92,44 @@ $(function(){ initResizable(false); });
 </div><!--header-->
 <div class="contents">
 
+<p>A class representing a single token in an SQL query.  
+ <a href="#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="Token_8h_source.html">Token.h</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for Token:</div>
 <div class="dyncontent">
 <div class="center"><img src="classToken__coll__graph.png" border="0" usemap="#aToken_coll__map" alt="Collaboration graph"/></div>
 <map name="aToken_coll__map" id="aToken_coll__map">
-<area shape="rect" title=" " alt="" coords="5,5,101,139"/>
+<area shape="rect" title="A class representing a single token in an SQL query." alt="" coords="5,5,101,139"/>
 </map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:af739a2f2aeccfd8fdcc9385fc081551f" id="r_af739a2f2aeccfd8fdcc9385fc081551f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af739a2f2aeccfd8fdcc9385fc081551f">Token</a> (string t, string l)</td></tr>
+<tr class="memdesc:af739a2f2aeccfd8fdcc9385fc081551f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="classToken.html" title="A class representing a single token in an SQL query.">Token</a> with a specified type and lexeme.  <br /></td></tr>
 <tr class="separator:af739a2f2aeccfd8fdcc9385fc081551f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab2b08d2198a5a68cf098bbb692f8342f" id="r_ab2b08d2198a5a68cf098bbb692f8342f"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab2b08d2198a5a68cf098bbb692f8342f">getLexeme</a> () const</td></tr>
+<tr class="memdesc:ab2b08d2198a5a68cf098bbb692f8342f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the lexeme of the token.  <br /></td></tr>
 <tr class="separator:ab2b08d2198a5a68cf098bbb692f8342f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeda1c29c63c88e423312128306393ebb" id="r_aeda1c29c63c88e423312128306393ebb"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeda1c29c63c88e423312128306393ebb">getType</a> () const</td></tr>
+<tr class="memdesc:aeda1c29c63c88e423312128306393ebb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the type of the token.  <br /></td></tr>
 <tr class="separator:aeda1c29c63c88e423312128306393ebb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:af4c57a4ede01f2040ea4927141f5a661" id="r_af4c57a4ede01f2040ea4927141f5a661"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af4c57a4ede01f2040ea4927141f5a661">lexeme</a></td></tr>
+<tr class="memdesc:af4c57a4ede01f2040ea4927141f5a661"><td class="mdescLeft">&#160;</td><td class="mdescRight">The actual string value of the token (e.g., "SELECT", "table1").  <br /></td></tr>
 <tr class="separator:af4c57a4ede01f2040ea4927141f5a661"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa1a83620e3ce3a181768b7f8b268100c" id="r_aa1a83620e3ce3a181768b7f8b268100c"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa1a83620e3ce3a181768b7f8b268100c">type</a></td></tr>
+<tr class="memdesc:aa1a83620e3ce3a181768b7f8b268100c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type or category of the token (e.g., "KEYWORD", "IDENTIFIER").  <br /></td></tr>
 <tr class="separator:aa1a83620e3ce3a181768b7f8b268100c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A class representing a single token in an SQL query. </p>
+<p>The <a class="el" href="classToken.html" title="A class representing a single token in an SQL query.">Token</a> class stores the type (e.g., "KEYWORD", "IDENTIFIER") and lexeme (the actual string) of a token, providing accessors to retrieve these values. It is used by the <a class="el" href="classLexer.html" title="A class that tokenizes SQL query strings into a vector of Token objects.">Lexer</a> and <a class="el" href="classParser.html" title="A class implementing an LL1 parser for SQL queries.">Parser</a> in an LL1 SQL interpreter. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="af739a2f2aeccfd8fdcc9385fc081551f" name="af739a2f2aeccfd8fdcc9385fc081551f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af739a2f2aeccfd8fdcc9385fc081551f">&#9670;&#160;</a></span>Token()</h2>
 
@@ -138,6 +149,24 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Constructs a <a class="el" href="classToken.html" title="A class representing a single token in an SQL query.">Token</a> with a specified type and lexeme. </p>
+<p>Initializes a <a class="el" href="classToken.html" title="A class representing a single token in an SQL query.">Token</a> object with the given type and lexeme values.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">t</td><td>The type of the token (e.g., "KEYWORD", "OPERATOR"). </td></tr>
+    <tr><td class="paramname">l</td><td>The lexeme of the token (the actual string it represents).</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Initializes the <a class="el" href="classToken.html" title="A class representing a single token in an SQL query.">Token</a> object using member initialization to set the type and lexeme.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">t</td><td>The type of the token (e.g., "KEYWORD", "OPERATOR"). </td></tr>
+    <tr><td class="paramname">l</td><td>The lexeme of the token (the actual string it represents). </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -155,17 +184,23 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Gets the lexeme of the token. </p>
+<p>Returns the actual string value of the token as it appeared in the input.</p>
+<dl class="section return"><dt>Returns</dt><dd>The lexeme of the token.</dd></dl>
+<p>Returns the stored lexeme string as a const value.</p>
+<dl class="section return"><dt>Returns</dt><dd>The lexeme of the token. </dd></dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classToken_ab2b08d2198a5a68cf098bbb692f8342f_icgraph.png" border="0" usemap="#aclassToken_ab2b08d2198a5a68cf098bbb692f8342f_icgraph" alt=""/></div>
 <map name="aclassToken_ab2b08d2198a5a68cf098bbb692f8342f_icgraph" id="aclassToken_ab2b08d2198a5a68cf098bbb692f8342f_icgraph">
-<area shape="rect" title=" " alt="" coords="429,13,558,40"/>
-<area shape="rect" href="classParser.html#a65780aca08811f29dda782f145bd7d4d" title=" " alt="" coords="282,13,381,40"/>
+<area shape="rect" title="Gets the lexeme of the token." alt="" coords="429,13,558,40"/>
+<area shape="rect" href="classParser.html#a65780aca08811f29dda782f145bd7d4d" title="Parses a sequence of tokens using the LL1 parsing table." alt="" coords="282,13,381,40"/>
 <area shape="poly" title=" " alt="" coords="414,29,382,29,382,24,414,24"/>
-<area shape="rect" href="classSQLInterpreter.html#afe6f5863dedf9018fdebd95fad6bed77" title=" " alt="" coords="103,5,234,48"/>
+<area shape="rect" href="classSQLInterpreter.html#afe6f5863dedf9018fdebd95fad6bed77" title="Initializes and runs the SQL interpreter." alt="" coords="103,5,234,48"/>
 <area shape="poly" title=" " alt="" coords="266,29,234,29,234,24,266,24"/>
-<area shape="rect" href="Interpreter__main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,13,55,40"/>
+<area shape="rect" href="Interpreter__main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="Main entry point for the SQL interpreter program." alt="" coords="5,13,55,40"/>
 <area shape="poly" title=" " alt="" coords="87,29,55,29,55,24,87,24"/>
 </map>
 </div>
@@ -186,17 +221,23 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Gets the type of the token. </p>
+<p>Returns the category or classification of the token.</p>
+<dl class="section return"><dt>Returns</dt><dd>The type of the token.</dd></dl>
+<p>Returns the stored type string as a const value.</p>
+<dl class="section return"><dt>Returns</dt><dd>The type of the token. </dd></dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classToken_aeda1c29c63c88e423312128306393ebb_icgraph.png" border="0" usemap="#aclassToken_aeda1c29c63c88e423312128306393ebb_icgraph" alt=""/></div>
 <map name="aclassToken_aeda1c29c63c88e423312128306393ebb_icgraph" id="aclassToken_aeda1c29c63c88e423312128306393ebb_icgraph">
-<area shape="rect" title=" " alt="" coords="429,13,540,40"/>
-<area shape="rect" href="classParser.html#a65780aca08811f29dda782f145bd7d4d" title=" " alt="" coords="282,13,381,40"/>
+<area shape="rect" title="Gets the type of the token." alt="" coords="429,13,540,40"/>
+<area shape="rect" href="classParser.html#a65780aca08811f29dda782f145bd7d4d" title="Parses a sequence of tokens using the LL1 parsing table." alt="" coords="282,13,381,40"/>
 <area shape="poly" title=" " alt="" coords="414,29,382,29,382,24,414,24"/>
-<area shape="rect" href="classSQLInterpreter.html#afe6f5863dedf9018fdebd95fad6bed77" title=" " alt="" coords="103,5,234,48"/>
+<area shape="rect" href="classSQLInterpreter.html#afe6f5863dedf9018fdebd95fad6bed77" title="Initializes and runs the SQL interpreter." alt="" coords="103,5,234,48"/>
 <area shape="poly" title=" " alt="" coords="266,29,234,29,234,24,266,24"/>
-<area shape="rect" href="Interpreter__main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,13,55,40"/>
+<area shape="rect" href="Interpreter__main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="Main entry point for the SQL interpreter program." alt="" coords="5,13,55,40"/>
 <area shape="poly" title=" " alt="" coords="87,29,55,29,55,24,87,24"/>
 </map>
 </div>
@@ -224,6 +265,8 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>The actual string value of the token (e.g., "SELECT", "table1"). </p>
+
 </div>
 </div>
 <a id="aa1a83620e3ce3a181768b7f8b268100c" name="aa1a83620e3ce3a181768b7f8b268100c"></a>
@@ -245,6 +288,8 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>The type or category of the token (e.g., "KEYWORD", "IDENTIFIER"). </p>
 
 </div>
 </div>

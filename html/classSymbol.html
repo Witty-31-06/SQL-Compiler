@@ -92,16 +92,19 @@ $(function(){ initResizable(false); });
 </div><!--header-->
 <div class="contents">
 
+<p>Base class representing a symbol in the grammar (terminal or non-terminal).  
+ <a href="#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="parser_8h_source.html">parser.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Symbol:</div>
 <div class="dyncontent">
 <div class="center"><img src="classSymbol__inherit__graph.png" border="0" usemap="#aSymbol_inherit__map" alt="Inheritance graph"/></div>
 <map name="aSymbol_inherit__map" id="aSymbol_inherit__map">
-<area shape="rect" title=" " alt="" coords="64,5,173,160"/>
-<area shape="rect" href="classNonTerminal.html" title=" " alt="" coords="5,208,109,299"/>
+<area shape="rect" title="Base class representing a symbol in the grammar (terminal or non&#45;terminal)." alt="" coords="64,5,173,160"/>
+<area shape="rect" href="classNonTerminal.html" title="Derived class representing a non&#45;terminal symbol in the grammar." alt="" coords="5,208,109,299"/>
 <area shape="poly" title=" " alt="" coords="88,175,76,209,71,208,83,173"/>
-<area shape="rect" href="classTerminal.html" title=" " alt="" coords="134,208,229,299"/>
+<area shape="rect" href="classTerminal.html" title="Derived class representing a terminal symbol in the grammar." alt="" coords="134,208,229,299"/>
 <area shape="poly" title=" " alt="" coords="155,173,168,208,163,209,150,175"/>
 </map>
 </div>
@@ -110,29 +113,38 @@ Collaboration diagram for Symbol:</div>
 <div class="dyncontent">
 <div class="center"><img src="classSymbol__coll__graph.png" border="0" usemap="#aSymbol_coll__map" alt="Collaboration graph"/></div>
 <map name="aSymbol_coll__map" id="aSymbol_coll__map">
-<area shape="rect" title=" " alt="" coords="5,5,115,160"/>
+<area shape="rect" title="Base class representing a symbol in the grammar (terminal or non&#45;terminal)." alt="" coords="5,5,115,160"/>
 </map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a6e5009e9408693d2f7240d1e8662c278" id="r_a6e5009e9408693d2f7240d1e8662c278"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6e5009e9408693d2f7240d1e8662c278">Symbol</a> (string <a class="el" href="#a5a6510dbf012192a46984e4c6b8f315c">symbol</a>, bool <a class="el" href="#a7911a477f0959199fd61fb6a37fb5397">isTerminal</a>)</td></tr>
+<tr class="memdesc:a6e5009e9408693d2f7240d1e8662c278"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="classSymbol.html" title="Base class representing a symbol in the grammar (terminal or non-terminal).">Symbol</a> with a given name and terminal status.  <br /></td></tr>
 <tr class="separator:a6e5009e9408693d2f7240d1e8662c278"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a626bdd3948ea431fa1281416e0d012d5" id="r_a626bdd3948ea431fa1281416e0d012d5"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a626bdd3948ea431fa1281416e0d012d5">getSymbol</a> () const</td></tr>
+<tr class="memdesc:a626bdd3948ea431fa1281416e0d012d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the string representation of the symbol.  <br /></td></tr>
 <tr class="separator:a626bdd3948ea431fa1281416e0d012d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aec1e9bf10060bdfd209414b69044a357" id="r_aec1e9bf10060bdfd209414b69044a357"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aec1e9bf10060bdfd209414b69044a357">getIsTerminal</a> () const</td></tr>
+<tr class="memdesc:aec1e9bf10060bdfd209414b69044a357"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the symbol is a terminal.  <br /></td></tr>
 <tr class="separator:aec1e9bf10060bdfd209414b69044a357"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa30b510ea651d376f68346a018ff8fea" id="r_aa30b510ea651d376f68346a018ff8fea"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa30b510ea651d376f68346a018ff8fea">operator==</a> (const <a class="el" href="classSymbol.html">Symbol</a> &amp;other) const</td></tr>
+<tr class="memdesc:aa30b510ea651d376f68346a018ff8fea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares this symbol with another for equality.  <br /></td></tr>
 <tr class="separator:aa30b510ea651d376f68346a018ff8fea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:a5a6510dbf012192a46984e4c6b8f315c" id="r_a5a6510dbf012192a46984e4c6b8f315c"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5a6510dbf012192a46984e4c6b8f315c">symbol</a></td></tr>
+<tr class="memdesc:a5a6510dbf012192a46984e4c6b8f315c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The string representation of the symbol.  <br /></td></tr>
 <tr class="separator:a5a6510dbf012192a46984e4c6b8f315c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7911a477f0959199fd61fb6a37fb5397" id="r_a7911a477f0959199fd61fb6a37fb5397"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7911a477f0959199fd61fb6a37fb5397">isTerminal</a></td></tr>
+<tr class="memdesc:a7911a477f0959199fd61fb6a37fb5397"><td class="mdescLeft">&#160;</td><td class="mdescRight">True if the symbol is a terminal, false if it is a non-terminal.  <br /></td></tr>
 <tr class="separator:a7911a477f0959199fd61fb6a37fb5397"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Base class representing a symbol in the grammar (terminal or non-terminal). </p>
+<p>The <a class="el" href="classSymbol.html" title="Base class representing a symbol in the grammar (terminal or non-terminal).">Symbol</a> class encapsulates a string representation of a grammar symbol and a flag indicating whether it is a terminal or non-terminal symbol. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a6e5009e9408693d2f7240d1e8662c278" name="a6e5009e9408693d2f7240d1e8662c278"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6e5009e9408693d2f7240d1e8662c278">&#9670;&#160;</a></span>Symbol()</h2>
 
@@ -142,15 +154,26 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="memname">Symbol::Symbol </td>
           <td>(</td>
-          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>symbol</em></span>, </td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>s</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>isTerminal</em></span>&#160;)</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>t</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Constructs a <a class="el" href="classSymbol.html" title="Base class representing a symbol in the grammar (terminal or non-terminal).">Symbol</a> with a given name and terminal status. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">symbol</td><td>The string representation of the symbol. </td></tr>
+    <tr><td class="paramname">isTerminal</td><td>True if the symbol is a terminal, false otherwise.</td></tr>
+    <tr><td class="paramname">s</td><td>The string representation of the symbol. </td></tr>
+    <tr><td class="paramname">t</td><td>True if the symbol is a terminal, false otherwise. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -170,6 +193,11 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Checks if the symbol is a terminal. </p>
+<dl class="section return"><dt>Returns</dt><dd>True if the symbol is a terminal, false otherwise.</dd>
+<dd>
+True if terminal, false otherwise. </dd></dl>
+
 </div>
 </div>
 <a id="a626bdd3948ea431fa1281416e0d012d5" name="a626bdd3948ea431fa1281416e0d012d5"></a>
@@ -186,30 +214,33 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Gets the string representation of the symbol. </p>
+<dl class="section return"><dt>Returns</dt><dd>The symbol string. </dd></dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classSymbol_a626bdd3948ea431fa1281416e0d012d5_icgraph.png" border="0" usemap="#aclassSymbol_a626bdd3948ea431fa1281416e0d012d5_icgraph" alt=""/></div>
 <map name="aclassSymbol_a626bdd3948ea431fa1281416e0d012d5_icgraph" id="aclassSymbol_a626bdd3948ea431fa1281416e0d012d5_icgraph">
-<area shape="rect" title=" " alt="" coords="506,132,642,159"/>
-<area shape="rect" href="classParser.html#ae3862281fb56fea407bbd332c5bebe10" title=" " alt="" coords="286,5,455,32"/>
+<area shape="rect" title="Gets the string representation of the symbol." alt="" coords="506,132,642,159"/>
+<area shape="rect" href="classParser.html#ae3862281fb56fea407bbd332c5bebe10" title="Computes the LL1 parsing table based on the grammar and FIRST/FOLLOW sets." alt="" coords="286,5,455,32"/>
 <area shape="poly" title=" " alt="" coords="549,122,508,83,457,46,431,35,433,30,460,42,512,79,553,119"/>
-<area shape="rect" href="classParser.html#a271f328741d9e36146ed32bcb382d9a8" title=" " alt="" coords="282,56,458,83"/>
+<area shape="rect" href="classParser.html#a271f328741d9e36146ed32bcb382d9a8" title="Applies left factoring to the grammar to ensure LL1 compatibility." alt="" coords="282,56,458,83"/>
 <area shape="poly" title=" " alt="" coords="529,127,457,97,422,86,424,81,459,92,531,122"/>
-<area shape="rect" href="structSymbolHash.html#a1a1337eb6dd5e949ed42b80b7c1332e7" title=" " alt="" coords="290,107,450,133"/>
+<area shape="rect" href="structSymbolHash.html#a1a1337eb6dd5e949ed42b80b7c1332e7" title="Computes the hash value of a Symbol." alt="" coords="290,107,450,133"/>
 <area shape="poly" title=" " alt="" coords="491,138,450,133,451,127,491,132"/>
-<area shape="rect" href="classNonTerminal.html#a7d040e5e4754f3700921226fbc88fa67" title=" " alt="" coords="288,157,453,184"/>
+<area shape="rect" href="classNonTerminal.html#a7d040e5e4754f3700921226fbc88fa67" title="Compares this non&#45;terminal with another for equality." alt="" coords="288,157,453,184"/>
 <area shape="poly" title=" " alt="" coords="491,158,454,163,453,158,490,153"/>
-<area shape="rect" href="classTerminal.html#ac155612c0d3c3ffc64a043223fa6acca" title=" " alt="" coords="300,208,441,235"/>
+<area shape="rect" href="classTerminal.html#ac155612c0d3c3ffc64a043223fa6acca" title="Compares this terminal with another for equality." alt="" coords="300,208,441,235"/>
 <area shape="poly" title=" " alt="" coords="531,168,459,198,424,210,422,205,457,194,529,163"/>
-<area shape="rect" href="classParser.html#a65780aca08811f29dda782f145bd7d4d" title=" " alt="" coords="320,259,420,285"/>
+<area shape="rect" href="classParser.html#a65780aca08811f29dda782f145bd7d4d" title="Parses a sequence of tokens using the LL1 parsing table." alt="" coords="320,259,420,285"/>
 <area shape="poly" title=" " alt="" coords="553,172,512,212,460,249,421,264,419,259,457,244,508,207,549,168"/>
-<area shape="rect" href="classParser.html#ac13410cc626574db39d1b39cdf8dfe39" title=" " alt="" coords="116,31,221,57"/>
+<area shape="rect" href="classParser.html#ac13410cc626574db39d1b39cdf8dfe39" title="Constructs a Parser by loading a grammar from a file." alt="" coords="116,31,221,57"/>
 <area shape="poly" title=" " alt="" coords="270,34,222,40,221,35,269,29"/>
 <area shape="poly" title=" " alt="" coords="266,59,221,53,222,48,267,54"/>
-<area shape="rect" href="classSQLInterpreter.html#afe6f5863dedf9018fdebd95fad6bed77" title=" " alt="" coords="103,251,234,293"/>
+<area shape="rect" href="classSQLInterpreter.html#afe6f5863dedf9018fdebd95fad6bed77" title="Initializes and runs the SQL interpreter." alt="" coords="103,251,234,293"/>
 <area shape="poly" title=" " alt="" coords="305,275,234,275,234,269,305,269"/>
-<area shape="rect" href="Interpreter__main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,259,55,285"/>
+<area shape="rect" href="Interpreter__main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="Main entry point for the SQL interpreter program." alt="" coords="5,259,55,285"/>
 <area shape="poly" title=" " alt="" coords="87,275,55,275,55,269,87,269"/>
 </map>
 </div>
@@ -230,6 +261,15 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Compares this symbol with another for equality. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>The other <a class="el" href="classSymbol.html" title="Base class representing a symbol in the grammar (terminal or non-terminal).">Symbol</a> to compare with. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the symbols are equal, false otherwise. </dd></dl>
 
 </div>
 </div>
@@ -254,6 +294,8 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>True if the symbol is a terminal, false if it is a non-terminal. </p>
+
 </div>
 </div>
 <a id="a5a6510dbf012192a46984e4c6b8f315c" name="a5a6510dbf012192a46984e4c6b8f315c"></a>
@@ -275,6 +317,8 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>The string representation of the symbol. </p>
 
 </div>
 </div>

@@ -93,6 +93,9 @@ $(function(){ initResizable(false); });
   <div class="headertitle"><div class="title">parser.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Header file for the <a class="el" href="classParser.html" title="A class implementing an LL1 parser for SQL queries.">Parser</a> class and related symbol classes for LL1 parsing of SQL queries.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;bits/stdc++.h&gt;</code><br />
 <code>#include &lt;memory&gt;</code><br />
 <code>#include &quot;<a class="el" href="Token_8h_source.html">Token.h</a>&quot;</code><br />
@@ -101,12 +104,12 @@ Include dependency graph for parser.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="parser_8h__incl.png" border="0" usemap="#ainclude_2parser_8h" alt=""/></div>
 <map name="ainclude_2parser_8h" id="ainclude_2parser_8h">
-<area shape="rect" title=" " alt="" coords="106,5,219,32"/>
+<area shape="rect" title="Header file for the Parser class and related symbol classes for LL1 parsing of SQL queries." alt="" coords="106,5,219,32"/>
 <area shape="rect" title=" " alt="" coords="5,80,104,107"/>
 <area shape="poly" title=" " alt="" coords="145,35,88,73,85,69,142,30"/>
 <area shape="rect" title=" " alt="" coords="128,80,197,107"/>
 <area shape="poly" title=" " alt="" coords="165,33,165,64,160,64,160,33"/>
-<area shape="rect" href="Token_8h.html" title=" " alt="" coords="221,80,288,107"/>
+<area shape="rect" href="Token_8h.html" title="Header file for the Token class, representing a single token in an SQL query." alt="" coords="221,80,288,107"/>
 <area shape="poly" title=" " alt="" coords="180,30,229,68,225,73,177,35"/>
 <area shape="rect" title=" " alt="" coords="228,155,281,181"/>
 <area shape="poly" title=" " alt="" coords="257,107,257,139,252,139,252,107"/>
@@ -117,14 +120,14 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="parser_8h__dep__incl.png" border="0" usemap="#ainclude_2parser_8hdep" alt=""/></div>
 <map name="ainclude_2parser_8hdep" id="ainclude_2parser_8hdep">
-<area shape="rect" title=" " alt="" coords="200,5,314,32"/>
+<area shape="rect" title="Header file for the Parser class and related symbol classes for LL1 parsing of SQL queries." alt="" coords="200,5,314,32"/>
 <area shape="rect" href="SQL__Intepreter_8h.html" title=" " alt="" coords="96,80,261,107"/>
 <area shape="poly" title=" " alt="" coords="234,45,194,82,190,78,230,41"/>
-<area shape="rect" href="parser_8cpp.html" title=" " alt="" coords="285,80,389,107"/>
+<area shape="rect" href="parser_8cpp.html" title="Implementation of the Parser class and related symbol classes for LL1 parsing of SQL queries." alt="" coords="285,80,389,107"/>
 <area shape="poly" title=" " alt="" coords="284,41,325,78,322,82,280,44"/>
 <area shape="rect" href="Interpreter__main_8cpp.html" title=" " alt="" coords="5,155,168,181"/>
 <area shape="poly" title=" " alt="" coords="152,119,104,156,101,152,149,114"/>
-<area shape="rect" href="SQL__Interpreter_8cpp.html" title=" " alt="" coords="192,155,352,181"/>
+<area shape="rect" href="SQL__Interpreter_8cpp.html" title="Implementation of the SQLInterpreter class for interpreting SQL queries." alt="" coords="192,155,352,181"/>
 <area shape="poly" title=" " alt="" coords="208,114,257,152,254,156,205,119"/>
 </map>
 </div>
@@ -134,17 +137,25 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSymbol.html">Symbol</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base class representing a symbol in the grammar (terminal or non-terminal).  <a href="classSymbol.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSymbolHash.html">SymbolHash</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hash function object for <a class="el" href="classSymbol.html" title="Base class representing a symbol in the grammar (terminal or non-terminal).">Symbol</a> objects.  <a href="structSymbolHash.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNonTerminal.html">NonTerminal</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Derived class representing a non-terminal symbol in the grammar.  <a href="classNonTerminal.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTerminal.html">Terminal</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Derived class representing a terminal symbol in the grammar.  <a href="classTerminal.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classParser.html">Parser</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A class implementing an LL1 parser for SQL queries.  <a href="classParser.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-</div><!-- contents -->
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Header file for the <a class="el" href="classParser.html" title="A class implementing an LL1 parser for SQL queries.">Parser</a> class and related symbol classes for LL1 parsing of SQL queries. </p>
+<p>This file defines the <a class="el" href="classSymbol.html" title="Base class representing a symbol in the grammar (terminal or non-terminal).">Symbol</a>, <a class="el" href="classNonTerminal.html" title="Derived class representing a non-terminal symbol in the grammar.">NonTerminal</a>, <a class="el" href="classTerminal.html" title="Derived class representing a terminal symbol in the grammar.">Terminal</a>, and <a class="el" href="classParser.html" title="A class implementing an LL1 parser for SQL queries.">Parser</a> classes, which together implement an LL1 parser for SQL queries using a grammar loaded from a file. </p>
+</div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0

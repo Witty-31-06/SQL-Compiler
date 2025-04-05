@@ -3,37 +3,82 @@
 #include <unordered_map>
 #include <nlohmann/json.hpp>
 #include <memory>
-#include <iomanip>
 #include <tabulate/table.hpp>
 
 using json = nlohmann::json;
+using namespace tabulate;
 using namespace std;
 
-// Constructor and methods for Symbol
+/**
+ * @file parser.cpp
+ * @brief Implementation of the Parser class and related symbol classes for LL1 parsing of SQL queries.
+ *
+ * This file contains the definitions of the Symbol, NonTerminal, Terminal, and Parser class methods,
+ * which implement an LL1 parser for SQL queries by loading a grammar, computing FIRST and FOLLOW sets,
+ * constructing an LL1 table, and parsing token sequences.
+ */
+
+/**
+ * @brief Constructs a Symbol with a given name and terminal status.
+ * @param s The string representation of the symbol.
+ * @param t True if the symbol is a terminal, false otherwise.
+ */
 Symbol::Symbol(string s, bool t) : symbol(s), isTerminal(t) {}
 
+/** @brief Gets the string representation of the symbol. @return The symbol string. */
 string Symbol::getSymbol() const { return symbol; }
+
+/** @brief Checks if the symbol is a terminal. @return True if terminal, false otherwise. */
 bool Symbol::getIsTerminal() const { return isTerminal; }
 
+/**
+ * @brief Compares this symbol with another for equality.
+ * @param other The other Symbol to compare with.
+ * @return True if the symbols are equal, false otherwise.
+ */
 bool Symbol::operator==(const Symbol& other) const {
     return symbol == other.symbol && isTerminal == other.isTerminal;
 }
 
+/**
+ * @brief Compares this non-terminal with another for equality.
+ * @param other The other NonTerminal to compare with.
+ * @return True if equal, false otherwise.
+ */
 bool NonTerminal::operator==(const NonTerminal& other) const {
     return this->getSymbol() == other.getSymbol();
 }
 
+/**
+ * @brief Compares this terminal with another for equality.
+ * @param other The other Terminal to compare with.
+ * @return True if equal, false otherwise.
+ */
 bool Terminal::operator==(const Terminal& other) const {
     return this->getSymbol() == other.getSymbol();
 }
 
+/** @brief Constructs a NonTerminal with a given name. @param symbol The non-terminal name. */
 NonTerminal::NonTerminal(string symbol) : Symbol(symbol, false) {}
+
+/** @brief Constructs a Terminal with a given name. @param symbol The terminal name. */
 Terminal::Terminal(string symbol) : Symbol(symbol, true) {}
 
+/**
+ * @brief Computes the hash value of a Symbol.
+ * @param s The Symbol to hash.
+ * @return The hash value based on the symbol string.
+ */
 size_t SymbolHash::operator()(const Symbol& s) const {
     return hash<string>()(s.getSymbol());
 }
 
+/**
+ * @brief Constructs a Parser by loading a grammar from a JSON file.
+ *
+ * Initializes the grammar, sets the start symbol, and computes necessary parsing structures.
+ * @param filename The path to the JSON grammar file.
+ */
 Parser::Parser(const string& filename) {
     ifstream file(filename);
     if (!file.is_open()) {
@@ -76,9 +121,12 @@ Parser::Parser(const string& filename) {
 
 }
 
-#include <tabulate/table.hpp>
-using namespace tabulate;
 
+/**
+ * @brief Prints the loaded grammar rules in a tabulated format.
+ *
+ * Uses the tabulate library to display the start symbol and production rules.
+ */
 void Parser::printGrammar() const {
     Table table;
     table.add_row({"Start Symbol", start->getSymbol()});
@@ -87,7 +135,7 @@ void Parser::printGrammar() const {
     table.add_row({"Grammar Rules", ""});
     table[1].format().font_color(Color::cyan).font_style({FontStyle::bold});
 
-    
+
     for (const auto& rule : grammar) {
         string lhs = rule.first.getSymbol();
         string rhs;
@@ -107,7 +155,11 @@ void Parser::printGrammar() const {
     cout << table << endl<<endl<<endl;
 }
 
-
+/**
+ * @brief Applies left factoring to the grammar to ensure LL1 compatibility.
+ *
+ * Groups productions by common prefixes and introduces new non-terminals to eliminate ambiguity.
+ */
 void Parser::leftFactorGrammar() {
     unordered_map<NonTerminal, vector<vector<shared_ptr<Symbol>>>, SymbolHash> newGrammar;
 
@@ -172,6 +224,11 @@ void Parser::leftFactorGrammar() {
     grammar = newGrammar;
 }
 
+/**
+ * @brief Computes the FIRST sets for all non-terminals in the grammar.
+ *
+ * Iteratively calculates the set of terminals that can appear as the first symbol of strings derived from each non-terminal.
+ */
 void Parser::computeFirst() {
     bool changed;
     do {
@@ -215,7 +272,11 @@ void Parser::computeFirst() {
 }
 
 
-
+/**
+ * @brief Computes the FOLLOW sets for all non-terminals in the grammar.
+ *
+ * Iteratively calculates the set of terminals that can appear immediately after each non-terminal in a derivation.
+ */
 void Parser::computeFollow() {
     // Initialize FOLLOW set of start symbol with "$"
     follow[*start].insert(Terminal("$"));
@@ -276,9 +337,12 @@ void Parser::computeFollow() {
     } while (changed);
 }
 
-#include <tabulate/table.hpp>
-using namespace tabulate;
 
+/**
+ * @brief Prints the computed FIRST and FOLLOW sets in tabulated format.
+ *
+ * Displays each non-terminal’s FIRST and FOLLOW sets using the tabulate library.
+ */
 void Parser::printFirstAndFollow() const {
     // Table for FIRST sets
     Table firstTable;
@@ -316,7 +380,11 @@ void Parser::printFirstAndFollow() const {
     cout << "FOLLOW Sets:\n" << followTable << "\n";
 }
 
-
+/**
+ * @brief Computes the LL1 parsing table based on the grammar and FIRST/FOLLOW sets.
+ *
+ * Constructs the table by mapping non-terminals and terminals to productions, checking for conflicts.
+ */
 void Parser::computeLL1Table() {
     for (const auto& rule : grammar) {
         NonTerminal A = rule.first;  // Left-hand side of the production
@@ -328,13 +396,13 @@ void Parser::computeLL1Table() {
             for (const auto& sym : rhs) {
                 if (sym->getSymbol() == "#") {
                     continue;
-                }  
-                else if (sym->getIsTerminal()) {  
+                }
+                else if (sym->getIsTerminal()) {
                     // If the symbol is a terminal, add it and stop processing
                     firstSet.insert(Terminal(sym->getSymbol()));
                     hasEpsilon = false;
                     break;  // No need to check further symbols
-                } else {  
+                } else {
                     // If it's a non-terminal, add its FIRST set
                     NonTerminal B(sym->getSymbol());
                     bool foundEpsilon = false;
@@ -356,8 +424,8 @@ void Parser::computeLL1Table() {
 
             // Step 1: Add rule to LL(1) table using FIRST(rhs)
             for (const auto& t : firstSet) {
-                if (t.getSymbol() != "#") {  
-                    if (ll1Table[A].count(t) == 0) { 
+                if (t.getSymbol() != "#") {
+                    if (ll1Table[A].count(t) == 0) {
                         ll1Table[A][t] = rhs;
                     } else {
                         cerr << "Error: Conflict in LL(1) table for " << A.getSymbol() << " with terminal " << t.getSymbol() << endl;
@@ -381,6 +449,11 @@ void Parser::computeLL1Table() {
     }
 }
 
+/**
+ * @brief Prints the constructed LL1 parsing table in tabulated format.
+ *
+ * Displays the non-terminal, terminal, and production entries using the tabulate library.
+ */
 void Parser::printLL1Table() const {
     Table table;
     table.add_row({"Non-Terminal", "Terminal", "Production"});
@@ -403,20 +476,22 @@ void Parser::printLL1Table() const {
             table.column(2).format().font_color(Color::green).font_style({FontStyle::bold});
 
         }
-        
+
     }
 
     cout << "\nLL(1) Parsing Table:\n" << table << endl <<endl;
 }
 
-
-
-
-
+/**
+ * @brief Parses a sequence of tokens using the LL1 parsing table.
+ *
+ * Uses a stack-based approach to match tokens against the grammar, printing a trace table.
+ * @param tokens The vector of Token objects to parse.
+ * @return True if the parse succeeds, false otherwise.
+ */
 bool Parser::parse(vector<Token> tokens) {
-    using namespace tabulate;
 
-    tokens.push_back(Token("$", "$")); 
+    tokens.push_back(Token("$", "$"));
     stack<shared_ptr<Symbol>> parseStack;
     parseStack.push(make_shared<Terminal>("$"));
     parseStack.push(start);

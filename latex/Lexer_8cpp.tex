@@ -1,13 +1,24 @@
 \doxysection{src/\+Lexer.cpp File Reference}
 \hypertarget{Lexer_8cpp}{}\label{Lexer_8cpp}\index{src/Lexer.cpp@{src/Lexer.cpp}}
+
+
+Implementation of the \doxylink{classLexer}{Lexer} class for tokenizing SQL query strings.  
+
+
 {\ttfamily \#include "{}Lexer.\+h"{}}\newline
-{\ttfamily \#include $<$sstream$>$}\newline
 {\ttfamily \#include $<$cctype$>$}\newline
 {\ttfamily \#include $<$iostream$>$}\newline
-Include dependency graph for Lexer.\+cpp\+:\nopagebreak
+Include dependency graph for Lexer.\+cpp\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{Lexer_8cpp__incl}
+\includegraphics[width=334pt]{Lexer_8cpp__incl}
 \end{center}
 \end{figure}
+
+
+\doxysubsection{Detailed Description}
+Implementation of the \doxylink{classLexer}{Lexer} class for tokenizing SQL query strings. 
+
+This file contains the definitions of the \doxylink{classLexer}{Lexer} class methods, which process input strings and convert them into a sequence of \doxylink{classToken}{Token} objects for use in an LL1 parser for SQL queries. 

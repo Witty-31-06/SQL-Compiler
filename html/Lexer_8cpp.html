@@ -91,8 +91,10 @@ $(function(){ initResizable(false); });
   <div class="headertitle"><div class="title">Lexer.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Implementation of the <a class="el" href="classLexer.html" title="A class that tokenizes SQL query strings into a vector of Token objects.">Lexer</a> class for tokenizing SQL query strings.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="Lexer_8h_source.html">Lexer.h</a>&quot;</code><br />
-<code>#include &lt;sstream&gt;</code><br />
 <code>#include &lt;cctype&gt;</code><br />
 <code>#include &lt;iostream&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
@@ -100,29 +102,27 @@ Include dependency graph for Lexer.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="Lexer_8cpp__incl.png" border="0" usemap="#asrc_2Lexer_8cpp" alt=""/></div>
 <map name="asrc_2Lexer_8cpp" id="asrc_2Lexer_8cpp">
-<area shape="rect" title=" " alt="" coords="191,5,291,32"/>
-<area shape="rect" href="Lexer_8h.html" title=" " alt="" coords="164,80,228,107"/>
-<area shape="poly" title=" " alt="" coords="235,34,214,68,209,65,231,31"/>
-<area shape="rect" title=" " alt="" coords="5,155,77,181"/>
-<area shape="poly" title=" " alt="" coords="223,35,153,82,70,147,66,143,150,78,220,30"/>
-<area shape="rect" title=" " alt="" coords="252,80,320,107"/>
-<area shape="poly" title=" " alt="" coords="251,31,273,65,268,68,247,34"/>
-<area shape="rect" title=" " alt="" coords="344,80,404,107"/>
-<area shape="poly" title=" " alt="" coords="265,30,339,70,337,75,263,35"/>
-<area shape="rect" title=" " alt="" coords="100,155,158,181"/>
-<area shape="poly" title=" " alt="" coords="186,109,153,145,149,141,182,105"/>
-<area shape="rect" title=" " alt="" coords="288,229,341,256"/>
-<area shape="poly" title=" " alt="" coords="199,107,206,142,213,162,223,180,247,203,275,221,272,226,244,208,219,183,208,164,201,143,194,108"/>
-<area shape="poly" title=" " alt="" coords="170,110,83,150,81,145,168,105"/>
-<area shape="rect" title=" " alt="" coords="233,155,286,181"/>
-<area shape="poly" title=" " alt="" coords="209,105,240,141,237,145,205,109"/>
-<area shape="rect" title=" " alt="" coords="311,155,376,181"/>
-<area shape="poly" title=" " alt="" coords="223,105,305,145,303,150,220,110"/>
-<area shape="rect" href="Token_8h.html" title=" " alt="" coords="401,155,468,181"/>
-<area shape="poly" title=" " alt="" coords="229,102,387,149,385,155,228,107"/>
-<area shape="poly" title=" " alt="" coords="415,184,350,223,347,219,412,180"/>
+<area shape="rect" title="Implementation of the Lexer class for tokenizing SQL query strings." alt="" coords="169,5,270,32"/>
+<area shape="rect" href="Lexer_8h.html" title="Header file for the Lexer class, responsible for tokenizing SQL query strings." alt="" coords="100,80,165,107"/>
+<area shape="poly" title=" " alt="" coords="206,35,161,72,157,68,203,30"/>
+<area shape="rect" title=" " alt="" coords="189,80,250,107"/>
+<area shape="poly" title=" " alt="" coords="222,33,222,64,217,64,217,33"/>
+<area shape="rect" title=" " alt="" coords="273,80,344,107"/>
+<area shape="poly" title=" " alt="" coords="237,30,283,68,280,72,233,35"/>
+<area shape="rect" title=" " alt="" coords="5,155,63,181"/>
+<area shape="poly" title=" " alt="" coords="117,109,65,148,62,143,114,105"/>
+<area shape="rect" title=" " alt="" coords="147,229,201,256"/>
+<area shape="poly" title=" " alt="" coords="131,107,125,141,125,161,129,180,138,199,151,216,147,220,134,202,123,182,119,162,120,141,126,106"/>
+<area shape="rect" title=" " alt="" coords="138,155,191,181"/>
+<area shape="poly" title=" " alt="" coords="141,106,156,139,151,142,136,108"/>
+<area shape="rect" href="Token_8h.html" title="Header file for the Token class, representing a single token in an SQL query." alt="" coords="215,155,282,181"/>
+<area shape="poly" title=" " alt="" coords="154,105,217,144,214,148,151,109"/>
+<area shape="poly" title=" " alt="" coords="238,184,199,221,196,217,234,180"/>
 </map>
 </div>
+</div><a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Implementation of the <a class="el" href="classLexer.html" title="A class that tokenizes SQL query strings into a vector of Token objects.">Lexer</a> class for tokenizing SQL query strings. </p>
+<p>This file contains the definitions of the <a class="el" href="classLexer.html" title="A class that tokenizes SQL query strings into a vector of Token objects.">Lexer</a> class methods, which process input strings and convert them into a sequence of <a class="el" href="classToken.html" title="A class representing a single token in an SQL query.">Token</a> objects for use in an LL1 parser for SQL queries. </p>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

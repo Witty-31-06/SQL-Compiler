@@ -2,6 +2,11 @@
 \hypertarget{classToken}{}\label{classToken}\index{Token@{Token}}
 
 
+A class representing a single token in an SQL query.  
+
+
+
+
 {\ttfamily \#include $<$Token.\+h$>$}
 
 
@@ -18,19 +23,24 @@ Collaboration diagram for Token\+:
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classToken_af739a2f2aeccfd8fdcc9385fc081551f}{Token}} (string t, string l)
-\item 
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classToken}{Token} with a specified type and lexeme. \end{DoxyCompactList}\item 
 string \mbox{\hyperlink{classToken_ab2b08d2198a5a68cf098bbb692f8342f}{get\+Lexeme}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Gets the lexeme of the token. \end{DoxyCompactList}\item 
 string \mbox{\hyperlink{classToken_aeda1c29c63c88e423312128306393ebb}{get\+Type}} () const
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Gets the type of the token. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
 string \mbox{\hyperlink{classToken_af4c57a4ede01f2040ea4927141f5a661}{lexeme}}
-\item 
+\begin{DoxyCompactList}\small\item\em The actual string value of the token (e.\+g., "{}\+SELECT"{}, "{}table1"{}). \end{DoxyCompactList}\item 
 string \mbox{\hyperlink{classToken_aa1a83620e3ce3a181768b7f8b268100c}{type}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The type or category of the token (e.\+g., "{}\+KEYWORD"{}, "{}\+IDENTIFIER"{}). \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+A class representing a single token in an SQL query. 
+
+The \doxylink{classToken}{Token} class stores the type (e.\+g., "{}\+KEYWORD"{}, "{}\+IDENTIFIER"{}) and lexeme (the actual string) of a token, providing accessors to retrieve these values. It is used by the \doxylink{classLexer}{Lexer} and \doxylink{classParser}{Parser} in an LL1 SQL interpreter. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \Hypertarget{classToken_af739a2f2aeccfd8fdcc9385fc081551f}\index{Token@{Token}!Token@{Token}}
@@ -41,6 +51,28 @@ Token\+::\+Token (\begin{DoxyParamCaption}\item[{string}]{t}{, }\item[{string}]{
 
 
 
+Constructs a \doxylink{classToken}{Token} with a specified type and lexeme. 
+
+Initializes a \doxylink{classToken}{Token} object with the given type and lexeme values.
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & The type of the token (e.\+g., "{}\+KEYWORD"{}, "{}\+OPERATOR"{}). \\
+\hline
+{\em l} & The lexeme of the token (the actual string it represents).\\
+\hline
+\end{DoxyParams}
+Initializes the \doxylink{classToken}{Token} object using member initialization to set the type and lexeme.
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & The type of the token (e.\+g., "{}\+KEYWORD"{}, "{}\+OPERATOR"{}). \\
+\hline
+{\em l} & The lexeme of the token (the actual string it represents). \\
+\hline
+\end{DoxyParams}
+
+
 \doxysubsection{Member Function Documentation}
 \Hypertarget{classToken_ab2b08d2198a5a68cf098bbb692f8342f}\index{Token@{Token}!getLexeme@{getLexeme}}
 \index{getLexeme@{getLexeme}!Token@{Token}}
@@ -48,7 +80,22 @@ Token\+::\+Token (\begin{DoxyParamCaption}\item[{string}]{t}{, }\item[{string}]{
 {\footnotesize\ttfamily \label{classToken_ab2b08d2198a5a68cf098bbb692f8342f} 
 string Token\+::get\+Lexeme (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
 
-Here is the caller graph for this function\+:\nopagebreak
+
+
+Gets the lexeme of the token. 
+
+Returns the actual string value of the token as it appeared in the input.
+
+\begin{DoxyReturn}{Returns}
+The lexeme of the token.
+\end{DoxyReturn}
+Returns the stored lexeme string as a const value.
+
+\begin{DoxyReturn}{Returns}
+The lexeme of the token. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -61,7 +108,22 @@ Here is the caller graph for this function\+:\nopagebreak
 {\footnotesize\ttfamily \label{classToken_aeda1c29c63c88e423312128306393ebb} 
 string Token\+::get\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
 
-Here is the caller graph for this function\+:\nopagebreak
+
+
+Gets the type of the token. 
+
+Returns the category or classification of the token.
+
+\begin{DoxyReturn}{Returns}
+The type of the token.
+\end{DoxyReturn}
+Returns the stored type string as a const value.
+
+\begin{DoxyReturn}{Returns}
+The type of the token. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -77,11 +139,19 @@ Here is the caller graph for this function\+:\nopagebreak
 {\footnotesize\ttfamily \label{classToken_af4c57a4ede01f2040ea4927141f5a661} 
 string Token\+::lexeme\hspace{0.3cm}{\ttfamily [private]}}
 
+
+
+The actual string value of the token (e.\+g., "{}\+SELECT"{}, "{}table1"{}). 
+
 \Hypertarget{classToken_aa1a83620e3ce3a181768b7f8b268100c}\index{Token@{Token}!type@{type}}
 \index{type@{type}!Token@{Token}}
 \doxysubsubsection{\texorpdfstring{type}{type}}
 {\footnotesize\ttfamily \label{classToken_aa1a83620e3ce3a181768b7f8b268100c} 
 string Token\+::type\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The type or category of the token (e.\+g., "{}\+KEYWORD"{}, "{}\+IDENTIFIER"{}). 
 
 
 

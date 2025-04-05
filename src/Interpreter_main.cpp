@@ -2,6 +2,15 @@
 #include <iostream>
 #include <unordered_map>
 #include <vector>
+
+/**
+ * @brief Prints the help message for the SQL interpreter program.
+ *
+ * Displays the usage instructions and available command-line options to the standard output.
+ * This function is called when the user requests help via the -h or --help flag or when an error occurs.
+ *
+ * @param progName The name of the program (typically argv[0]).
+ */
 void printHelp(const std::string& progName) {
     std::cout << "Usage: " << progName << " [options]\n"
               << "Options:\n"
@@ -9,11 +18,23 @@ void printHelp(const std::string& progName) {
               << "  -h, --help           Show this help message\n";
 }
 
+/**
+ * @brief Main entry point for the SQL interpreter program.
+ *
+ * Parses command-line arguments to configure the verbosity level and initializes the SQL interpreter.
+ * Supports options for verbosity (-v or --verbose) and help (-h or --help). If invalid arguments
+ * or verbosity levels are provided, an error message is displayed, and the program exits with a
+ * non-zero status.
+ *
+ * @param argc Number of command-line arguments.
+ * @param argv Array of command-line argument strings.
+ * @return int Exit status (0 for success, 1 for failure).
+ */
 int main(int argc, char* argv[]) {
     int verbosity = 1; // Default verbosity level
 
-    std::unordered_map<std::string, std::string> args;
-    std::vector<std::string> validFlags = {"-v", "--verbose", "-h", "--help"};
+    std::unordered_map<std::string, std::string> args; ///< Stores parsed command-line arguments.
+    std::vector<std::string> validFlags = {"-v", "--verbose", "-h", "--help"}; ///< List of valid flags.
 
     // Parse command-line arguments
     for (int i = 1; i < argc; ++i) {

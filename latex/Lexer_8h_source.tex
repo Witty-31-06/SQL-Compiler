@@ -7,34 +7,41 @@
 \DoxyCodeLine{00003\ }
 \DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <vector>}}
 \DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <string>}}
-\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <iostream>}}
-\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <regex>}}
-\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <fstream>}}
-\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Token_8h}{Token.h}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <regex>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Token_8h}{Token.h}}"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{using\ namespace\ }std;}
 \DoxyCodeLine{00010\ }
-\DoxyCodeLine{00011\ \textcolor{keyword}{using\ namespace\ }std;}
-\DoxyCodeLine{00012\ }
-\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classLexer}{Lexer}}}
-\DoxyCodeLine{00014\ \{}
-\DoxyCodeLine{00015\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{classLexer_ae589851446b61a31157d5f27829f2c18}{filename}};}
-\DoxyCodeLine{00017\ \ \ \ \ vector<Token>\ \mbox{\hyperlink{classLexer_a5271266ba9bc67fc6dc3f7210961f3f6}{tokens}};}
-\DoxyCodeLine{00018\ }
-\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{classLexer_ab599dcaa2c91238cd49c6c99d69c58f0}{removeSpaces}}(\textcolor{keywordtype}{string}\ \&t);}
-\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classLexer_a4546b85fe75e0152a3cba759d18f240d}{isKeyword}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&str);}
-\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classLexer_acc2c15fd3f25cbc9e0fba3946ddfe1fe}{isIdentifier}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&str);}
-\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classLexer_af0d792d931a1c5c168bc224b5218bdb8}{isOperator}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&str);}
-\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classLexer_a6c8157cad4951a2f24c763ab5645e693}{isNumericLiteral}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&str);}
-\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classLexer_aed757d18850c5bfe53b6b0fa65a07587}{isStringLiteral}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&str);}
-\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classLexer_abebae2e9ca0987e3f06363c48442b054}{isPunctuation}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&str);}
-\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classLexer_a7d2a073525f3dafc49701dc64fb8455a}{isAll}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&str);}
-\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{classToken}{Token}}\ \mbox{\hyperlink{classLexer_aeef65cdc820f48477913e8411df2fcf4}{classifyToken}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&str);}
-\DoxyCodeLine{00028\ }
-\DoxyCodeLine{00029\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{classLexer_a2752a2b16cc1ffbcb8fc3e82e95bf331}{Lexer}}();}
-\DoxyCodeLine{00031\ \ \ \ \ vector<Token>\ \mbox{\hyperlink{classLexer_a53ca4097e5fdc3038c07104a07d91bf0}{tokenize}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&);}
-\DoxyCodeLine{00032\ \};}
-\DoxyCodeLine{00033\ }
-\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00027\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classLexer}{Lexer}}}
+\DoxyCodeLine{00028\ \{}
+\DoxyCodeLine{00029\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{classLexer_ae589851446b61a31157d5f27829f2c18}{filename}};\ }
+\DoxyCodeLine{00031\ \ \ \ \ vector<Token>\ \mbox{\hyperlink{classLexer_a5271266ba9bc67fc6dc3f7210961f3f6}{tokens}};\ }
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{classLexer_ab599dcaa2c91238cd49c6c99d69c58f0}{removeSpaces}}(\textcolor{keywordtype}{string}\ \&t);}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classLexer_a4546b85fe75e0152a3cba759d18f240d}{isKeyword}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&str);}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classLexer_acc2c15fd3f25cbc9e0fba3946ddfe1fe}{isIdentifier}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&str);}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classLexer_af0d792d931a1c5c168bc224b5218bdb8}{isOperator}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&str);}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classLexer_a6c8157cad4951a2f24c763ab5645e693}{isNumericLiteral}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&str);}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classLexer_aed757d18850c5bfe53b6b0fa65a07587}{isStringLiteral}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&str);}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classLexer_abebae2e9ca0987e3f06363c48442b054}{isPunctuation}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&str);}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classLexer_a7d2a073525f3dafc49701dc64fb8455a}{isAll}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&str);}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00094\ \ \ \ \ \mbox{\hyperlink{classToken}{Token}}\ \mbox{\hyperlink{classLexer_aeef65cdc820f48477913e8411df2fcf4}{classifyToken}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&str);}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00102\ \ \ \ \ \mbox{\hyperlink{classLexer_a2752a2b16cc1ffbcb8fc3e82e95bf331}{Lexer}}();}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00113\ \ \ \ \ vector<Token>\ \mbox{\hyperlink{classLexer_abf0e5edeefd5155b71591488ada01e16}{tokenize}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&input);}
+\DoxyCodeLine{00114\ \};}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

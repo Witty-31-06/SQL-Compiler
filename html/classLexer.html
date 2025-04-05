@@ -87,11 +87,15 @@ $(function(){ initResizable(false); });
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-static-methods">Static Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classLexer-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Lexer Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>A class that tokenizes SQL query strings into a vector of <a class="el" href="classToken.html" title="A class representing a single token in an SQL query.">Token</a> objects.  
+ <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="Lexer_8h_source.html">Lexer.h</a>&gt;</code></p>
 <div class="dynheader">
@@ -99,46 +103,65 @@ Collaboration diagram for Lexer:</div>
 <div class="dyncontent">
 <div class="center"><img src="classLexer__coll__graph.png" border="0" usemap="#aLexer_coll__map" alt="Collaboration graph"/></div>
 <map name="aLexer_coll__map" id="aLexer_coll__map">
-<area shape="rect" title=" " alt="" coords="5,5,131,309"/>
+<area shape="rect" title="A class that tokenizes SQL query strings into a vector of Token objects." alt="" coords="5,5,131,309"/>
 </map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a2752a2b16cc1ffbcb8fc3e82e95bf331" id="r_a2752a2b16cc1ffbcb8fc3e82e95bf331"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2752a2b16cc1ffbcb8fc3e82e95bf331">Lexer</a> ()</td></tr>
+<tr class="memdesc:a2752a2b16cc1ffbcb8fc3e82e95bf331"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor for the <a class="el" href="classLexer.html" title="A class that tokenizes SQL query strings into a vector of Token objects.">Lexer</a> class.  <br /></td></tr>
 <tr class="separator:a2752a2b16cc1ffbcb8fc3e82e95bf331"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a53ca4097e5fdc3038c07104a07d91bf0" id="r_a53ca4097e5fdc3038c07104a07d91bf0"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="classToken.html">Token</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a53ca4097e5fdc3038c07104a07d91bf0">tokenize</a> (const string &amp;)</td></tr>
-<tr class="separator:a53ca4097e5fdc3038c07104a07d91bf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf0e5edeefd5155b71591488ada01e16" id="r_abf0e5edeefd5155b71591488ada01e16"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="classToken.html">Token</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abf0e5edeefd5155b71591488ada01e16">tokenize</a> (const string &amp;input)</td></tr>
+<tr class="memdesc:abf0e5edeefd5155b71591488ada01e16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tokenizes an input string into a vector of <a class="el" href="classToken.html" title="A class representing a single token in an SQL query.">Token</a> objects.  <br /></td></tr>
+<tr class="separator:abf0e5edeefd5155b71591488ada01e16"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
-<tr class="memitem:ab599dcaa2c91238cd49c6c99d69c58f0" id="r_ab599dcaa2c91238cd49c6c99d69c58f0"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab599dcaa2c91238cd49c6c99d69c58f0">removeSpaces</a> (string &amp;t)</td></tr>
-<tr class="separator:ab599dcaa2c91238cd49c6c99d69c58f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4546b85fe75e0152a3cba759d18f240d" id="r_a4546b85fe75e0152a3cba759d18f240d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4546b85fe75e0152a3cba759d18f240d">isKeyword</a> (const string &amp;str)</td></tr>
-<tr class="separator:a4546b85fe75e0152a3cba759d18f240d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acc2c15fd3f25cbc9e0fba3946ddfe1fe" id="r_acc2c15fd3f25cbc9e0fba3946ddfe1fe"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acc2c15fd3f25cbc9e0fba3946ddfe1fe">isIdentifier</a> (const string &amp;str)</td></tr>
-<tr class="separator:acc2c15fd3f25cbc9e0fba3946ddfe1fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af0d792d931a1c5c168bc224b5218bdb8" id="r_af0d792d931a1c5c168bc224b5218bdb8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af0d792d931a1c5c168bc224b5218bdb8">isOperator</a> (const string &amp;str)</td></tr>
+<tr class="memdesc:af0d792d931a1c5c168bc224b5218bdb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a string is an SQL operator.  <br /></td></tr>
 <tr class="separator:af0d792d931a1c5c168bc224b5218bdb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6c8157cad4951a2f24c763ab5645e693" id="r_a6c8157cad4951a2f24c763ab5645e693"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6c8157cad4951a2f24c763ab5645e693">isNumericLiteral</a> (const string &amp;str)</td></tr>
+<tr class="memdesc:a6c8157cad4951a2f24c763ab5645e693"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a string is a numeric literal.  <br /></td></tr>
 <tr class="separator:a6c8157cad4951a2f24c763ab5645e693"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aed757d18850c5bfe53b6b0fa65a07587" id="r_aed757d18850c5bfe53b6b0fa65a07587"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aed757d18850c5bfe53b6b0fa65a07587">isStringLiteral</a> (const string &amp;str)</td></tr>
+<tr class="memdesc:aed757d18850c5bfe53b6b0fa65a07587"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a string is a string literal.  <br /></td></tr>
 <tr class="separator:aed757d18850c5bfe53b6b0fa65a07587"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abebae2e9ca0987e3f06363c48442b054" id="r_abebae2e9ca0987e3f06363c48442b054"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abebae2e9ca0987e3f06363c48442b054">isPunctuation</a> (const string &amp;str)</td></tr>
+<tr class="memdesc:abebae2e9ca0987e3f06363c48442b054"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a string is a punctuation mark.  <br /></td></tr>
 <tr class="separator:abebae2e9ca0987e3f06363c48442b054"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7d2a073525f3dafc49701dc64fb8455a" id="r_a7d2a073525f3dafc49701dc64fb8455a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7d2a073525f3dafc49701dc64fb8455a">isAll</a> (const string &amp;str)</td></tr>
+<tr class="memdesc:a7d2a073525f3dafc49701dc64fb8455a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a string matches all token classification rules (for debugging or special cases).  <br /></td></tr>
 <tr class="separator:a7d2a073525f3dafc49701dc64fb8455a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeef65cdc820f48477913e8411df2fcf4" id="r_aeef65cdc820f48477913e8411df2fcf4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classToken.html">Token</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeef65cdc820f48477913e8411df2fcf4">classifyToken</a> (const string &amp;str)</td></tr>
+<tr class="memdesc:aeef65cdc820f48477913e8411df2fcf4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Classifies a string into a specific <a class="el" href="classToken.html" title="A class representing a single token in an SQL query.">Token</a> type.  <br /></td></tr>
 <tr class="separator:aeef65cdc820f48477913e8411df2fcf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-methods" name="pri-static-methods"></a>
+Static Private Member Functions</h2></td></tr>
+<tr class="memitem:ab599dcaa2c91238cd49c6c99d69c58f0" id="r_ab599dcaa2c91238cd49c6c99d69c58f0"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab599dcaa2c91238cd49c6c99d69c58f0">removeSpaces</a> (string &amp;t)</td></tr>
+<tr class="memdesc:ab599dcaa2c91238cd49c6c99d69c58f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes leading and trailing spaces from a string.  <br /></td></tr>
+<tr class="separator:ab599dcaa2c91238cd49c6c99d69c58f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4546b85fe75e0152a3cba759d18f240d" id="r_a4546b85fe75e0152a3cba759d18f240d"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4546b85fe75e0152a3cba759d18f240d">isKeyword</a> (const string &amp;str)</td></tr>
+<tr class="memdesc:a4546b85fe75e0152a3cba759d18f240d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a string is an SQL keyword.  <br /></td></tr>
+<tr class="separator:a4546b85fe75e0152a3cba759d18f240d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc2c15fd3f25cbc9e0fba3946ddfe1fe" id="r_acc2c15fd3f25cbc9e0fba3946ddfe1fe"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acc2c15fd3f25cbc9e0fba3946ddfe1fe">isIdentifier</a> (const string &amp;str)</td></tr>
+<tr class="memdesc:acc2c15fd3f25cbc9e0fba3946ddfe1fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a string is a valid SQL identifier.  <br /></td></tr>
+<tr class="separator:acc2c15fd3f25cbc9e0fba3946ddfe1fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:ae589851446b61a31157d5f27829f2c18" id="r_ae589851446b61a31157d5f27829f2c18"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae589851446b61a31157d5f27829f2c18">filename</a></td></tr>
+<tr class="memdesc:ae589851446b61a31157d5f27829f2c18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Name of the file being tokenized (if applicable).  <br /></td></tr>
 <tr class="separator:ae589851446b61a31157d5f27829f2c18"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5271266ba9bc67fc6dc3f7210961f3f6" id="r_a5271266ba9bc67fc6dc3f7210961f3f6"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="classToken.html">Token</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5271266ba9bc67fc6dc3f7210961f3f6">tokens</a></td></tr>
+<tr class="memdesc:a5271266ba9bc67fc6dc3f7210961f3f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vector storing the generated tokens.  <br /></td></tr>
 <tr class="separator:a5271266ba9bc67fc6dc3f7210961f3f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A class that tokenizes SQL query strings into a vector of <a class="el" href="classToken.html" title="A class representing a single token in an SQL query.">Token</a> objects. </p>
+<p>The <a class="el" href="classLexer.html" title="A class that tokenizes SQL query strings into a vector of Token objects.">Lexer</a> class takes an input string (e.g., an SQL query) and breaks it down into individual tokens, such as keywords, identifiers, operators, and literals. It uses helper methods to classify each token based on predefined rules and stores the results in a vector. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a2752a2b16cc1ffbcb8fc3e82e95bf331" name="a2752a2b16cc1ffbcb8fc3e82e95bf331"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2752a2b16cc1ffbcb8fc3e82e95bf331">&#9670;&#160;</a></span>Lexer()</h2>
 
@@ -153,6 +176,10 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Default constructor for the <a class="el" href="classLexer.html" title="A class that tokenizes SQL query strings into a vector of Token objects.">Lexer</a> class. </p>
+<p>Initializes an empty <a class="el" href="classLexer.html" title="A class that tokenizes SQL query strings into a vector of Token objects.">Lexer</a> object with no tokens and an empty filename.</p>
+<p>Initializes an empty <a class="el" href="classLexer.html" title="A class that tokenizes SQL query strings into a vector of Token objects.">Lexer</a> object. The filename and tokens vector are left empty by default. </p>
 
 </div>
 </div>
@@ -169,7 +196,7 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="classToken.html">Token</a> Lexer::classifyToken </td>
           <td>(</td>
-          <td class="paramtype">const string &amp;</td>          <td class="paramname"><span class="paramname"><em>str</em></span></td><td>)</td>
+          <td class="paramtype">const string &amp;</td>          <td class="paramname"><span class="paramname"><em>token</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -179,23 +206,40 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Classifies a string into a specific <a class="el" href="classToken.html" title="A class representing a single token in an SQL query.">Token</a> type. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>The string to classify. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="classToken.html" title="A class representing a single token in an SQL query.">Token</a> object representing the classified string.</dd></dl>
+<p>Evaluates the input string against various token types (keyword, operator, identifier, etc.) and returns a corresponding <a class="el" href="classToken.html" title="A class representing a single token in an SQL query.">Token</a> object. If the string cannot be classified, an error is printed, and the program exits.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">token</td><td>The string to classify. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="classToken.html" title="A class representing a single token in an SQL query.">Token</a> object representing the classified string. </dd></dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classLexer_aeef65cdc820f48477913e8411df2fcf4_cgraph.png" border="0" usemap="#aclassLexer_aeef65cdc820f48477913e8411df2fcf4_cgraph" alt=""/></div>
 <map name="aclassLexer_aeef65cdc820f48477913e8411df2fcf4_cgraph" id="aclassLexer_aeef65cdc820f48477913e8411df2fcf4_cgraph">
-<area shape="rect" title=" " alt="" coords="5,132,147,159"/>
-<area shape="rect" href="classLexer.html#a7d2a073525f3dafc49701dc64fb8455a" title=" " alt="" coords="229,5,316,32"/>
+<area shape="rect" title="Classifies a string into a specific Token type." alt="" coords="5,132,147,159"/>
+<area shape="rect" href="classLexer.html#a7d2a073525f3dafc49701dc64fb8455a" title="Checks if a string matches all token classification rules (for debugging or special cases)." alt="" coords="229,5,316,32"/>
 <area shape="poly" title=" " alt="" coords="88,130,132,87,161,63,193,42,213,32,216,37,196,46,165,67,135,91,92,134"/>
-<area shape="rect" href="classLexer.html#acc2c15fd3f25cbc9e0fba3946ddfe1fe" title=" " alt="" coords="212,56,333,83"/>
+<area shape="rect" href="classLexer.html#acc2c15fd3f25cbc9e0fba3946ddfe1fe" title="Checks if a string is a valid SQL identifier." alt="" coords="212,56,333,83"/>
 <area shape="poly" title=" " alt="" coords="106,129,194,92,212,86,214,91,196,97,108,134"/>
-<area shape="rect" href="classLexer.html#a4546b85fe75e0152a3cba759d18f240d" title=" " alt="" coords="211,107,334,133"/>
+<area shape="rect" href="classLexer.html#a4546b85fe75e0152a3cba759d18f240d" title="Checks if a string is an SQL keyword." alt="" coords="211,107,334,133"/>
 <area shape="poly" title=" " alt="" coords="147,134,195,127,196,132,148,139"/>
-<area shape="rect" href="classLexer.html#a6c8157cad4951a2f24c763ab5645e693" title=" " alt="" coords="195,157,350,184"/>
+<area shape="rect" href="classLexer.html#a6c8157cad4951a2f24c763ab5645e693" title="Checks if a string is a numeric literal." alt="" coords="195,157,350,184"/>
 <area shape="poly" title=" " alt="" coords="148,152,180,156,179,161,147,157"/>
-<area shape="rect" href="classLexer.html#af0d792d931a1c5c168bc224b5218bdb8" title=" " alt="" coords="212,208,333,235"/>
+<area shape="rect" href="classLexer.html#af0d792d931a1c5c168bc224b5218bdb8" title="Checks if a string is an SQL operator." alt="" coords="212,208,333,235"/>
 <area shape="poly" title=" " alt="" coords="108,157,196,194,214,200,212,205,194,198,106,162"/>
-<area shape="rect" href="classLexer.html#aed757d18850c5bfe53b6b0fa65a07587" title=" " alt="" coords="202,259,342,285"/>
+<area shape="rect" href="classLexer.html#aed757d18850c5bfe53b6b0fa65a07587" title="Checks if a string is a string literal." alt="" coords="202,259,342,285"/>
 <area shape="poly" title=" " alt="" coords="92,157,135,200,165,224,196,244,207,250,204,255,193,249,161,228,132,204,88,161"/>
 </map>
 </div>
@@ -204,12 +248,12 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classLexer_aeef65cdc820f48477913e8411df2fcf4_icgraph.png" border="0" usemap="#aclassLexer_aeef65cdc820f48477913e8411df2fcf4_icgraph" alt=""/></div>
 <map name="aclassLexer_aeef65cdc820f48477913e8411df2fcf4_icgraph" id="aclassLexer_aeef65cdc820f48477913e8411df2fcf4_icgraph">
-<area shape="rect" title=" " alt="" coords="440,13,582,40"/>
-<area shape="rect" href="classLexer.html#a53ca4097e5fdc3038c07104a07d91bf0" title=" " alt="" coords="282,13,392,40"/>
+<area shape="rect" title="Classifies a string into a specific Token type." alt="" coords="440,13,582,40"/>
+<area shape="rect" href="classLexer.html#abf0e5edeefd5155b71591488ada01e16" title="Tokenizes an input string into a vector of Token objects." alt="" coords="282,13,392,40"/>
 <area shape="poly" title=" " alt="" coords="425,29,393,29,393,24,425,24"/>
-<area shape="rect" href="classSQLInterpreter.html#afe6f5863dedf9018fdebd95fad6bed77" title=" " alt="" coords="103,5,234,48"/>
+<area shape="rect" href="classSQLInterpreter.html#afe6f5863dedf9018fdebd95fad6bed77" title="Initializes and runs the SQL interpreter." alt="" coords="103,5,234,48"/>
 <area shape="poly" title=" " alt="" coords="266,29,235,29,235,24,266,24"/>
-<area shape="rect" href="Interpreter__main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,13,55,40"/>
+<area shape="rect" href="Interpreter__main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="Main entry point for the SQL interpreter program." alt="" coords="5,13,55,40"/>
 <area shape="poly" title=" " alt="" coords="87,29,55,29,55,24,87,24"/>
 </map>
 </div>
@@ -238,19 +282,37 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Checks if a string matches all token classification rules (for debugging or special cases). </p>
+<p>Checks if a string represents the "all" wildcard (*).</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>The string to check. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the string matches all rules, false otherwise.</dd></dl>
+<p>Uses a regular expression to match the string against the asterisk (*) character.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>The string to check. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the string is "*", false otherwise. </dd></dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classLexer_a7d2a073525f3dafc49701dc64fb8455a_icgraph.png" border="0" usemap="#aclassLexer_a7d2a073525f3dafc49701dc64fb8455a_icgraph" alt=""/></div>
 <map name="aclassLexer_a7d2a073525f3dafc49701dc64fb8455a_icgraph" id="aclassLexer_a7d2a073525f3dafc49701dc64fb8455a_icgraph">
-<area shape="rect" title=" " alt="" coords="630,13,716,40"/>
-<area shape="rect" href="classLexer.html#aeef65cdc820f48477913e8411df2fcf4" title=" " alt="" coords="440,13,582,40"/>
+<area shape="rect" title="Checks if a string matches all token classification rules (for debugging or special cases)." alt="" coords="630,13,716,40"/>
+<area shape="rect" href="classLexer.html#aeef65cdc820f48477913e8411df2fcf4" title="Classifies a string into a specific Token type." alt="" coords="440,13,582,40"/>
 <area shape="poly" title=" " alt="" coords="614,29,582,29,582,24,614,24"/>
-<area shape="rect" href="classLexer.html#a53ca4097e5fdc3038c07104a07d91bf0" title=" " alt="" coords="282,13,392,40"/>
+<area shape="rect" href="classLexer.html#abf0e5edeefd5155b71591488ada01e16" title="Tokenizes an input string into a vector of Token objects." alt="" coords="282,13,392,40"/>
 <area shape="poly" title=" " alt="" coords="425,29,393,29,393,24,425,24"/>
-<area shape="rect" href="classSQLInterpreter.html#afe6f5863dedf9018fdebd95fad6bed77" title=" " alt="" coords="103,5,234,48"/>
+<area shape="rect" href="classSQLInterpreter.html#afe6f5863dedf9018fdebd95fad6bed77" title="Initializes and runs the SQL interpreter." alt="" coords="103,5,234,48"/>
 <area shape="poly" title=" " alt="" coords="266,29,235,29,235,24,266,24"/>
-<area shape="rect" href="Interpreter__main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,13,55,40"/>
+<area shape="rect" href="Interpreter__main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="Main entry point for the SQL interpreter program." alt="" coords="5,13,55,40"/>
 <area shape="poly" title=" " alt="" coords="87,29,55,29,55,24,87,24"/>
 </map>
 </div>
@@ -275,23 +337,40 @@ Here is the caller graph for this function:</div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Checks if a string is a valid SQL identifier. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>The string to check. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the string is an identifier, false otherwise.</dd></dl>
+<p>Uses a regular expression to match the string against the pattern for SQL identifiers (starts with a letter, followed by letters, digits, or underscores).</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>The string to check. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the string is an identifier, false otherwise. </dd></dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classLexer_acc2c15fd3f25cbc9e0fba3946ddfe1fe_icgraph.png" border="0" usemap="#aclassLexer_acc2c15fd3f25cbc9e0fba3946ddfe1fe_icgraph" alt=""/></div>
 <map name="aclassLexer_acc2c15fd3f25cbc9e0fba3946ddfe1fe_icgraph" id="aclassLexer_acc2c15fd3f25cbc9e0fba3946ddfe1fe_icgraph">
-<area shape="rect" title=" " alt="" coords="630,13,751,40"/>
-<area shape="rect" href="classLexer.html#aeef65cdc820f48477913e8411df2fcf4" title=" " alt="" coords="440,13,582,40"/>
+<area shape="rect" title="Checks if a string is a valid SQL identifier." alt="" coords="630,13,751,40"/>
+<area shape="rect" href="classLexer.html#aeef65cdc820f48477913e8411df2fcf4" title="Classifies a string into a specific Token type." alt="" coords="440,13,582,40"/>
 <area shape="poly" title=" " alt="" coords="614,29,582,29,582,24,614,24"/>
-<area shape="rect" href="classLexer.html#a53ca4097e5fdc3038c07104a07d91bf0" title=" " alt="" coords="282,13,392,40"/>
+<area shape="rect" href="classLexer.html#abf0e5edeefd5155b71591488ada01e16" title="Tokenizes an input string into a vector of Token objects." alt="" coords="282,13,392,40"/>
 <area shape="poly" title=" " alt="" coords="425,29,393,29,393,24,425,24"/>
-<area shape="rect" href="classSQLInterpreter.html#afe6f5863dedf9018fdebd95fad6bed77" title=" " alt="" coords="103,5,234,48"/>
+<area shape="rect" href="classSQLInterpreter.html#afe6f5863dedf9018fdebd95fad6bed77" title="Initializes and runs the SQL interpreter." alt="" coords="103,5,234,48"/>
 <area shape="poly" title=" " alt="" coords="266,29,235,29,235,24,266,24"/>
-<area shape="rect" href="Interpreter__main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,13,55,40"/>
+<area shape="rect" href="Interpreter__main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="Main entry point for the SQL interpreter program." alt="" coords="5,13,55,40"/>
 <area shape="poly" title=" " alt="" coords="87,29,55,29,55,24,87,24"/>
 </map>
 </div>
@@ -316,23 +395,40 @@ Here is the caller graph for this function:</div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Checks if a string is an SQL keyword. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>The string to check. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the string is a keyword, false otherwise.</dd></dl>
+<p>Uses a regular expression to match the string against a list of SQL keywords.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>The string to check. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the string is a keyword, false otherwise. </dd></dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classLexer_a4546b85fe75e0152a3cba759d18f240d_icgraph.png" border="0" usemap="#aclassLexer_a4546b85fe75e0152a3cba759d18f240d_icgraph" alt=""/></div>
 <map name="aclassLexer_a4546b85fe75e0152a3cba759d18f240d_icgraph" id="aclassLexer_a4546b85fe75e0152a3cba759d18f240d_icgraph">
-<area shape="rect" title=" " alt="" coords="630,13,752,40"/>
-<area shape="rect" href="classLexer.html#aeef65cdc820f48477913e8411df2fcf4" title=" " alt="" coords="440,13,582,40"/>
+<area shape="rect" title="Checks if a string is an SQL keyword." alt="" coords="630,13,752,40"/>
+<area shape="rect" href="classLexer.html#aeef65cdc820f48477913e8411df2fcf4" title="Classifies a string into a specific Token type." alt="" coords="440,13,582,40"/>
 <area shape="poly" title=" " alt="" coords="614,29,582,29,582,24,614,24"/>
-<area shape="rect" href="classLexer.html#a53ca4097e5fdc3038c07104a07d91bf0" title=" " alt="" coords="282,13,392,40"/>
+<area shape="rect" href="classLexer.html#abf0e5edeefd5155b71591488ada01e16" title="Tokenizes an input string into a vector of Token objects." alt="" coords="282,13,392,40"/>
 <area shape="poly" title=" " alt="" coords="425,29,393,29,393,24,425,24"/>
-<area shape="rect" href="classSQLInterpreter.html#afe6f5863dedf9018fdebd95fad6bed77" title=" " alt="" coords="103,5,234,48"/>
+<area shape="rect" href="classSQLInterpreter.html#afe6f5863dedf9018fdebd95fad6bed77" title="Initializes and runs the SQL interpreter." alt="" coords="103,5,234,48"/>
 <area shape="poly" title=" " alt="" coords="266,29,235,29,235,24,266,24"/>
-<area shape="rect" href="Interpreter__main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,13,55,40"/>
+<area shape="rect" href="Interpreter__main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="Main entry point for the SQL interpreter program." alt="" coords="5,13,55,40"/>
 <area shape="poly" title=" " alt="" coords="87,29,55,29,55,24,87,24"/>
 </map>
 </div>
@@ -361,19 +457,36 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Checks if a string is a numeric literal. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>The string to check. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the string is a numeric literal, false otherwise.</dd></dl>
+<p>Uses a regular expression to match the string against the pattern for numeric literals (non-zero starting digits or single zero).</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>The string to check. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the string is a numeric literal, false otherwise. </dd></dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classLexer_a6c8157cad4951a2f24c763ab5645e693_icgraph.png" border="0" usemap="#aclassLexer_a6c8157cad4951a2f24c763ab5645e693_icgraph" alt=""/></div>
 <map name="aclassLexer_a6c8157cad4951a2f24c763ab5645e693_icgraph" id="aclassLexer_a6c8157cad4951a2f24c763ab5645e693_icgraph">
-<area shape="rect" title=" " alt="" coords="630,13,785,40"/>
-<area shape="rect" href="classLexer.html#aeef65cdc820f48477913e8411df2fcf4" title=" " alt="" coords="440,13,582,40"/>
+<area shape="rect" title="Checks if a string is a numeric literal." alt="" coords="630,13,785,40"/>
+<area shape="rect" href="classLexer.html#aeef65cdc820f48477913e8411df2fcf4" title="Classifies a string into a specific Token type." alt="" coords="440,13,582,40"/>
 <area shape="poly" title=" " alt="" coords="614,29,582,29,582,24,614,24"/>
-<area shape="rect" href="classLexer.html#a53ca4097e5fdc3038c07104a07d91bf0" title=" " alt="" coords="282,13,392,40"/>
+<area shape="rect" href="classLexer.html#abf0e5edeefd5155b71591488ada01e16" title="Tokenizes an input string into a vector of Token objects." alt="" coords="282,13,392,40"/>
 <area shape="poly" title=" " alt="" coords="425,29,393,29,393,24,425,24"/>
-<area shape="rect" href="classSQLInterpreter.html#afe6f5863dedf9018fdebd95fad6bed77" title=" " alt="" coords="103,5,234,48"/>
+<area shape="rect" href="classSQLInterpreter.html#afe6f5863dedf9018fdebd95fad6bed77" title="Initializes and runs the SQL interpreter." alt="" coords="103,5,234,48"/>
 <area shape="poly" title=" " alt="" coords="266,29,235,29,235,24,266,24"/>
-<area shape="rect" href="Interpreter__main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,13,55,40"/>
+<area shape="rect" href="Interpreter__main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="Main entry point for the SQL interpreter program." alt="" coords="5,13,55,40"/>
 <area shape="poly" title=" " alt="" coords="87,29,55,29,55,24,87,24"/>
 </map>
 </div>
@@ -402,19 +515,36 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Checks if a string is an SQL operator. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>The string to check. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the string is an operator, false otherwise.</dd></dl>
+<p>Uses a regular expression to match the string against a list of SQL operators.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>The string to check. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the string is an operator, false otherwise. </dd></dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classLexer_af0d792d931a1c5c168bc224b5218bdb8_icgraph.png" border="0" usemap="#aclassLexer_af0d792d931a1c5c168bc224b5218bdb8_icgraph" alt=""/></div>
 <map name="aclassLexer_af0d792d931a1c5c168bc224b5218bdb8_icgraph" id="aclassLexer_af0d792d931a1c5c168bc224b5218bdb8_icgraph">
-<area shape="rect" title=" " alt="" coords="630,13,751,40"/>
-<area shape="rect" href="classLexer.html#aeef65cdc820f48477913e8411df2fcf4" title=" " alt="" coords="440,13,582,40"/>
+<area shape="rect" title="Checks if a string is an SQL operator." alt="" coords="630,13,751,40"/>
+<area shape="rect" href="classLexer.html#aeef65cdc820f48477913e8411df2fcf4" title="Classifies a string into a specific Token type." alt="" coords="440,13,582,40"/>
 <area shape="poly" title=" " alt="" coords="614,29,582,29,582,24,614,24"/>
-<area shape="rect" href="classLexer.html#a53ca4097e5fdc3038c07104a07d91bf0" title=" " alt="" coords="282,13,392,40"/>
+<area shape="rect" href="classLexer.html#abf0e5edeefd5155b71591488ada01e16" title="Tokenizes an input string into a vector of Token objects." alt="" coords="282,13,392,40"/>
 <area shape="poly" title=" " alt="" coords="425,29,393,29,393,24,425,24"/>
-<area shape="rect" href="classSQLInterpreter.html#afe6f5863dedf9018fdebd95fad6bed77" title=" " alt="" coords="103,5,234,48"/>
+<area shape="rect" href="classSQLInterpreter.html#afe6f5863dedf9018fdebd95fad6bed77" title="Initializes and runs the SQL interpreter." alt="" coords="103,5,234,48"/>
 <area shape="poly" title=" " alt="" coords="266,29,235,29,235,24,266,24"/>
-<area shape="rect" href="Interpreter__main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,13,55,40"/>
+<area shape="rect" href="Interpreter__main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="Main entry point for the SQL interpreter program." alt="" coords="5,13,55,40"/>
 <area shape="poly" title=" " alt="" coords="87,29,55,29,55,24,87,24"/>
 </map>
 </div>
@@ -444,6 +574,15 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>Checks if a string is a punctuation mark. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>The string to check. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the string is punctuation, false otherwise. </dd></dl>
+
 </div>
 </div>
 <a id="aed757d18850c5bfe53b6b0fa65a07587" name="aed757d18850c5bfe53b6b0fa65a07587"></a>
@@ -468,19 +607,36 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Checks if a string is a string literal. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>The string to check. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the string is a string literal, false otherwise.</dd></dl>
+<p>Uses a regular expression to match the string against the pattern for string literals (text enclosed in single quotes).</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>The string to check. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the string is a string literal, false otherwise. </dd></dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classLexer_aed757d18850c5bfe53b6b0fa65a07587_icgraph.png" border="0" usemap="#aclassLexer_aed757d18850c5bfe53b6b0fa65a07587_icgraph" alt=""/></div>
 <map name="aclassLexer_aed757d18850c5bfe53b6b0fa65a07587_icgraph" id="aclassLexer_aed757d18850c5bfe53b6b0fa65a07587_icgraph">
-<area shape="rect" title=" " alt="" coords="630,13,770,40"/>
-<area shape="rect" href="classLexer.html#aeef65cdc820f48477913e8411df2fcf4" title=" " alt="" coords="440,13,582,40"/>
+<area shape="rect" title="Checks if a string is a string literal." alt="" coords="630,13,770,40"/>
+<area shape="rect" href="classLexer.html#aeef65cdc820f48477913e8411df2fcf4" title="Classifies a string into a specific Token type." alt="" coords="440,13,582,40"/>
 <area shape="poly" title=" " alt="" coords="614,29,582,29,582,24,614,24"/>
-<area shape="rect" href="classLexer.html#a53ca4097e5fdc3038c07104a07d91bf0" title=" " alt="" coords="282,13,392,40"/>
+<area shape="rect" href="classLexer.html#abf0e5edeefd5155b71591488ada01e16" title="Tokenizes an input string into a vector of Token objects." alt="" coords="282,13,392,40"/>
 <area shape="poly" title=" " alt="" coords="425,29,393,29,393,24,425,24"/>
-<area shape="rect" href="classSQLInterpreter.html#afe6f5863dedf9018fdebd95fad6bed77" title=" " alt="" coords="103,5,234,48"/>
+<area shape="rect" href="classSQLInterpreter.html#afe6f5863dedf9018fdebd95fad6bed77" title="Initializes and runs the SQL interpreter." alt="" coords="103,5,234,48"/>
 <area shape="poly" title=" " alt="" coords="266,29,235,29,235,24,266,24"/>
-<area shape="rect" href="Interpreter__main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,13,55,40"/>
+<area shape="rect" href="Interpreter__main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="Main entry point for the SQL interpreter program." alt="" coords="5,13,55,40"/>
 <area shape="poly" title=" " alt="" coords="87,29,55,29,55,24,87,24"/>
 </map>
 </div>
@@ -505,15 +661,33 @@ Here is the caller graph for this function:</div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
+<p>Removes leading and trailing spaces from a string. </p>
+<p>Removes all spaces from a string.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">t</td><td>The string to process. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The trimmed string with spaces removed.</dd></dl>
+<p>Iterates through the input string and builds a new string containing only non-space characters.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">t</td><td>The string to process. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The string with all spaces removed. </dd></dl>
+
 </div>
 </div>
-<a id="a53ca4097e5fdc3038c07104a07d91bf0" name="a53ca4097e5fdc3038c07104a07d91bf0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a53ca4097e5fdc3038c07104a07d91bf0">&#9670;&#160;</a></span>tokenize()</h2>
+<a id="abf0e5edeefd5155b71591488ada01e16" name="abf0e5edeefd5155b71591488ada01e16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf0e5edeefd5155b71591488ada01e16">&#9670;&#160;</a></span>tokenize()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -526,37 +700,55 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Tokenizes an input string into a vector of <a class="el" href="classToken.html" title="A class representing a single token in an SQL query.">Token</a> objects. </p>
+<p>Processes the input string (e.g., an SQL query) and generates a sequence of tokens by identifying keywords, identifiers, operators, literals, and punctuation.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">input</td><td>The input string to tokenize. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A vector of <a class="el" href="classToken.html" title="A class representing a single token in an SQL query.">Token</a> objects representing the tokenized input.</dd></dl>
+<p>Processes the input SQL query string character by character, extracting tokens based on spaces and special characters (e.g., parentheses, semicolon). Each extracted string is classified and added to the token vector.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">query</td><td>The input SQL query string to tokenize. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A vector of <a class="el" href="classToken.html" title="A class representing a single token in an SQL query.">Token</a> objects representing the tokenized input. </dd></dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classLexer_a53ca4097e5fdc3038c07104a07d91bf0_cgraph.png" border="0" usemap="#aclassLexer_a53ca4097e5fdc3038c07104a07d91bf0_cgraph" alt=""/></div>
-<map name="aclassLexer_a53ca4097e5fdc3038c07104a07d91bf0_cgraph" id="aclassLexer_a53ca4097e5fdc3038c07104a07d91bf0_cgraph">
-<area shape="rect" title=" " alt="" coords="5,132,116,159"/>
-<area shape="rect" href="classLexer.html#aeef65cdc820f48477913e8411df2fcf4" title=" " alt="" coords="164,132,305,159"/>
+<div class="center"><img src="classLexer_abf0e5edeefd5155b71591488ada01e16_cgraph.png" border="0" usemap="#aclassLexer_abf0e5edeefd5155b71591488ada01e16_cgraph" alt=""/></div>
+<map name="aclassLexer_abf0e5edeefd5155b71591488ada01e16_cgraph" id="aclassLexer_abf0e5edeefd5155b71591488ada01e16_cgraph">
+<area shape="rect" title="Tokenizes an input string into a vector of Token objects." alt="" coords="5,132,116,159"/>
+<area shape="rect" href="classLexer.html#aeef65cdc820f48477913e8411df2fcf4" title="Classifies a string into a specific Token type." alt="" coords="164,132,305,159"/>
 <area shape="poly" title=" " alt="" coords="116,143,149,143,149,148,116,148"/>
-<area shape="rect" href="classLexer.html#a7d2a073525f3dafc49701dc64fb8455a" title=" " alt="" coords="388,5,474,32"/>
+<area shape="rect" href="classLexer.html#a7d2a073525f3dafc49701dc64fb8455a" title="Checks if a string matches all token classification rules (for debugging or special cases)." alt="" coords="388,5,474,32"/>
 <area shape="poly" title=" " alt="" coords="246,130,290,87,320,63,352,42,372,32,374,37,354,46,323,67,294,91,250,134"/>
-<area shape="rect" href="classLexer.html#acc2c15fd3f25cbc9e0fba3946ddfe1fe" title=" " alt="" coords="370,56,491,83"/>
+<area shape="rect" href="classLexer.html#acc2c15fd3f25cbc9e0fba3946ddfe1fe" title="Checks if a string is a valid SQL identifier." alt="" coords="370,56,491,83"/>
 <area shape="poly" title=" " alt="" coords="265,129,352,92,370,86,372,91,354,97,267,134"/>
-<area shape="rect" href="classLexer.html#a4546b85fe75e0152a3cba759d18f240d" title=" " alt="" coords="370,107,492,133"/>
+<area shape="rect" href="classLexer.html#a4546b85fe75e0152a3cba759d18f240d" title="Checks if a string is an SQL keyword." alt="" coords="370,107,492,133"/>
 <area shape="poly" title=" " alt="" coords="305,134,354,127,354,132,306,139"/>
-<area shape="rect" href="classLexer.html#a6c8157cad4951a2f24c763ab5645e693" title=" " alt="" coords="353,157,508,184"/>
+<area shape="rect" href="classLexer.html#a6c8157cad4951a2f24c763ab5645e693" title="Checks if a string is a numeric literal." alt="" coords="353,157,508,184"/>
 <area shape="poly" title=" " alt="" coords="306,152,338,156,337,161,305,157"/>
-<area shape="rect" href="classLexer.html#af0d792d931a1c5c168bc224b5218bdb8" title=" " alt="" coords="370,208,491,235"/>
+<area shape="rect" href="classLexer.html#af0d792d931a1c5c168bc224b5218bdb8" title="Checks if a string is an SQL operator." alt="" coords="370,208,491,235"/>
 <area shape="poly" title=" " alt="" coords="267,157,354,194,372,200,370,205,352,198,265,162"/>
-<area shape="rect" href="classLexer.html#aed757d18850c5bfe53b6b0fa65a07587" title=" " alt="" coords="360,259,501,285"/>
+<area shape="rect" href="classLexer.html#aed757d18850c5bfe53b6b0fa65a07587" title="Checks if a string is a string literal." alt="" coords="360,259,501,285"/>
 <area shape="poly" title=" " alt="" coords="250,157,294,200,323,224,354,244,365,250,363,255,352,249,320,228,290,204,246,161"/>
 </map>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classLexer_a53ca4097e5fdc3038c07104a07d91bf0_icgraph.png" border="0" usemap="#aclassLexer_a53ca4097e5fdc3038c07104a07d91bf0_icgraph" alt=""/></div>
-<map name="aclassLexer_a53ca4097e5fdc3038c07104a07d91bf0_icgraph" id="aclassLexer_a53ca4097e5fdc3038c07104a07d91bf0_icgraph">
-<area shape="rect" title=" " alt="" coords="282,13,392,40"/>
-<area shape="rect" href="classSQLInterpreter.html#afe6f5863dedf9018fdebd95fad6bed77" title=" " alt="" coords="103,5,234,48"/>
+<div class="center"><img src="classLexer_abf0e5edeefd5155b71591488ada01e16_icgraph.png" border="0" usemap="#aclassLexer_abf0e5edeefd5155b71591488ada01e16_icgraph" alt=""/></div>
+<map name="aclassLexer_abf0e5edeefd5155b71591488ada01e16_icgraph" id="aclassLexer_abf0e5edeefd5155b71591488ada01e16_icgraph">
+<area shape="rect" title="Tokenizes an input string into a vector of Token objects." alt="" coords="282,13,392,40"/>
+<area shape="rect" href="classSQLInterpreter.html#afe6f5863dedf9018fdebd95fad6bed77" title="Initializes and runs the SQL interpreter." alt="" coords="103,5,234,48"/>
 <area shape="poly" title=" " alt="" coords="266,29,235,29,235,24,266,24"/>
-<area shape="rect" href="Interpreter__main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,13,55,40"/>
+<area shape="rect" href="Interpreter__main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="Main entry point for the SQL interpreter program." alt="" coords="5,13,55,40"/>
 <area shape="poly" title=" " alt="" coords="87,29,55,29,55,24,87,24"/>
 </map>
 </div>
@@ -584,6 +776,8 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>Name of the file being tokenized (if applicable). </p>
+
 </div>
 </div>
 <a id="a5271266ba9bc67fc6dc3f7210961f3f6" name="a5271266ba9bc67fc6dc3f7210961f3f6"></a>
@@ -605,6 +799,8 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Vector storing the generated tokens. </p>
 
 </div>
 </div>

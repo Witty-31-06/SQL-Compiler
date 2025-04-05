@@ -93,31 +93,28 @@ $(function(){ initResizable(false); });
   <div class="headertitle"><div class="title">Lexer.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Header file for the <a class="el" href="classLexer.html" title="A class that tokenizes SQL query strings into a vector of Token objects.">Lexer</a> class, responsible for tokenizing SQL query strings.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;vector&gt;</code><br />
 <code>#include &lt;string&gt;</code><br />
-<code>#include &lt;iostream&gt;</code><br />
 <code>#include &lt;regex&gt;</code><br />
-<code>#include &lt;fstream&gt;</code><br />
 <code>#include &quot;<a class="el" href="Token_8h_source.html">Token.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for Lexer.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="Lexer_8h__incl.png" border="0" usemap="#ainclude_2Lexer_8h" alt=""/></div>
 <map name="ainclude_2Lexer_8h" id="ainclude_2Lexer_8h">
-<area shape="rect" title=" " alt="" coords="162,5,271,32"/>
+<area shape="rect" title="Header file for the Lexer class, responsible for tokenizing SQL query strings." alt="" coords="78,5,187,32"/>
 <area shape="rect" title=" " alt="" coords="5,80,63,107"/>
-<area shape="poly" title=" " alt="" coords="186,35,78,77,76,72,184,30"/>
-<area shape="rect" title=" " alt="" coords="241,155,294,181"/>
-<area shape="poly" title=" " alt="" coords="187,35,160,49,137,66,125,85,124,95,128,105,148,126,173,142,200,152,226,159,225,164,198,157,170,146,144,130,124,108,119,96,119,83,134,62,158,44,184,30"/>
-<area shape="rect" title=" " alt="" coords="138,80,210,107"/>
-<area shape="poly" title=" " alt="" coords="212,34,191,68,187,65,207,31"/>
-<area shape="rect" title=" " alt="" coords="234,80,287,107"/>
-<area shape="poly" title=" " alt="" coords="227,31,247,65,243,68,222,34"/>
-<area shape="rect" title=" " alt="" coords="312,80,377,107"/>
-<area shape="poly" title=" " alt="" coords="240,30,310,70,308,74,238,35"/>
-<area shape="rect" href="Token_8h.html" title=" " alt="" coords="402,80,469,107"/>
-<area shape="poly" title=" " alt="" coords="256,30,388,74,386,79,254,35"/>
-<area shape="poly" title=" " alt="" coords="407,110,310,151,307,147,405,105"/>
+<area shape="poly" title=" " alt="" coords="117,35,65,73,62,69,114,30"/>
+<area shape="rect" title=" " alt="" coords="147,155,201,181"/>
+<area shape="poly" title=" " alt="" coords="131,33,125,67,125,86,129,106,138,125,151,142,147,145,134,128,123,108,119,87,120,66,126,32"/>
+<area shape="rect" title=" " alt="" coords="138,80,191,107"/>
+<area shape="poly" title=" " alt="" coords="141,31,156,65,151,67,136,34"/>
+<area shape="rect" href="Token_8h.html" title="Header file for the Token class, representing a single token in an SQL query." alt="" coords="215,80,282,107"/>
+<area shape="poly" title=" " alt="" coords="154,30,217,69,214,74,151,35"/>
+<area shape="poly" title=" " alt="" coords="238,109,199,146,196,142,234,105"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -125,14 +122,14 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="Lexer_8h__dep__incl.png" border="0" usemap="#ainclude_2Lexer_8hdep" alt=""/></div>
 <map name="ainclude_2Lexer_8hdep" id="ainclude_2Lexer_8hdep">
-<area shape="rect" title=" " alt="" coords="202,5,312,32"/>
+<area shape="rect" title="Header file for the Lexer class, responsible for tokenizing SQL query strings." alt="" coords="202,5,312,32"/>
 <area shape="rect" href="SQL__Intepreter_8h.html" title=" " alt="" coords="96,80,261,107"/>
 <area shape="poly" title=" " alt="" coords="234,45,194,82,190,78,230,41"/>
-<area shape="rect" href="Lexer_8cpp.html" title=" " alt="" coords="286,80,386,107"/>
+<area shape="rect" href="Lexer_8cpp.html" title="Implementation of the Lexer class for tokenizing SQL query strings." alt="" coords="286,80,386,107"/>
 <area shape="poly" title=" " alt="" coords="284,41,324,78,320,82,280,45"/>
 <area shape="rect" href="Interpreter__main_8cpp.html" title=" " alt="" coords="5,155,168,181"/>
 <area shape="poly" title=" " alt="" coords="152,119,104,156,101,152,149,114"/>
-<area shape="rect" href="SQL__Interpreter_8cpp.html" title=" " alt="" coords="192,155,352,181"/>
+<area shape="rect" href="SQL__Interpreter_8cpp.html" title="Implementation of the SQLInterpreter class for interpreting SQL queries." alt="" coords="192,155,352,181"/>
 <area shape="poly" title=" " alt="" coords="208,114,257,152,254,156,205,119"/>
 </map>
 </div>
@@ -142,9 +139,13 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLexer.html">Lexer</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A class that tokenizes SQL query strings into a vector of <a class="el" href="classToken.html" title="A class representing a single token in an SQL query.">Token</a> objects.  <a href="classLexer.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-</div><!-- contents -->
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Header file for the <a class="el" href="classLexer.html" title="A class that tokenizes SQL query strings into a vector of Token objects.">Lexer</a> class, responsible for tokenizing SQL query strings. </p>
+<p>This file defines the <a class="el" href="classLexer.html" title="A class that tokenizes SQL query strings into a vector of Token objects.">Lexer</a> class, which processes input strings and converts them into a sequence of tokens for use in an LL1 parser for SQL queries. </p>
+</div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0

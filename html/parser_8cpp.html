@@ -93,37 +93,37 @@ $(function(){ initResizable(false); });
   <div class="headertitle"><div class="title">parser.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Implementation of the <a class="el" href="classParser.html" title="A class implementing an LL1 parser for SQL queries.">Parser</a> class and related symbol classes for LL1 parsing of SQL queries.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="parser_8h_source.html">parser.h</a>&quot;</code><br />
 <code>#include &lt;iostream&gt;</code><br />
 <code>#include &lt;unordered_map&gt;</code><br />
 <code>#include &lt;nlohmann/json.hpp&gt;</code><br />
 <code>#include &lt;memory&gt;</code><br />
-<code>#include &lt;iomanip&gt;</code><br />
 <code>#include &lt;tabulate/table.hpp&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for parser.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="parser_8cpp__incl.png" border="0" usemap="#asrc_2parser_8cpp" alt=""/></div>
 <map name="asrc_2parser_8cpp" id="asrc_2parser_8cpp">
-<area shape="rect" title=" " alt="" coords="384,5,488,32"/>
-<area shape="rect" href="parser_8h.html" title=" " alt="" coords="136,80,205,107"/>
-<area shape="poly" title=" " alt="" coords="390,35,220,81,219,76,389,30"/>
+<area shape="rect" title="Implementation of the Parser class and related symbol classes for LL1 parsing of SQL queries." alt="" coords="326,5,431,32"/>
+<area shape="rect" href="parser_8h.html" title="Header file for the Parser class and related symbol classes for LL1 parsing of SQL queries." alt="" coords="136,80,205,107"/>
+<area shape="poly" title=" " alt="" coords="343,35,220,78,219,73,341,30"/>
 <area shape="rect" title=" " alt="" coords="219,155,287,181"/>
-<area shape="poly" title=" " alt="" coords="384,29,326,46,299,61,275,82,261,109,256,140,250,139,256,108,271,78,296,57,324,41,382,24"/>
+<area shape="poly" title=" " alt="" coords="342,35,306,54,289,66,275,81,262,110,257,140,251,139,257,108,271,79,286,62,303,49,340,30"/>
 <area shape="rect" title=" " alt="" coords="286,80,357,107"/>
-<area shape="poly" title=" " alt="" coords="417,35,356,74,353,69,414,30"/>
+<area shape="poly" title=" " alt="" coords="371,34,343,69,338,66,366,31"/>
 <area shape="rect" title=" " alt="" coords="381,80,491,107"/>
-<area shape="poly" title=" " alt="" coords="438,33,438,64,433,64,433,33"/>
+<area shape="poly" title=" " alt="" coords="391,31,419,66,414,69,386,34"/>
 <area shape="rect" title=" " alt="" coords="515,80,645,107"/>
-<area shape="poly" title=" " alt="" coords="462,30,542,70,540,75,460,35"/>
-<area shape="rect" title=" " alt="" coords="669,80,736,107"/>
-<area shape="poly" title=" " alt="" coords="483,30,655,76,654,82,482,35"/>
-<area shape="rect" title=" " alt="" coords="760,80,885,107"/>
-<area shape="poly" title=" " alt="" coords="489,27,746,75,745,80,488,32"/>
+<area shape="poly" title=" " alt="" coords="414,30,531,72,529,77,413,35"/>
+<area shape="rect" title=" " alt="" coords="670,80,794,107"/>
+<area shape="poly" title=" " alt="" coords="432,28,656,74,655,79,430,33"/>
 <area shape="rect" title=" " alt="" coords="5,155,104,181"/>
 <area shape="poly" title=" " alt="" coords="152,109,89,148,86,144,149,105"/>
 <area shape="poly" title=" " alt="" coords="187,105,229,142,226,146,183,109"/>
-<area shape="rect" href="Token_8h.html" title=" " alt="" coords="128,155,195,181"/>
+<area shape="rect" href="Token_8h.html" title="Header file for the Token class, representing a single token in an SQL query." alt="" coords="128,155,195,181"/>
 <area shape="poly" title=" " alt="" coords="172,108,167,140,162,139,166,107"/>
 <area shape="rect" title=" " alt="" coords="134,229,188,256"/>
 <area shape="poly" title=" " alt="" coords="164,182,164,214,158,214,158,182"/>
@@ -135,7 +135,10 @@ Typedefs</h2></td></tr>
 <tr class="memitem:ab701e3ac61a85b337ec5c1abaad6742d" id="r_ab701e3ac61a85b337ec5c1abaad6742d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab701e3ac61a85b337ec5c1abaad6742d">json</a> = nlohmann::json</td></tr>
 <tr class="separator:ab701e3ac61a85b337ec5c1abaad6742d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Typedef Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Implementation of the <a class="el" href="classParser.html" title="A class implementing an LL1 parser for SQL queries.">Parser</a> class and related symbol classes for LL1 parsing of SQL queries. </p>
+<p>This file contains the definitions of the <a class="el" href="classSymbol.html" title="Base class representing a symbol in the grammar (terminal or non-terminal).">Symbol</a>, <a class="el" href="classNonTerminal.html" title="Derived class representing a non-terminal symbol in the grammar.">NonTerminal</a>, <a class="el" href="classTerminal.html" title="Derived class representing a terminal symbol in the grammar.">Terminal</a>, and <a class="el" href="classParser.html" title="A class implementing an LL1 parser for SQL queries.">Parser</a> class methods, which implement an LL1 parser for SQL queries by loading a grammar, computing FIRST and FOLLOW sets, constructing an LL1 table, and parsing token sequences. </p>
+</div><h2 class="groupheader">Typedef Documentation</h2>
 <a id="ab701e3ac61a85b337ec5c1abaad6742d" name="ab701e3ac61a85b337ec5c1abaad6742d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab701e3ac61a85b337ec5c1abaad6742d">&#9670;&#160;</a></span>json</h2>
 

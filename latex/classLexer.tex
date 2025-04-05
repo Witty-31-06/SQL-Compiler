@@ -2,6 +2,11 @@
 \hypertarget{classLexer}{}\label{classLexer}\index{Lexer@{Lexer}}
 
 
+A class that tokenizes SQL query strings into a vector of \doxylink{classToken}{Token} objects.  
+
+
+
+
 {\ttfamily \#include $<$Lexer.\+h$>$}
 
 
@@ -18,38 +23,46 @@ Collaboration diagram for Lexer\+:
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classLexer_a2752a2b16cc1ffbcb8fc3e82e95bf331}{Lexer}} ()
-\item 
-vector$<$ \mbox{\hyperlink{classToken}{Token}} $>$ \mbox{\hyperlink{classLexer_a53ca4097e5fdc3038c07104a07d91bf0}{tokenize}} (const string \&)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Default constructor for the \doxylink{classLexer}{Lexer} class. \end{DoxyCompactList}\item 
+vector$<$ \mbox{\hyperlink{classToken}{Token}} $>$ \mbox{\hyperlink{classLexer_abf0e5edeefd5155b71591488ada01e16}{tokenize}} (const string \&input)
+\begin{DoxyCompactList}\small\item\em Tokenizes an input string into a vector of \doxylink{classToken}{Token} objects. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-string \mbox{\hyperlink{classLexer_ab599dcaa2c91238cd49c6c99d69c58f0}{remove\+Spaces}} (string \&t)
-\item 
-bool \mbox{\hyperlink{classLexer_a4546b85fe75e0152a3cba759d18f240d}{is\+Keyword}} (const string \&str)
-\item 
-bool \mbox{\hyperlink{classLexer_acc2c15fd3f25cbc9e0fba3946ddfe1fe}{is\+Identifier}} (const string \&str)
-\item 
 bool \mbox{\hyperlink{classLexer_af0d792d931a1c5c168bc224b5218bdb8}{is\+Operator}} (const string \&str)
-\item 
+\begin{DoxyCompactList}\small\item\em Checks if a string is an SQL operator. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classLexer_a6c8157cad4951a2f24c763ab5645e693}{is\+Numeric\+Literal}} (const string \&str)
-\item 
+\begin{DoxyCompactList}\small\item\em Checks if a string is a numeric literal. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classLexer_aed757d18850c5bfe53b6b0fa65a07587}{is\+String\+Literal}} (const string \&str)
-\item 
+\begin{DoxyCompactList}\small\item\em Checks if a string is a string literal. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classLexer_abebae2e9ca0987e3f06363c48442b054}{is\+Punctuation}} (const string \&str)
-\item 
+\begin{DoxyCompactList}\small\item\em Checks if a string is a punctuation mark. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classLexer_a7d2a073525f3dafc49701dc64fb8455a}{is\+All}} (const string \&str)
-\item 
+\begin{DoxyCompactList}\small\item\em Checks if a string matches all token classification rules (for debugging or special cases). \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classToken}{Token}} \mbox{\hyperlink{classLexer_aeef65cdc820f48477913e8411df2fcf4}{classify\+Token}} (const string \&str)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Classifies a string into a specific \doxylink{classToken}{Token} type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static string \mbox{\hyperlink{classLexer_ab599dcaa2c91238cd49c6c99d69c58f0}{remove\+Spaces}} (string \&t)
+\begin{DoxyCompactList}\small\item\em Removes leading and trailing spaces from a string. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{classLexer_a4546b85fe75e0152a3cba759d18f240d}{is\+Keyword}} (const string \&str)
+\begin{DoxyCompactList}\small\item\em Checks if a string is an SQL keyword. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{classLexer_acc2c15fd3f25cbc9e0fba3946ddfe1fe}{is\+Identifier}} (const string \&str)
+\begin{DoxyCompactList}\small\item\em Checks if a string is a valid SQL identifier. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
 string \mbox{\hyperlink{classLexer_ae589851446b61a31157d5f27829f2c18}{filename}}
-\item 
+\begin{DoxyCompactList}\small\item\em Name of the file being tokenized (if applicable). \end{DoxyCompactList}\item 
 vector$<$ \mbox{\hyperlink{classToken}{Token}} $>$ \mbox{\hyperlink{classLexer_a5271266ba9bc67fc6dc3f7210961f3f6}{tokens}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Vector storing the generated tokens. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+A class that tokenizes SQL query strings into a vector of \doxylink{classToken}{Token} objects. 
+
+The \doxylink{classLexer}{Lexer} class takes an input string (e.\+g., an SQL query) and breaks it down into individual tokens, such as keywords, identifiers, operators, and literals. It uses helper methods to classify each token based on predefined rules and stores the results in a vector. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \Hypertarget{classLexer_a2752a2b16cc1ffbcb8fc3e82e95bf331}\index{Lexer@{Lexer}!Lexer@{Lexer}}
@@ -60,21 +73,51 @@ Lexer\+::\+Lexer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
 
 
+Default constructor for the \doxylink{classLexer}{Lexer} class. 
+
+Initializes an empty \doxylink{classLexer}{Lexer} object with no tokens and an empty filename.
+
+Initializes an empty \doxylink{classLexer}{Lexer} object. The filename and tokens vector are left empty by default. 
+
 \doxysubsection{Member Function Documentation}
 \Hypertarget{classLexer_aeef65cdc820f48477913e8411df2fcf4}\index{Lexer@{Lexer}!classifyToken@{classifyToken}}
 \index{classifyToken@{classifyToken}!Lexer@{Lexer}}
 \doxysubsubsection{\texorpdfstring{classifyToken()}{classifyToken()}}
 {\footnotesize\ttfamily \label{classLexer_aeef65cdc820f48477913e8411df2fcf4} 
-\mbox{\hyperlink{classToken}{Token}} Lexer\+::classify\+Token (\begin{DoxyParamCaption}\item[{const string \&}]{str}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+\mbox{\hyperlink{classToken}{Token}} Lexer\+::classify\+Token (\begin{DoxyParamCaption}\item[{const string \&}]{token}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
-Here is the call graph for this function\+:\nopagebreak
+
+
+Classifies a string into a specific \doxylink{classToken}{Token} type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & The string to classify. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{classToken}{Token} object representing the classified string.
+\end{DoxyReturn}
+Evaluates the input string against various token types (keyword, operator, identifier, etc.) and returns a corresponding \doxylink{classToken}{Token} object. If the string cannot be classified, an error is printed, and the program exits.
+
+
+\begin{DoxyParams}{Parameters}
+{\em token} & The string to classify. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{classToken}{Token} object representing the classified string. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=339pt]{classLexer_aeef65cdc820f48477913e8411df2fcf4_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -87,7 +130,32 @@ Here is the caller graph for this function\+:\nopagebreak
 {\footnotesize\ttfamily \label{classLexer_a7d2a073525f3dafc49701dc64fb8455a} 
 bool Lexer\+::is\+All (\begin{DoxyParamCaption}\item[{const string \&}]{str}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
-Here is the caller graph for this function\+:\nopagebreak
+
+
+Checks if a string matches all token classification rules (for debugging or special cases). 
+
+Checks if a string represents the "{}all"{} wildcard (\texorpdfstring{$\ast$}{*}).
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & The string to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the string matches all rules, false otherwise.
+\end{DoxyReturn}
+Uses a regular expression to match the string against the asterisk (\texorpdfstring{$\ast$}{*}) character.
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & The string to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the string is "{}\texorpdfstring{$\ast$}{*}"{}, false otherwise. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -98,9 +166,32 @@ Here is the caller graph for this function\+:\nopagebreak
 \index{isIdentifier@{isIdentifier}!Lexer@{Lexer}}
 \doxysubsubsection{\texorpdfstring{isIdentifier()}{isIdentifier()}}
 {\footnotesize\ttfamily \label{classLexer_acc2c15fd3f25cbc9e0fba3946ddfe1fe} 
-bool Lexer\+::is\+Identifier (\begin{DoxyParamCaption}\item[{const string \&}]{str}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+bool Lexer\+::is\+Identifier (\begin{DoxyParamCaption}\item[{const string \&}]{str}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
 
-Here is the caller graph for this function\+:\nopagebreak
+
+
+Checks if a string is a valid SQL identifier. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & The string to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the string is an identifier, false otherwise.
+\end{DoxyReturn}
+Uses a regular expression to match the string against the pattern for SQL identifiers (starts with a letter, followed by letters, digits, or underscores).
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & The string to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the string is an identifier, false otherwise. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -111,9 +202,32 @@ Here is the caller graph for this function\+:\nopagebreak
 \index{isKeyword@{isKeyword}!Lexer@{Lexer}}
 \doxysubsubsection{\texorpdfstring{isKeyword()}{isKeyword()}}
 {\footnotesize\ttfamily \label{classLexer_a4546b85fe75e0152a3cba759d18f240d} 
-bool Lexer\+::is\+Keyword (\begin{DoxyParamCaption}\item[{const string \&}]{str}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+bool Lexer\+::is\+Keyword (\begin{DoxyParamCaption}\item[{const string \&}]{str}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
 
-Here is the caller graph for this function\+:\nopagebreak
+
+
+Checks if a string is an SQL keyword. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & The string to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the string is a keyword, false otherwise.
+\end{DoxyReturn}
+Uses a regular expression to match the string against a list of SQL keywords.
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & The string to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the string is a keyword, false otherwise. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -126,7 +240,30 @@ Here is the caller graph for this function\+:\nopagebreak
 {\footnotesize\ttfamily \label{classLexer_a6c8157cad4951a2f24c763ab5645e693} 
 bool Lexer\+::is\+Numeric\+Literal (\begin{DoxyParamCaption}\item[{const string \&}]{str}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
-Here is the caller graph for this function\+:\nopagebreak
+
+
+Checks if a string is a numeric literal. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & The string to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the string is a numeric literal, false otherwise.
+\end{DoxyReturn}
+Uses a regular expression to match the string against the pattern for numeric literals (non-\/zero starting digits or single zero).
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & The string to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the string is a numeric literal, false otherwise. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -139,7 +276,30 @@ Here is the caller graph for this function\+:\nopagebreak
 {\footnotesize\ttfamily \label{classLexer_af0d792d931a1c5c168bc224b5218bdb8} 
 bool Lexer\+::is\+Operator (\begin{DoxyParamCaption}\item[{const string \&}]{str}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
-Here is the caller graph for this function\+:\nopagebreak
+
+
+Checks if a string is an SQL operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & The string to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the string is an operator, false otherwise.
+\end{DoxyReturn}
+Uses a regular expression to match the string against a list of SQL operators.
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & The string to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the string is an operator, false otherwise. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -152,13 +312,48 @@ Here is the caller graph for this function\+:\nopagebreak
 {\footnotesize\ttfamily \label{classLexer_abebae2e9ca0987e3f06363c48442b054} 
 bool Lexer\+::is\+Punctuation (\begin{DoxyParamCaption}\item[{const string \&}]{str}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
+
+
+Checks if a string is a punctuation mark. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & The string to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the string is punctuation, false otherwise. 
+\end{DoxyReturn}
 \Hypertarget{classLexer_aed757d18850c5bfe53b6b0fa65a07587}\index{Lexer@{Lexer}!isStringLiteral@{isStringLiteral}}
 \index{isStringLiteral@{isStringLiteral}!Lexer@{Lexer}}
 \doxysubsubsection{\texorpdfstring{isStringLiteral()}{isStringLiteral()}}
 {\footnotesize\ttfamily \label{classLexer_aed757d18850c5bfe53b6b0fa65a07587} 
 bool Lexer\+::is\+String\+Literal (\begin{DoxyParamCaption}\item[{const string \&}]{str}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
-Here is the caller graph for this function\+:\nopagebreak
+
+
+Checks if a string is a string literal. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & The string to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the string is a string literal, false otherwise.
+\end{DoxyReturn}
+Uses a regular expression to match the string against the pattern for string literals (text enclosed in single quotes).
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & The string to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the string is a string literal, false otherwise. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -169,26 +364,76 @@ Here is the caller graph for this function\+:\nopagebreak
 \index{removeSpaces@{removeSpaces}!Lexer@{Lexer}}
 \doxysubsubsection{\texorpdfstring{removeSpaces()}{removeSpaces()}}
 {\footnotesize\ttfamily \label{classLexer_ab599dcaa2c91238cd49c6c99d69c58f0} 
-string Lexer\+::remove\+Spaces (\begin{DoxyParamCaption}\item[{string \&}]{t}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+string Lexer\+::remove\+Spaces (\begin{DoxyParamCaption}\item[{string \&}]{t}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
 
-\Hypertarget{classLexer_a53ca4097e5fdc3038c07104a07d91bf0}\index{Lexer@{Lexer}!tokenize@{tokenize}}
+
+
+Removes leading and trailing spaces from a string. 
+
+Removes all spaces from a string.
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & The string to process. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The trimmed string with spaces removed.
+\end{DoxyReturn}
+Iterates through the input string and builds a new string containing only non-\/space characters.
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & The string to process. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The string with all spaces removed. 
+\end{DoxyReturn}
+\Hypertarget{classLexer_abf0e5edeefd5155b71591488ada01e16}\index{Lexer@{Lexer}!tokenize@{tokenize}}
 \index{tokenize@{tokenize}!Lexer@{Lexer}}
 \doxysubsubsection{\texorpdfstring{tokenize()}{tokenize()}}
-{\footnotesize\ttfamily \label{classLexer_a53ca4097e5fdc3038c07104a07d91bf0} 
+{\footnotesize\ttfamily \label{classLexer_abf0e5edeefd5155b71591488ada01e16} 
 vector$<$ \mbox{\hyperlink{classToken}{Token}} $>$ Lexer\+::tokenize (\begin{DoxyParamCaption}\item[{const string \&}]{query}{}\end{DoxyParamCaption})}
 
-Here is the call graph for this function\+:\nopagebreak
+
+
+Tokenizes an input string into a vector of \doxylink{classToken}{Token} objects. 
+
+Processes the input string (e.\+g., an SQL query) and generates a sequence of tokens by identifying keywords, identifiers, operators, literals, and punctuation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & The input string to tokenize. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of \doxylink{classToken}{Token} objects representing the tokenized input.
+\end{DoxyReturn}
+Processes the input SQL query string character by character, extracting tokens based on spaces and special characters (e.\+g., parentheses, semicolon). Each extracted string is classified and added to the token vector.
+
+
+\begin{DoxyParams}{Parameters}
+{\em query} & The input SQL query string to tokenize. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of \doxylink{classToken}{Token} objects representing the tokenized input. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{classLexer_a53ca4097e5fdc3038c07104a07d91bf0_cgraph}
+\includegraphics[width=350pt]{classLexer_abf0e5edeefd5155b71591488ada01e16_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{classLexer_a53ca4097e5fdc3038c07104a07d91bf0_icgraph}
+\includegraphics[width=350pt]{classLexer_abf0e5edeefd5155b71591488ada01e16_icgraph}
 \end{center}
 \end{figure}
 
@@ -200,11 +445,19 @@ Here is the caller graph for this function\+:\nopagebreak
 {\footnotesize\ttfamily \label{classLexer_ae589851446b61a31157d5f27829f2c18} 
 string Lexer\+::filename\hspace{0.3cm}{\ttfamily [private]}}
 
+
+
+Name of the file being tokenized (if applicable). 
+
 \Hypertarget{classLexer_a5271266ba9bc67fc6dc3f7210961f3f6}\index{Lexer@{Lexer}!tokens@{tokens}}
 \index{tokens@{tokens}!Lexer@{Lexer}}
 \doxysubsubsection{\texorpdfstring{tokens}{tokens}}
 {\footnotesize\ttfamily \label{classLexer_a5271266ba9bc67fc6dc3f7210961f3f6} 
 vector$<$\mbox{\hyperlink{classToken}{Token}}$>$ Lexer\+::tokens\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Vector storing the generated tokens. 
 
 
 

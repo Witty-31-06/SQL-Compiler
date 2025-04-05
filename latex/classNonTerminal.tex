@@ -2,6 +2,11 @@
 \hypertarget{classNonTerminal}{}\label{classNonTerminal}\index{NonTerminal@{NonTerminal}}
 
 
+Derived class representing a non-\/terminal symbol in the grammar.  
+
+
+
+
 {\ttfamily \#include $<$parser.\+h$>$}
 
 
@@ -28,29 +33,34 @@ Collaboration diagram for Non\+Terminal\+:
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classNonTerminal_a409576a130daba865db9e6ff6b385be5}{Non\+Terminal}} (string \mbox{\hyperlink{classSymbol_a5a6510dbf012192a46984e4c6b8f315c}{symbol}})
-\item 
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classNonTerminal}{Non\+Terminal} with a given name. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classNonTerminal_a7d040e5e4754f3700921226fbc88fa67}{operator==}} (const \mbox{\hyperlink{classNonTerminal}{Non\+Terminal}} \&other) const
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Compares this non-\/terminal with another for equality. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classSymbol}{Symbol}}}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classSymbol_a6e5009e9408693d2f7240d1e8662c278}{Symbol}} (string \mbox{\hyperlink{classSymbol_a5a6510dbf012192a46984e4c6b8f315c}{symbol}}, bool \mbox{\hyperlink{classSymbol_a7911a477f0959199fd61fb6a37fb5397}{is\+Terminal}})
-\item 
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classSymbol}{Symbol} with a given name and terminal status. \end{DoxyCompactList}\item 
 string \mbox{\hyperlink{classSymbol_a626bdd3948ea431fa1281416e0d012d5}{get\+Symbol}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Gets the string representation of the symbol. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classSymbol_aec1e9bf10060bdfd209414b69044a357}{get\+Is\+Terminal}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Checks if the symbol is a terminal. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classSymbol_aa30b510ea651d376f68346a018ff8fea}{operator==}} (const \mbox{\hyperlink{classSymbol}{Symbol}} \&other) const
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Compares this symbol with another for equality. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Additional Inherited Members}
 \doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classSymbol}{Symbol}}}
 \begin{DoxyCompactItemize}
 \item 
 string \mbox{\hyperlink{classSymbol_a5a6510dbf012192a46984e4c6b8f315c}{symbol}}
-\item 
+\begin{DoxyCompactList}\small\item\em The string representation of the symbol. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classSymbol_a7911a477f0959199fd61fb6a37fb5397}{is\+Terminal}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em True if the symbol is a terminal, false if it is a non-\/terminal. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+Derived class representing a non-\/terminal symbol in the grammar. 
+
+Inherits from \doxylink{classSymbol}{Symbol} and specifies that the symbol is a non-\/terminal. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \Hypertarget{classNonTerminal_a409576a130daba865db9e6ff6b385be5}\index{NonTerminal@{NonTerminal}!NonTerminal@{NonTerminal}}
@@ -61,6 +71,17 @@ Non\+Terminal\+::\+Non\+Terminal (\begin{DoxyParamCaption}\item[{string}]{symbol
 
 
 
+Constructs a \doxylink{classNonTerminal}{Non\+Terminal} with a given name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em symbol} & The string representation of the non-\/terminal.\\
+\hline
+{\em symbol} & The non-\/terminal name. \\
+\hline
+\end{DoxyParams}
+
+
 \doxysubsection{Member Function Documentation}
 \Hypertarget{classNonTerminal_a7d040e5e4754f3700921226fbc88fa67}\index{NonTerminal@{NonTerminal}!operator==@{operator==}}
 \index{operator==@{operator==}!NonTerminal@{NonTerminal}}
@@ -68,7 +89,28 @@ Non\+Terminal\+::\+Non\+Terminal (\begin{DoxyParamCaption}\item[{string}]{symbol
 {\footnotesize\ttfamily \label{classNonTerminal_a7d040e5e4754f3700921226fbc88fa67} 
 bool Non\+Terminal\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classNonTerminal}{Non\+Terminal}} \&}]{other}{}\end{DoxyParamCaption}) const}
 
-Here is the call graph for this function\+:\nopagebreak
+
+
+Compares this non-\/terminal with another for equality. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The other \doxylink{classNonTerminal}{Non\+Terminal} to compare with. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the non-\/terminals are equal, false otherwise.
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The other \doxylink{classNonTerminal}{Non\+Terminal} to compare with. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if equal, false otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

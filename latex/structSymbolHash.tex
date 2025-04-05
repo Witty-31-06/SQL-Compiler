@@ -2,6 +2,11 @@
 \hypertarget{structSymbolHash}{}\label{structSymbolHash}\index{SymbolHash@{SymbolHash}}
 
 
+Hash function object for \doxylink{classSymbol}{Symbol} objects.  
+
+
+
+
 {\ttfamily \#include $<$parser.\+h$>$}
 
 
@@ -18,8 +23,13 @@ Collaboration diagram for Symbol\+Hash\+:
 \begin{DoxyCompactItemize}
 \item 
 size\+\_\+t \mbox{\hyperlink{structSymbolHash_a1a1337eb6dd5e949ed42b80b7c1332e7}{operator()}} (const \mbox{\hyperlink{classSymbol}{Symbol}} \&s) const
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Computes the hash value of a \doxylink{classSymbol}{Symbol}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+Hash function object for \doxylink{classSymbol}{Symbol} objects. 
+
+Provides a hash function for use with unordered containers that store \doxylink{classSymbol}{Symbol} objects. 
 
 \doxysubsection{Member Function Documentation}
 \Hypertarget{structSymbolHash_a1a1337eb6dd5e949ed42b80b7c1332e7}\index{SymbolHash@{SymbolHash}!operator()@{operator()}}
@@ -28,7 +38,28 @@ size\+\_\+t \mbox{\hyperlink{structSymbolHash_a1a1337eb6dd5e949ed42b80b7c1332e7}
 {\footnotesize\ttfamily \label{structSymbolHash_a1a1337eb6dd5e949ed42b80b7c1332e7} 
 size\+\_\+t Symbol\+Hash\+::operator() (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classSymbol}{Symbol}} \&}]{s}{}\end{DoxyParamCaption}) const}
 
-Here is the call graph for this function\+:\nopagebreak
+
+
+Computes the hash value of a \doxylink{classSymbol}{Symbol}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & The \doxylink{classSymbol}{Symbol} to hash. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The hash value of the symbol.
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em s} & The \doxylink{classSymbol}{Symbol} to hash. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The hash value based on the symbol string. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

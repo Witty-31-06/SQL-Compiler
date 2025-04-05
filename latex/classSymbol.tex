@@ -2,6 +2,11 @@
 \hypertarget{classSymbol}{}\label{classSymbol}\index{Symbol@{Symbol}}
 
 
+Base class representing a symbol in the grammar (terminal or non-\/terminal).  
+
+
+
+
 {\ttfamily \#include $<$parser.\+h$>$}
 
 
@@ -28,29 +33,49 @@ Collaboration diagram for Symbol\+:
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classSymbol_a6e5009e9408693d2f7240d1e8662c278}{Symbol}} (string \mbox{\hyperlink{classSymbol_a5a6510dbf012192a46984e4c6b8f315c}{symbol}}, bool \mbox{\hyperlink{classSymbol_a7911a477f0959199fd61fb6a37fb5397}{is\+Terminal}})
-\item 
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classSymbol}{Symbol} with a given name and terminal status. \end{DoxyCompactList}\item 
 string \mbox{\hyperlink{classSymbol_a626bdd3948ea431fa1281416e0d012d5}{get\+Symbol}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Gets the string representation of the symbol. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classSymbol_aec1e9bf10060bdfd209414b69044a357}{get\+Is\+Terminal}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Checks if the symbol is a terminal. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classSymbol_aa30b510ea651d376f68346a018ff8fea}{operator==}} (const \mbox{\hyperlink{classSymbol}{Symbol}} \&other) const
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Compares this symbol with another for equality. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
 string \mbox{\hyperlink{classSymbol_a5a6510dbf012192a46984e4c6b8f315c}{symbol}}
-\item 
+\begin{DoxyCompactList}\small\item\em The string representation of the symbol. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classSymbol_a7911a477f0959199fd61fb6a37fb5397}{is\+Terminal}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em True if the symbol is a terminal, false if it is a non-\/terminal. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+Base class representing a symbol in the grammar (terminal or non-\/terminal). 
+
+The \doxylink{classSymbol}{Symbol} class encapsulates a string representation of a grammar symbol and a flag indicating whether it is a terminal or non-\/terminal symbol. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \Hypertarget{classSymbol_a6e5009e9408693d2f7240d1e8662c278}\index{Symbol@{Symbol}!Symbol@{Symbol}}
 \index{Symbol@{Symbol}!Symbol@{Symbol}}
 \doxysubsubsection{\texorpdfstring{Symbol()}{Symbol()}}
 {\footnotesize\ttfamily \label{classSymbol_a6e5009e9408693d2f7240d1e8662c278} 
-Symbol\+::\+Symbol (\begin{DoxyParamCaption}\item[{string}]{symbol}{, }\item[{bool}]{is\+Terminal}{}\end{DoxyParamCaption})}
+Symbol\+::\+Symbol (\begin{DoxyParamCaption}\item[{string}]{s}{, }\item[{bool}]{t}{}\end{DoxyParamCaption})}
 
+
+
+Constructs a \doxylink{classSymbol}{Symbol} with a given name and terminal status. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em symbol} & The string representation of the symbol. \\
+\hline
+{\em is\+Terminal} & True if the symbol is a terminal, false otherwise.\\
+\hline
+{\em s} & The string representation of the symbol. \\
+\hline
+{\em t} & True if the symbol is a terminal, false otherwise. \\
+\hline
+\end{DoxyParams}
 
 
 \doxysubsection{Member Function Documentation}
@@ -60,13 +85,30 @@ Symbol\+::\+Symbol (\begin{DoxyParamCaption}\item[{string}]{symbol}{, }\item[{bo
 {\footnotesize\ttfamily \label{classSymbol_aec1e9bf10060bdfd209414b69044a357} 
 bool Symbol\+::get\+Is\+Terminal (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
 
+
+
+Checks if the symbol is a terminal. 
+
+\begin{DoxyReturn}{Returns}
+True if the symbol is a terminal, false otherwise.
+
+True if terminal, false otherwise. 
+\end{DoxyReturn}
 \Hypertarget{classSymbol_a626bdd3948ea431fa1281416e0d012d5}\index{Symbol@{Symbol}!getSymbol@{getSymbol}}
 \index{getSymbol@{getSymbol}!Symbol@{Symbol}}
 \doxysubsubsection{\texorpdfstring{getSymbol()}{getSymbol()}}
 {\footnotesize\ttfamily \label{classSymbol_a626bdd3948ea431fa1281416e0d012d5} 
 string Symbol\+::get\+Symbol (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
 
-Here is the caller graph for this function\+:\nopagebreak
+
+
+Gets the string representation of the symbol. 
+
+\begin{DoxyReturn}{Returns}
+The symbol string. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -81,6 +123,18 @@ bool Symbol\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink
 
 
 
+Compares this symbol with another for equality. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The other \doxylink{classSymbol}{Symbol} to compare with. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the symbols are equal, false otherwise. 
+\end{DoxyReturn}
+
+
 \doxysubsection{Member Data Documentation}
 \Hypertarget{classSymbol_a7911a477f0959199fd61fb6a37fb5397}\index{Symbol@{Symbol}!isTerminal@{isTerminal}}
 \index{isTerminal@{isTerminal}!Symbol@{Symbol}}
@@ -88,11 +142,19 @@ bool Symbol\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink
 {\footnotesize\ttfamily \label{classSymbol_a7911a477f0959199fd61fb6a37fb5397} 
 bool Symbol\+::is\+Terminal\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+True if the symbol is a terminal, false if it is a non-\/terminal. 
+
 \Hypertarget{classSymbol_a5a6510dbf012192a46984e4c6b8f315c}\index{Symbol@{Symbol}!symbol@{symbol}}
 \index{symbol@{symbol}!Symbol@{Symbol}}
 \doxysubsubsection{\texorpdfstring{symbol}{symbol}}
 {\footnotesize\ttfamily \label{classSymbol_a5a6510dbf012192a46984e4c6b8f315c} 
 string Symbol\+::symbol\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The string representation of the symbol. 
 
 
 

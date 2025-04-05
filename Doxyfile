@@ -12,7 +12,7 @@ EXTRACT_STATIC         = YES
 CALL_GRAPH             = YES
 CALLER_GRAPH           = YES
 DOT_CLEANUP            = YES
-
+RECURSIVE = YES
 # Diagrams
 HAVE_DOT               = YES  # Enables Graphviz support
 CLASS_DIAGRAMS         = YES  # Enables UML-like class diagrams

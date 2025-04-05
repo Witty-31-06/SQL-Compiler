@@ -1,16 +1,23 @@
 \doxysection{include/parser.h File Reference}
 \hypertarget{parser_8h}{}\label{parser_8h}\index{include/parser.h@{include/parser.h}}
+
+
+Header file for the \doxylink{classParser}{Parser} class and related symbol classes for LL1 parsing of SQL queries.  
+
+
 {\ttfamily \#include $<$bits/stdc++.\+h$>$}\newline
 {\ttfamily \#include $<$memory$>$}\newline
 {\ttfamily \#include "{}Token.\+h"{}}\newline
-Include dependency graph for parser.\+h\+:\nopagebreak
+Include dependency graph for parser.\+h\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=292pt]{parser_8h__incl}
 \end{center}
 \end{figure}
-This graph shows which files directly or indirectly include this file\+:\nopagebreak
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -21,12 +28,18 @@ This graph shows which files directly or indirectly include this file\+:\nopageb
 \begin{DoxyCompactItemize}
 \item 
 class \mbox{\hyperlink{classSymbol}{Symbol}}
-\item 
+\begin{DoxyCompactList}\small\item\em Base class representing a symbol in the grammar (terminal or non-\/terminal). \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structSymbolHash}{Symbol\+Hash}}
-\item 
+\begin{DoxyCompactList}\small\item\em Hash function object for \doxylink{classSymbol}{Symbol} objects. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classNonTerminal}{Non\+Terminal}}
-\item 
+\begin{DoxyCompactList}\small\item\em Derived class representing a non-\/terminal symbol in the grammar. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classTerminal}{Terminal}}
-\item 
+\begin{DoxyCompactList}\small\item\em Derived class representing a terminal symbol in the grammar. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classParser}{Parser}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em A class implementing an LL1 parser for SQL queries. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header file for the \doxylink{classParser}{Parser} class and related symbol classes for LL1 parsing of SQL queries. 
+
+This file defines the \doxylink{classSymbol}{Symbol}, \doxylink{classNonTerminal}{Non\+Terminal}, \doxylink{classTerminal}{Terminal}, and \doxylink{classParser}{Parser} classes, which together implement an LL1 parser for SQL queries using a grammar loaded from a file. 

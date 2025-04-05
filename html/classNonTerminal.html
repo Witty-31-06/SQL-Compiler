@@ -91,14 +91,17 @@ $(function(){ initResizable(false); });
 </div><!--header-->
 <div class="contents">
 
+<p>Derived class representing a non-terminal symbol in the grammar.  
+ <a href="#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="parser_8h_source.html">parser.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for NonTerminal:</div>
 <div class="dyncontent">
 <div class="center"><img src="classNonTerminal__inherit__graph.png" border="0" usemap="#aNonTerminal_inherit__map" alt="Inheritance graph"/></div>
 <map name="aNonTerminal_inherit__map" id="aNonTerminal_inherit__map">
-<area shape="rect" title=" " alt="" coords="8,208,112,299"/>
-<area shape="rect" href="classSymbol.html" title=" " alt="" coords="5,5,115,160"/>
+<area shape="rect" title="Derived class representing a non&#45;terminal symbol in the grammar." alt="" coords="8,208,112,299"/>
+<area shape="rect" href="classSymbol.html" title="Base class representing a symbol in the grammar (terminal or non&#45;terminal)." alt="" coords="5,5,115,160"/>
 <area shape="poly" title=" " alt="" coords="63,175,63,208,57,208,57,175"/>
 </map>
 </div>
@@ -107,8 +110,8 @@ Collaboration diagram for NonTerminal:</div>
 <div class="dyncontent">
 <div class="center"><img src="classNonTerminal__coll__graph.png" border="0" usemap="#aNonTerminal_coll__map" alt="Collaboration graph"/></div>
 <map name="aNonTerminal_coll__map" id="aNonTerminal_coll__map">
-<area shape="rect" title=" " alt="" coords="8,208,112,299"/>
-<area shape="rect" href="classSymbol.html" title=" " alt="" coords="5,5,115,160"/>
+<area shape="rect" title="Derived class representing a non&#45;terminal symbol in the grammar." alt="" coords="8,208,112,299"/>
+<area shape="rect" href="classSymbol.html" title="Base class representing a symbol in the grammar (terminal or non&#45;terminal)." alt="" coords="5,5,115,160"/>
 <area shape="poly" title=" " alt="" coords="63,175,63,208,57,208,57,175"/>
 </map>
 </div>
@@ -116,28 +119,39 @@ Collaboration diagram for NonTerminal:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a409576a130daba865db9e6ff6b385be5" id="r_a409576a130daba865db9e6ff6b385be5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a409576a130daba865db9e6ff6b385be5">NonTerminal</a> (string <a class="el" href="classSymbol.html#a5a6510dbf012192a46984e4c6b8f315c">symbol</a>)</td></tr>
+<tr class="memdesc:a409576a130daba865db9e6ff6b385be5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="classNonTerminal.html" title="Derived class representing a non-terminal symbol in the grammar.">NonTerminal</a> with a given name.  <br /></td></tr>
 <tr class="separator:a409576a130daba865db9e6ff6b385be5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7d040e5e4754f3700921226fbc88fa67" id="r_a7d040e5e4754f3700921226fbc88fa67"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7d040e5e4754f3700921226fbc88fa67">operator==</a> (const <a class="el" href="classNonTerminal.html">NonTerminal</a> &amp;other) const</td></tr>
+<tr class="memdesc:a7d040e5e4754f3700921226fbc88fa67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares this non-terminal with another for equality.  <br /></td></tr>
 <tr class="separator:a7d040e5e4754f3700921226fbc88fa67"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classSymbol"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classSymbol')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classSymbol.html">Symbol</a></td></tr>
 <tr class="memitem:a6e5009e9408693d2f7240d1e8662c278 inherit pub_methods_classSymbol" id="r_a6e5009e9408693d2f7240d1e8662c278"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSymbol.html#a6e5009e9408693d2f7240d1e8662c278">Symbol</a> (string <a class="el" href="classSymbol.html#a5a6510dbf012192a46984e4c6b8f315c">symbol</a>, bool <a class="el" href="classSymbol.html#a7911a477f0959199fd61fb6a37fb5397">isTerminal</a>)</td></tr>
+<tr class="memdesc:a6e5009e9408693d2f7240d1e8662c278 inherit pub_methods_classSymbol"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="classSymbol.html" title="Base class representing a symbol in the grammar (terminal or non-terminal).">Symbol</a> with a given name and terminal status.  <br /></td></tr>
 <tr class="separator:a6e5009e9408693d2f7240d1e8662c278 inherit pub_methods_classSymbol"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a626bdd3948ea431fa1281416e0d012d5 inherit pub_methods_classSymbol" id="r_a626bdd3948ea431fa1281416e0d012d5"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSymbol.html#a626bdd3948ea431fa1281416e0d012d5">getSymbol</a> () const</td></tr>
+<tr class="memdesc:a626bdd3948ea431fa1281416e0d012d5 inherit pub_methods_classSymbol"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the string representation of the symbol.  <br /></td></tr>
 <tr class="separator:a626bdd3948ea431fa1281416e0d012d5 inherit pub_methods_classSymbol"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aec1e9bf10060bdfd209414b69044a357 inherit pub_methods_classSymbol" id="r_aec1e9bf10060bdfd209414b69044a357"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSymbol.html#aec1e9bf10060bdfd209414b69044a357">getIsTerminal</a> () const</td></tr>
+<tr class="memdesc:aec1e9bf10060bdfd209414b69044a357 inherit pub_methods_classSymbol"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the symbol is a terminal.  <br /></td></tr>
 <tr class="separator:aec1e9bf10060bdfd209414b69044a357 inherit pub_methods_classSymbol"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa30b510ea651d376f68346a018ff8fea inherit pub_methods_classSymbol" id="r_aa30b510ea651d376f68346a018ff8fea"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSymbol.html#aa30b510ea651d376f68346a018ff8fea">operator==</a> (const <a class="el" href="classSymbol.html">Symbol</a> &amp;other) const</td></tr>
+<tr class="memdesc:aa30b510ea651d376f68346a018ff8fea inherit pub_methods_classSymbol"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares this symbol with another for equality.  <br /></td></tr>
 <tr class="separator:aa30b510ea651d376f68346a018ff8fea inherit pub_methods_classSymbol"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_attribs_classSymbol"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_attribs_classSymbol')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classSymbol.html">Symbol</a></td></tr>
 <tr class="memitem:a5a6510dbf012192a46984e4c6b8f315c inherit pro_attribs_classSymbol" id="r_a5a6510dbf012192a46984e4c6b8f315c"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSymbol.html#a5a6510dbf012192a46984e4c6b8f315c">symbol</a></td></tr>
+<tr class="memdesc:a5a6510dbf012192a46984e4c6b8f315c inherit pro_attribs_classSymbol"><td class="mdescLeft">&#160;</td><td class="mdescRight">The string representation of the symbol.  <br /></td></tr>
 <tr class="separator:a5a6510dbf012192a46984e4c6b8f315c inherit pro_attribs_classSymbol"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7911a477f0959199fd61fb6a37fb5397 inherit pro_attribs_classSymbol" id="r_a7911a477f0959199fd61fb6a37fb5397"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSymbol.html#a7911a477f0959199fd61fb6a37fb5397">isTerminal</a></td></tr>
+<tr class="memdesc:a7911a477f0959199fd61fb6a37fb5397 inherit pro_attribs_classSymbol"><td class="mdescLeft">&#160;</td><td class="mdescRight">True if the symbol is a terminal, false if it is a non-terminal.  <br /></td></tr>
 <tr class="separator:a7911a477f0959199fd61fb6a37fb5397 inherit pro_attribs_classSymbol"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Derived class representing a non-terminal symbol in the grammar. </p>
+<p>Inherits from <a class="el" href="classSymbol.html" title="Base class representing a symbol in the grammar (terminal or non-terminal).">Symbol</a> and specifies that the symbol is a non-terminal. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a409576a130daba865db9e6ff6b385be5" name="a409576a130daba865db9e6ff6b385be5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a409576a130daba865db9e6ff6b385be5">&#9670;&#160;</a></span>NonTerminal()</h2>
 
@@ -152,6 +166,15 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Constructs a <a class="el" href="classNonTerminal.html" title="Derived class representing a non-terminal symbol in the grammar.">NonTerminal</a> with a given name. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">symbol</td><td>The string representation of the non-terminal.</td></tr>
+    <tr><td class="paramname">symbol</td><td>The non-terminal name. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -170,13 +193,29 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Compares this non-terminal with another for equality. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>The other <a class="el" href="classNonTerminal.html" title="Derived class representing a non-terminal symbol in the grammar.">NonTerminal</a> to compare with. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the non-terminals are equal, false otherwise.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>The other <a class="el" href="classNonTerminal.html" title="Derived class representing a non-terminal symbol in the grammar.">NonTerminal</a> to compare with. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if equal, false otherwise. </dd></dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classNonTerminal_a7d040e5e4754f3700921226fbc88fa67_cgraph.png" border="0" usemap="#aclassNonTerminal_a7d040e5e4754f3700921226fbc88fa67_cgraph" alt=""/></div>
 <map name="aclassNonTerminal_a7d040e5e4754f3700921226fbc88fa67_cgraph" id="aclassNonTerminal_a7d040e5e4754f3700921226fbc88fa67_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,171,32"/>
-<area shape="rect" href="classSymbol.html#a626bdd3948ea431fa1281416e0d012d5" title=" " alt="" coords="219,5,354,32"/>
+<area shape="rect" title="Compares this non&#45;terminal with another for equality." alt="" coords="5,5,171,32"/>
+<area shape="rect" href="classSymbol.html#a626bdd3948ea431fa1281416e0d012d5" title="Gets the string representation of the symbol." alt="" coords="219,5,354,32"/>
 <area shape="poly" title=" " alt="" coords="171,16,203,16,203,21,171,21"/>
 </map>
 </div>

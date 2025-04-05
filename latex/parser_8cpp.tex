@@ -1,13 +1,18 @@
 \doxysection{src/parser.cpp File Reference}
 \hypertarget{parser_8cpp}{}\label{parser_8cpp}\index{src/parser.cpp@{src/parser.cpp}}
+
+
+Implementation of the \doxylink{classParser}{Parser} class and related symbol classes for LL1 parsing of SQL queries.  
+
+
 {\ttfamily \#include "{}parser.\+h"{}}\newline
 {\ttfamily \#include $<$iostream$>$}\newline
 {\ttfamily \#include $<$unordered\+\_\+map$>$}\newline
 {\ttfamily \#include $<$nlohmann/json.\+hpp$>$}\newline
 {\ttfamily \#include $<$memory$>$}\newline
-{\ttfamily \#include $<$iomanip$>$}\newline
 {\ttfamily \#include $<$tabulate/table.\+hpp$>$}\newline
-Include dependency graph for parser.\+cpp\+:\nopagebreak
+Include dependency graph for parser.\+cpp\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -20,6 +25,11 @@ Include dependency graph for parser.\+cpp\+:\nopagebreak
 using \mbox{\hyperlink{parser_8cpp_ab701e3ac61a85b337ec5c1abaad6742d}{json}} = nlohmann\+::json
 \end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+Implementation of the \doxylink{classParser}{Parser} class and related symbol classes for LL1 parsing of SQL queries. 
+
+This file contains the definitions of the \doxylink{classSymbol}{Symbol}, \doxylink{classNonTerminal}{Non\+Terminal}, \doxylink{classTerminal}{Terminal}, and \doxylink{classParser}{Parser} class methods, which implement an LL1 parser for SQL queries by loading a grammar, computing FIRST and FOLLOW sets, constructing an LL1 table, and parsing token sequences. 
 
 \doxysubsection{Typedef Documentation}
 \Hypertarget{parser_8cpp_ab701e3ac61a85b337ec5c1abaad6742d}\index{parser.cpp@{parser.cpp}!json@{json}}

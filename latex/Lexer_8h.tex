@@ -1,19 +1,24 @@
 \doxysection{include/\+Lexer.h File Reference}
 \hypertarget{Lexer_8h}{}\label{Lexer_8h}\index{include/Lexer.h@{include/Lexer.h}}
+
+
+Header file for the \doxylink{classLexer}{Lexer} class, responsible for tokenizing SQL query strings.  
+
+
 {\ttfamily \#include $<$vector$>$}\newline
 {\ttfamily \#include $<$string$>$}\newline
-{\ttfamily \#include $<$iostream$>$}\newline
 {\ttfamily \#include $<$regex$>$}\newline
-{\ttfamily \#include $<$fstream$>$}\newline
 {\ttfamily \#include "{}Token.\+h"{}}\newline
-Include dependency graph for Lexer.\+h\+:\nopagebreak
+Include dependency graph for Lexer.\+h\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{Lexer_8h__incl}
+\includegraphics[width=288pt]{Lexer_8h__incl}
 \end{center}
 \end{figure}
-This graph shows which files directly or indirectly include this file\+:\nopagebreak
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -24,4 +29,10 @@ This graph shows which files directly or indirectly include this file\+:\nopageb
 \begin{DoxyCompactItemize}
 \item 
 class \mbox{\hyperlink{classLexer}{Lexer}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em A class that tokenizes SQL query strings into a vector of \doxylink{classToken}{Token} objects. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header file for the \doxylink{classLexer}{Lexer} class, responsible for tokenizing SQL query strings. 
+
+This file defines the \doxylink{classLexer}{Lexer} class, which processes input strings and converts them into a sequence of tokens for use in an LL1 parser for SQL queries. 

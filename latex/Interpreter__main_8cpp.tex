@@ -4,7 +4,8 @@
 {\ttfamily \#include $<$iostream$>$}\newline
 {\ttfamily \#include $<$unordered\+\_\+map$>$}\newline
 {\ttfamily \#include $<$vector$>$}\newline
-Include dependency graph for Interpreter\+\_\+main.\+cpp\+:\nopagebreak
+Include dependency graph for Interpreter\+\_\+main.\+cpp\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -15,9 +16,9 @@ Include dependency graph for Interpreter\+\_\+main.\+cpp\+:\nopagebreak
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{Interpreter__main_8cpp_a7e050397070ce07d55a0114ec6f27387}{print\+Help}} (const std\+::string \&prog\+Name)
-\item 
+\begin{DoxyCompactList}\small\item\em Prints the help message for the SQL interpreter program. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{Interpreter__main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char \texorpdfstring{$\ast$}{*}argv\mbox{[}$\,$\mbox{]})
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Main entry point for the SQL interpreter program. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
@@ -27,7 +28,26 @@ int \mbox{\hyperlink{Interpreter__main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{m
 {\footnotesize\ttfamily \label{Interpreter__main_8cpp_a0ddf1224851353fc92bfbff6f499fa97} 
 int main (\begin{DoxyParamCaption}\item[{int}]{argc}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{argv}{\mbox{[}$\,$\mbox{]}}\end{DoxyParamCaption})}
 
-Here is the call graph for this function\+:\nopagebreak
+
+
+Main entry point for the SQL interpreter program. 
+
+Parses command-\/line arguments to configure the verbosity level and initializes the SQL interpreter. Supports options for verbosity (-\/v or --verbose) and help (-\/h or --help). If invalid arguments or verbosity levels are provided, an error message is displayed, and the program exits with a non-\/zero status.
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & Number of command-\/line arguments. \\
+\hline
+{\em argv} & Array of command-\/line argument strings. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Exit status (0 for success, 1 for failure). 
+\end{DoxyReturn}
+\texorpdfstring{$<$}{<} Stores parsed command-\/line arguments.
+
+\texorpdfstring{$<$}{<} List of valid flags.Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -40,7 +60,19 @@ Here is the call graph for this function\+:\nopagebreak
 {\footnotesize\ttfamily \label{Interpreter__main_8cpp_a7e050397070ce07d55a0114ec6f27387} 
 void print\+Help (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{prog\+Name}{}\end{DoxyParamCaption})}
 
-Here is the caller graph for this function\+:\nopagebreak
+
+
+Prints the help message for the SQL interpreter program. 
+
+Displays the usage instructions and available command-\/line options to the standard output. This function is called when the user requests help via the -\/h or --help flag or when an error occurs.
+
+
+\begin{DoxyParams}{Parameters}
+{\em prog\+Name} & The name of the program (typically argv\mbox{[}0\mbox{]}). \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

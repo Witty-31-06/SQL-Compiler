@@ -91,6 +91,9 @@ $(function(){ initResizable(false); });
   <div class="headertitle"><div class="title">SQL_Interpreter.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Implementation of the <a class="el" href="classSQLInterpreter.html" title="A class that interprets SQL queries using a lexer and parser.">SQLInterpreter</a> class for interpreting SQL queries.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="SQL__Intepreter_8h_source.html">SQL_Intepreter.h</a>&quot;</code><br />
 <code>#include &lt;iostream&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
@@ -98,35 +101,35 @@ Include dependency graph for SQL_Interpreter.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="SQL__Interpreter_8cpp__incl.png" border="0" usemap="#asrc_2SQL__Interpreter_8cpp" alt=""/></div>
 <map name="asrc_2SQL__Interpreter_8cpp" id="asrc_2SQL__Interpreter_8cpp">
-<area shape="rect" title=" " alt="" coords="18,5,178,32"/>
-<area shape="rect" href="SQL__Intepreter_8h.html" title=" " alt="" coords="98,80,218,107"/>
-<area shape="poly" title=" " alt="" coords="111,31,141,66,136,70,107,34"/>
-<area shape="rect" title=" " alt="" coords="5,229,77,256"/>
-<area shape="poly" title=" " alt="" coords="98,33,51,215,45,214,93,32"/>
-<area shape="poly" title=" " alt="" coords="150,109,62,219,58,216,146,106"/>
-<area shape="rect" href="Lexer_8h.html" title=" " alt="" coords="164,155,228,181"/>
-<area shape="poly" title=" " alt="" coords="167,106,185,140,180,142,162,108"/>
-<area shape="rect" href="parser_8h.html" title=" " alt="" coords="454,155,522,181"/>
-<area shape="poly" title=" " alt="" coords="217,105,439,153,438,158,216,110"/>
-<area shape="poly" title=" " alt="" coords="170,184,83,225,81,220,168,179"/>
-<area shape="rect" title=" " alt="" coords="100,229,158,256"/>
-<area shape="poly" title=" " alt="" coords="186,184,153,220,149,216,182,180"/>
-<area shape="rect" title=" " alt="" coords="288,304,341,331"/>
-<area shape="poly" title=" " alt="" coords="199,181,206,216,213,236,223,254,247,278,275,296,272,300,244,282,219,258,208,239,201,218,194,182"/>
-<area shape="rect" title=" " alt="" coords="233,229,286,256"/>
-<area shape="poly" title=" " alt="" coords="209,180,240,216,237,219,205,184"/>
-<area shape="rect" title=" " alt="" coords="311,229,376,256"/>
-<area shape="poly" title=" " alt="" coords="223,179,305,220,303,224,220,184"/>
-<area shape="rect" href="Token_8h.html" title=" " alt="" coords="401,229,468,256"/>
-<area shape="poly" title=" " alt="" coords="229,177,387,224,385,229,228,182"/>
-<area shape="poly" title=" " alt="" coords="415,259,350,298,347,293,412,254"/>
-<area shape="poly" title=" " alt="" coords="481,183,455,218,450,215,476,180"/>
-<area shape="rect" title=" " alt="" coords="492,229,590,256"/>
-<area shape="poly" title=" " alt="" coords="499,180,525,215,521,218,495,183"/>
-<area shape="rect" title=" " alt="" coords="615,229,683,256"/>
-<area shape="poly" title=" " alt="" coords="517,179,608,220,606,225,515,184"/>
+<area shape="rect" title="Implementation of the SQLInterpreter class for interpreting SQL queries." alt="" coords="36,5,197,32"/>
+<area shape="rect" href="SQL__Intepreter_8h.html" title=" " alt="" coords="106,80,226,107"/>
+<area shape="poly" title=" " alt="" coords="127,31,151,66,147,69,123,34"/>
+<area shape="rect" title=" " alt="" coords="36,155,107,181"/>
+<area shape="poly" title=" " alt="" coords="114,33,97,81,80,140,75,139,91,79,109,31"/>
+<area shape="poly" title=" " alt="" coords="151,109,101,147,98,143,148,105"/>
+<area shape="rect" href="Lexer_8h.html" title="Header file for the Lexer class, responsible for tokenizing SQL query strings." alt="" coords="132,155,197,181"/>
+<area shape="poly" title=" " alt="" coords="168,107,168,139,163,139,163,107"/>
+<area shape="rect" href="parser_8h.html" title="Header file for the Parser class and related symbol classes for LL1 parsing of SQL queries." alt="" coords="270,155,339,181"/>
+<area shape="poly" title=" " alt="" coords="191,105,268,145,266,149,189,110"/>
+<area shape="rect" title=" " alt="" coords="5,229,63,256"/>
+<area shape="poly" title=" " alt="" coords="143,184,72,224,69,219,141,180"/>
+<area shape="rect" title=" " alt="" coords="147,304,201,331"/>
+<area shape="poly" title=" " alt="" coords="155,183,133,216,127,236,129,255,138,274,151,291,147,294,134,277,123,257,121,235,128,214,150,180"/>
+<area shape="rect" title=" " alt="" coords="138,229,191,256"/>
+<area shape="poly" title=" " alt="" coords="167,182,167,214,162,214,162,182"/>
+<area shape="rect" href="Token_8h.html" title="Header file for the Token class, representing a single token in an SQL query." alt="" coords="215,229,282,256"/>
+<area shape="poly" title=" " alt="" coords="181,180,224,217,221,221,178,184"/>
+<area shape="poly" title=" " alt="" coords="238,258,199,295,196,291,234,255"/>
+<area shape="poly" title=" " alt="" coords="297,184,270,219,265,215,293,180"/>
+<area shape="rect" title=" " alt="" coords="306,229,404,256"/>
+<area shape="poly" title=" " alt="" coords="316,180,340,215,336,218,311,183"/>
+<area shape="rect" title=" " alt="" coords="429,229,498,256"/>
+<area shape="poly" title=" " alt="" coords="333,179,423,220,420,225,331,184"/>
 </map>
 </div>
+</div><a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Implementation of the <a class="el" href="classSQLInterpreter.html" title="A class that interprets SQL queries using a lexer and parser.">SQLInterpreter</a> class for interpreting SQL queries. </p>
+<p>This file contains the definitions of the <a class="el" href="classSQLInterpreter.html" title="A class that interprets SQL queries using a lexer and parser.">SQLInterpreter</a> class methods, which integrate a lexer and parser to process and interpret SQL queries interactively based on a verbosity level. </p>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

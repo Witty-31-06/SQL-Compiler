@@ -2,6 +2,11 @@
 \hypertarget{classParser}{}\label{classParser}\index{Parser@{Parser}}
 
 
+A class implementing an LL1 parser for SQL queries.  
+
+
+
+
 {\ttfamily \#include $<$parser.\+h$>$}
 
 
@@ -11,46 +16,49 @@ Collaboration diagram for Parser\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=218pt]{classParser__coll__graph}
+\includegraphics[width=188pt]{classParser__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classParser_ac13410cc626574db39d1b39cdf8dfe39}{Parser}} (const string \&filename)
-\item 
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classParser}{Parser} by loading a grammar from a file. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classParser_aaa59ab12d2363ede9c8f72ff8a32ce88}{print\+Grammar}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Prints the loaded grammar rules. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classParser_a271f328741d9e36146ed32bcb382d9a8}{left\+Factor\+Grammar}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Applies left factoring to the grammar to ensure LL1 compatibility. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classParser_ae656481d980555a17d639fe063fd436a}{compute\+First}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Computes the FIRST sets for all non-\/terminals in the grammar. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classParser_ae1dba1e4b94224b696e2d25cc39df2c7}{compute\+Follow}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Computes the FOLLOW sets for all non-\/terminals in the grammar. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classParser_a2dc265a26604c6829bac6fd93daa14ef}{print\+First\+And\+Follow}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Prints the computed FIRST and FOLLOW sets. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classParser_ae3862281fb56fea407bbd332c5bebe10}{compute\+LL1\+Table}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Computes the LL1 parsing table based on the grammar and FIRST/\+FOLLOW sets. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classParser_a7ccefd47273ea741d7350049eac417ff}{print\+LL1\+Table}} () const
-\item 
-void \mbox{\hyperlink{classParser_a5400c4e8361072c77bedc61e7bc15535}{print\+LL1\+Table\+From\+Grammar\+JSON}} (const std\+::string \&json\+File\+Path)
-\item 
+\begin{DoxyCompactList}\small\item\em Prints the constructed LL1 parsing table. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classParser_a65780aca08811f29dda782f145bd7d4d}{parse}} (vector$<$ \mbox{\hyperlink{classToken}{Token}} $>$ tokens)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Parses a sequence of tokens using the LL1 parsing table. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
 unordered\+\_\+map$<$ \mbox{\hyperlink{classNonTerminal}{Non\+Terminal}}, vector$<$ vector$<$ shared\+\_\+ptr$<$ \mbox{\hyperlink{classSymbol}{Symbol}} $>$ $>$ $>$, \mbox{\hyperlink{structSymbolHash}{Symbol\+Hash}} $>$ \mbox{\hyperlink{classParser_a36d2eb8091aea0fd77c6b1c1e6a234b7}{grammar}}
-\item 
+\begin{DoxyCompactList}\small\item\em Grammar rules mapping non-\/terminals to productions. \end{DoxyCompactList}\item 
 shared\+\_\+ptr$<$ \mbox{\hyperlink{classNonTerminal}{Non\+Terminal}} $>$ \mbox{\hyperlink{classParser_a2f6d04a797842407d2a2b76f6fec4e0b}{start}}
-\item 
+\begin{DoxyCompactList}\small\item\em The start symbol of the grammar. \end{DoxyCompactList}\item 
 unordered\+\_\+map$<$ \mbox{\hyperlink{classNonTerminal}{Non\+Terminal}}, unordered\+\_\+set$<$ \mbox{\hyperlink{classTerminal}{Terminal}}, \mbox{\hyperlink{structSymbolHash}{Symbol\+Hash}} $>$, \mbox{\hyperlink{structSymbolHash}{Symbol\+Hash}} $>$ \mbox{\hyperlink{classParser_ae4646e1c0f41c4011d9638e2bc40178f}{first}}
-\item 
+\begin{DoxyCompactList}\small\item\em FIRST sets for non-\/terminals. \end{DoxyCompactList}\item 
 unordered\+\_\+map$<$ \mbox{\hyperlink{classNonTerminal}{Non\+Terminal}}, unordered\+\_\+set$<$ \mbox{\hyperlink{classTerminal}{Terminal}}, \mbox{\hyperlink{structSymbolHash}{Symbol\+Hash}} $>$, \mbox{\hyperlink{structSymbolHash}{Symbol\+Hash}} $>$ \mbox{\hyperlink{classParser_af67ad55e9647af09901c752ffeb8a362}{follow}}
-\item 
+\begin{DoxyCompactList}\small\item\em FOLLOW sets for non-\/terminals. \end{DoxyCompactList}\item 
 unordered\+\_\+map$<$ \mbox{\hyperlink{classNonTerminal}{Non\+Terminal}}, unordered\+\_\+map$<$ \mbox{\hyperlink{classTerminal}{Terminal}}, vector$<$ shared\+\_\+ptr$<$ \mbox{\hyperlink{classSymbol}{Symbol}} $>$ $>$, \mbox{\hyperlink{structSymbolHash}{Symbol\+Hash}} $>$, \mbox{\hyperlink{structSymbolHash}{Symbol\+Hash}} $>$ \mbox{\hyperlink{classParser_ac526a9b9dc7871303a9cd581c79ba3c1}{ll1\+Table}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em LL1 parsing table. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+A class implementing an LL1 parser for SQL queries. 
+
+The \doxylink{classParser}{Parser} class loads a grammar from a file, computes the FIRST and FOLLOW sets, constructs an LL1 parsing table, and uses it to parse a sequence of tokens generated from an SQL query. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \Hypertarget{classParser_ac13410cc626574db39d1b39cdf8dfe39}\index{Parser@{Parser}!Parser@{Parser}}
@@ -59,7 +67,24 @@ unordered\+\_\+map$<$ \mbox{\hyperlink{classNonTerminal}{Non\+Terminal}}, unorde
 {\footnotesize\ttfamily \label{classParser_ac13410cc626574db39d1b39cdf8dfe39} 
 Parser\+::\+Parser (\begin{DoxyParamCaption}\item[{const string \&}]{filename}{}\end{DoxyParamCaption})}
 
-Here is the call graph for this function\+:\nopagebreak
+
+
+Constructs a \doxylink{classParser}{Parser} by loading a grammar from a file. 
+
+Constructs a \doxylink{classParser}{Parser} by loading a grammar from a JSON file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The path to the grammar file (e.\+g., JSON format).\\
+\hline
+\end{DoxyParams}
+Initializes the grammar, sets the start symbol, and computes necessary parsing structures. 
+\begin{DoxyParams}{Parameters}
+{\em filename} & The path to the JSON grammar file. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -75,7 +100,12 @@ Here is the call graph for this function\+:\nopagebreak
 {\footnotesize\ttfamily \label{classParser_ae656481d980555a17d639fe063fd436a} 
 void Parser\+::compute\+First (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
-Here is the caller graph for this function\+:\nopagebreak
+
+
+Computes the FIRST sets for all non-\/terminals in the grammar. 
+
+Iteratively calculates the set of terminals that can appear as the first symbol of strings derived from each non-\/terminal. Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -88,7 +118,12 @@ Here is the caller graph for this function\+:\nopagebreak
 {\footnotesize\ttfamily \label{classParser_ae1dba1e4b94224b696e2d25cc39df2c7} 
 void Parser\+::compute\+Follow (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
-Here is the caller graph for this function\+:\nopagebreak
+
+
+Computes the FOLLOW sets for all non-\/terminals in the grammar. 
+
+Iteratively calculates the set of terminals that can appear immediately after each non-\/terminal in a derivation. Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -101,14 +136,20 @@ Here is the caller graph for this function\+:\nopagebreak
 {\footnotesize\ttfamily \label{classParser_ae3862281fb56fea407bbd332c5bebe10} 
 void Parser\+::compute\+LL1\+Table (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
-Here is the call graph for this function\+:\nopagebreak
+
+
+Computes the LL1 parsing table based on the grammar and FIRST/\+FOLLOW sets. 
+
+Constructs the table by mapping non-\/terminals and terminals to productions, checking for conflicts. Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=345pt]{classParser_ae3862281fb56fea407bbd332c5bebe10_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -121,14 +162,20 @@ Here is the caller graph for this function\+:\nopagebreak
 {\footnotesize\ttfamily \label{classParser_a271f328741d9e36146ed32bcb382d9a8} 
 void Parser\+::left\+Factor\+Grammar (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
-Here is the call graph for this function\+:\nopagebreak
+
+
+Applies left factoring to the grammar to ensure LL1 compatibility. 
+
+Groups productions by common prefixes and introduces new non-\/terminals to eliminate ambiguity. Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{classParser_a271f328741d9e36146ed32bcb382d9a8_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -141,14 +188,36 @@ Here is the caller graph for this function\+:\nopagebreak
 {\footnotesize\ttfamily \label{classParser_a65780aca08811f29dda782f145bd7d4d} 
 bool Parser\+::parse (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{classToken}{Token}} $>$}]{tokens}{}\end{DoxyParamCaption})}
 
-Here is the call graph for this function\+:\nopagebreak
+
+
+Parses a sequence of tokens using the LL1 parsing table. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tokens} & The vector of \doxylink{classToken}{Token} objects to parse. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the parse succeeds, false otherwise.
+\end{DoxyReturn}
+Uses a stack-\/based approach to match tokens against the grammar, printing a trace table. 
+\begin{DoxyParams}{Parameters}
+{\em tokens} & The vector of \doxylink{classToken}{Token} objects to parse. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the parse succeeds, false otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=292pt]{classParser_a65780aca08811f29dda782f145bd7d4d_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -161,7 +230,14 @@ Here is the caller graph for this function\+:\nopagebreak
 {\footnotesize\ttfamily \label{classParser_a2dc265a26604c6829bac6fd93daa14ef} 
 void Parser\+::print\+First\+And\+Follow (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
 
-Here is the caller graph for this function\+:\nopagebreak
+
+
+Prints the computed FIRST and FOLLOW sets. 
+
+Prints the computed FIRST and FOLLOW sets in tabulated format.
+
+Displays each non-\/terminal’s FIRST and FOLLOW sets using the tabulate library. Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -174,7 +250,14 @@ Here is the caller graph for this function\+:\nopagebreak
 {\footnotesize\ttfamily \label{classParser_aaa59ab12d2363ede9c8f72ff8a32ce88} 
 void Parser\+::print\+Grammar (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
 
-Here is the caller graph for this function\+:\nopagebreak
+
+
+Prints the loaded grammar rules. 
+
+Prints the loaded grammar rules in a tabulated format.
+
+Uses the tabulate library to display the start symbol and production rules. Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -187,19 +270,20 @@ Here is the caller graph for this function\+:\nopagebreak
 {\footnotesize\ttfamily \label{classParser_a7ccefd47273ea741d7350049eac417ff} 
 void Parser\+::print\+LL1\+Table (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
 
-Here is the caller graph for this function\+:\nopagebreak
+
+
+Prints the constructed LL1 parsing table. 
+
+Prints the constructed LL1 parsing table in tabulated format.
+
+Displays the non-\/terminal, terminal, and production entries using the tabulate library. Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{classParser_a7ccefd47273ea741d7350049eac417ff_icgraph}
 \end{center}
 \end{figure}
-\Hypertarget{classParser_a5400c4e8361072c77bedc61e7bc15535}\index{Parser@{Parser}!printLL1TableFromGrammarJSON@{printLL1TableFromGrammarJSON}}
-\index{printLL1TableFromGrammarJSON@{printLL1TableFromGrammarJSON}!Parser@{Parser}}
-\doxysubsubsection{\texorpdfstring{printLL1TableFromGrammarJSON()}{printLL1TableFromGrammarJSON()}}
-{\footnotesize\ttfamily \label{classParser_a5400c4e8361072c77bedc61e7bc15535} 
-void Parser\+::print\+LL1\+Table\+From\+Grammar\+JSON (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{json\+File\+Path}{}\end{DoxyParamCaption})}
-
 
 
 \doxysubsection{Member Data Documentation}
@@ -209,11 +293,19 @@ void Parser\+::print\+LL1\+Table\+From\+Grammar\+JSON (\begin{DoxyParamCaption}\
 {\footnotesize\ttfamily \label{classParser_ae4646e1c0f41c4011d9638e2bc40178f} 
 unordered\+\_\+map$<$\mbox{\hyperlink{classNonTerminal}{Non\+Terminal}}, unordered\+\_\+set$<$\mbox{\hyperlink{classTerminal}{Terminal}}, \mbox{\hyperlink{structSymbolHash}{Symbol\+Hash}}$>$, \mbox{\hyperlink{structSymbolHash}{Symbol\+Hash}}$>$ Parser\+::first\hspace{0.3cm}{\ttfamily [private]}}
 
+
+
+FIRST sets for non-\/terminals. 
+
 \Hypertarget{classParser_af67ad55e9647af09901c752ffeb8a362}\index{Parser@{Parser}!follow@{follow}}
 \index{follow@{follow}!Parser@{Parser}}
 \doxysubsubsection{\texorpdfstring{follow}{follow}}
 {\footnotesize\ttfamily \label{classParser_af67ad55e9647af09901c752ffeb8a362} 
 unordered\+\_\+map$<$\mbox{\hyperlink{classNonTerminal}{Non\+Terminal}}, unordered\+\_\+set$<$\mbox{\hyperlink{classTerminal}{Terminal}}, \mbox{\hyperlink{structSymbolHash}{Symbol\+Hash}}$>$, \mbox{\hyperlink{structSymbolHash}{Symbol\+Hash}}$>$ Parser\+::follow\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+FOLLOW sets for non-\/terminals. 
 
 \Hypertarget{classParser_a36d2eb8091aea0fd77c6b1c1e6a234b7}\index{Parser@{Parser}!grammar@{grammar}}
 \index{grammar@{grammar}!Parser@{Parser}}
@@ -221,17 +313,29 @@ unordered\+\_\+map$<$\mbox{\hyperlink{classNonTerminal}{Non\+Terminal}}, unorder
 {\footnotesize\ttfamily \label{classParser_a36d2eb8091aea0fd77c6b1c1e6a234b7} 
 unordered\+\_\+map$<$\mbox{\hyperlink{classNonTerminal}{Non\+Terminal}}, vector$<$vector$<$shared\+\_\+ptr$<$\mbox{\hyperlink{classSymbol}{Symbol}}$>$ $>$ $>$, \mbox{\hyperlink{structSymbolHash}{Symbol\+Hash}}$>$ Parser\+::grammar\hspace{0.3cm}{\ttfamily [private]}}
 
+
+
+Grammar rules mapping non-\/terminals to productions. 
+
 \Hypertarget{classParser_ac526a9b9dc7871303a9cd581c79ba3c1}\index{Parser@{Parser}!ll1Table@{ll1Table}}
 \index{ll1Table@{ll1Table}!Parser@{Parser}}
 \doxysubsubsection{\texorpdfstring{ll1Table}{ll1Table}}
 {\footnotesize\ttfamily \label{classParser_ac526a9b9dc7871303a9cd581c79ba3c1} 
 unordered\+\_\+map$<$\mbox{\hyperlink{classNonTerminal}{Non\+Terminal}}, unordered\+\_\+map$<$\mbox{\hyperlink{classTerminal}{Terminal}}, vector$<$shared\+\_\+ptr$<$\mbox{\hyperlink{classSymbol}{Symbol}}$>$ $>$, \mbox{\hyperlink{structSymbolHash}{Symbol\+Hash}}$>$, \mbox{\hyperlink{structSymbolHash}{Symbol\+Hash}}$>$ Parser\+::ll1\+Table\hspace{0.3cm}{\ttfamily [private]}}
 
+
+
+LL1 parsing table. 
+
 \Hypertarget{classParser_a2f6d04a797842407d2a2b76f6fec4e0b}\index{Parser@{Parser}!start@{start}}
 \index{start@{start}!Parser@{Parser}}
 \doxysubsubsection{\texorpdfstring{start}{start}}
 {\footnotesize\ttfamily \label{classParser_a2f6d04a797842407d2a2b76f6fec4e0b} 
 shared\+\_\+ptr$<$\mbox{\hyperlink{classNonTerminal}{Non\+Terminal}}$>$ Parser\+::start\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The start symbol of the grammar. 
 
 
 
